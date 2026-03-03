@@ -11,7 +11,10 @@
 
   if (titleEl) titleEl.textContent = `Learn ${subjectName}: All Questions With Answers`;
   if (subtitleEl) subtitleEl.textContent = "Includes every question from L1, L2, L3, and L4 pools with richer explanations.";
-  if (backQuizEl) {`r`n    backQuizEl.setAttribute("href", quizLink);`r`n    backQuizEl.textContent = `"Back to ${subjectName} Quiz`";`r`n  }
+  if (backQuizEl) {
+    backQuizEl.setAttribute("href", quizLink);
+    backQuizEl.textContent = `Back to ${subjectName} Quiz`;
+  }
   if (!gridEl) return;
 
   function extractPool(content, poolName) {
