@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C++ Quiz - GraspQuiz</title>
+<meta name="description" content="Practice and learn C++ Quiz with structured questions, clear explanations, and interview-focused preparation on GraspQuiz.">
+<link rel="canonical" href="https://graspquiz.tech/cpp.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GraspQuiz">
+<meta property="og:title" content="C++ Quiz - GraspQuiz">
+<meta property="og:description" content="Practice C++ quiz questions across beginner to advanced levels and strengthen OOP, STL, templates, and performance concepts.">
+<meta property="og:url" content="https://graspquiz.tech/cpp.html">
+<meta property="og:image" content="https://graspquiz.tech/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="C++ Quiz - GraspQuiz">
+<meta name="twitter:description" content="Practice C++ quiz questions across beginner to advanced levels and strengthen OOP, STL, templates, and performance concepts.">
+<meta name="twitter:image" content="https://graspquiz.tech/logo.svg">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+<link rel="stylesheet" href="c.css">
+<!-- EDUCATION_QA_SCHEMA_START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "C++ Quiz",
+  "url": "https://graspquiz.tech/cpp.html",
+  "educationalLevel": "Beginner to Advanced",
+  "inLanguage": "en",
+  "hasPart": [
+    {
+      "@type": "Question",
+      "name": "Which header provides std::cout?",
+      "acceptedAnswer": { "@type": "Answer", "text": "iostream" }
+    },
+    {
+      "@type": "Question",
+      "name": "Which keyword defines a class in C++?",
+      "acceptedAnswer": { "@type": "Answer", "text": "class" }
+    },
+    {
+      "@type": "Question",
+      "name": "Which keyword allocates memory dynamically in C++?",
+      "acceptedAnswer": { "@type": "Answer", "text": "new" }
+    }
+  ]
+}
+</script>
+<!-- EDUCATION_QA_SCHEMA_END -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-82ZQVTYV9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-82ZQVTYV9J');
+</script>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo"><img src="logo.svg" alt="GraspQuiz logo"></div>
+    <nav>
+    <a href="/">Home</a>
+    <a href="c.html">C</a>
+    <a href="cpp.html">C++</a>
+    <a href="java.html">Java</a>
+    <a href="py.html">Python</a>
+    <a href="js.html">JavaScript</a>
+    <a href="dsa.html">DSA</a>
+    <a href="html.html">HTML</a>
+    <a href="sql.html">SQL</a>
+  </nav>
+</header>
+
+<section class="quiz-section">
+  <div class="quiz-container">
+    <h1>C++ Quiz</h1>
+    <h2 class="quiz-subtitle">Choose a level and start practicing with 25 questions per level.</h2>
+    <div class="quiz-top-actions">
+      <button type="button" onclick="window.location.href='index.html'">Back to Home</button>
+      <button type="button" onclick="window.location.href='cpp-learn.html'">Learn</button>
+    </div>
+    <h3 class="level-title">C++ Quiz</h3>
+    <div class="quiz-intro">
+      <p>Practice OOP, STL, templates, and memory concepts across 4 levels (Easy to Expert), with 25 questions per level.</p>
+    </div>
+    <div id="levelPicker" class="level-picker">
+      <div class="level-card" data-level-card="l1">
+        <div class="level-card-head"><h4>Set 1</h4><span>High Priority 1</span></div>
+        <div class="level-card-stats">
+          <div><strong>25</strong><small>Questions</small></div>
+          <div><strong>Easy</strong><small>Difficulty</small></div>
+        </div>
+        <button class="level-btn" data-level="l1" type="button">Start Now -></button>
+      </div>
+      <div class="level-card" data-level-card="l2">
+        <div class="level-card-head"><h4>Set 2</h4><span>High Priority 2</span></div>
+        <div class="level-card-stats">
+          <div><strong>25</strong><small>Questions</small></div>
+          <div><strong>Medium</strong><small>Difficulty</small></div>
+        </div>
+        <button class="level-btn" data-level="l2" type="button">Start Now -></button>
+      </div>
+      <div class="level-card" data-level-card="l3">
+        <div class="level-card-head"><h4>Set 3</h4><span>High Priority 3</span></div>
+        <div class="level-card-stats">
+          <div><strong>25</strong><small>Questions</small></div>
+          <div><strong>Hard</strong><small>Difficulty</small></div>
+        </div>
+        <button class="level-btn" data-level="l3" type="button">Start Now -></button>
+      </div>
+      <div class="level-card" data-level-card="l4">
+        <div class="level-card-head"><h4>Set 4</h4><span>High Priority 4</span></div>
+        <div class="level-card-stats">
+          <div><strong>25</strong><small>Questions</small></div>
+          <div><strong>Expert</strong><small>Difficulty</small></div>
+        </div>
+        <button class="level-btn" data-level="l4" type="button">Start Now -></button>
+      </div>
+    </div>
+    <div id="levelMeta" class="level-meta"></div>
+    <div id="question">Question text will appear here</div>
+    <div id="answers"></div>
+    <div id="explanation"></div>
+    <button id="nextBtn" type="button">Next</button>
+    <div id="result"></div>
+
+    <section class="related-quizzes" aria-label="Related quizzes">
+      <h3>Related Quizzes</h3>
+      <div class="related-links">
+        <a href="c.html">C Quiz</a>
+        <a href="java.html">Java Quiz</a>
+        <a href="dsa.html">DSA Quiz</a>
+        <a href="py.html">Python Quiz</a>
+      </div>
+    </section>
+  </div>
+</section>
+
+<script src="cpp.run.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1491 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 2810 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (All Quiz Questions With Correct Answers) Tj
+1 0 0 1 50 780 Tm (Generated from c.js, html.js, py.js, jsquiz.js, dsa.js) Tj
+1 0 0 1 50 766 Tm () Tj
+1 0 0 1 50 752 Tm (=== C Programming ===) Tj
+1 0 0 1 50 738 Tm (-- L1 --) Tj
+1 0 0 1 50 724 Tm (1. What does 'printf' function do in C?) Tj
+1 0 0 1 50 710 Tm (Answer: Prints output to console) Tj
+1 0 0 1 50 696 Tm (Explanation: 'printf' displays formatted output on the console.) Tj
+1 0 0 1 50 682 Tm () Tj
+1 0 0 1 50 668 Tm (2. Which header file is needed for 'printf'?) Tj
+1 0 0 1 50 654 Tm (Answer: <stdio.h>) Tj
+1 0 0 1 50 640 Tm (Explanation: 'printf' is declared in <stdio.h>.) Tj
+1 0 0 1 50 626 Tm () Tj
+1 0 0 1 50 612 Tm (3. Which operator is used for assignment in C?) Tj
+1 0 0 1 50 598 Tm (Answer: =) Tj
+1 0 0 1 50 584 Tm (Explanation: '=' assigns a value; '==' compares two values.) Tj
+1 0 0 1 50 570 Tm () Tj
+1 0 0 1 50 556 Tm (4. What is the return type of 'main' in standard C?) Tj
+1 0 0 1 50 542 Tm (Answer: int) Tj
+1 0 0 1 50 528 Tm (Explanation: main should return int to indicate exit status.) Tj
+1 0 0 1 50 514 Tm () Tj
+1 0 0 1 50 500 Tm (5. Which keyword defines a constant variable?) Tj
+1 0 0 1 50 486 Tm (Answer: const) Tj
+1 0 0 1 50 472 Tm (Explanation: const prevents changing the variable value after initialization.) Tj
+1 0 0 1 50 458 Tm () Tj
+1 0 0 1 50 444 Tm (6. Which loop runs at least once?) Tj
+1 0 0 1 50 430 Tm (Answer: do...while) Tj
+1 0 0 1 50 416 Tm (Explanation: do...while checks the condition after executing the loop body.) Tj
+1 0 0 1 50 402 Tm () Tj
+1 0 0 1 50 388 Tm (7. Which operator dereferences a pointer?) Tj
+1 0 0 1 50 374 Tm (Answer: *) Tj
+1 0 0 1 50 360 Tm (Explanation: The * operator accesses the value at a pointer address.) Tj
+1 0 0 1 50 346 Tm () Tj
+1 0 0 1 50 332 Tm (8. Which function reads formatted input?) Tj
+1 0 0 1 50 318 Tm (Answer: scanf\(\)) Tj
+1 0 0 1 50 304 Tm (Explanation: scanf\(\) reads formatted input from stdin.) Tj
+1 0 0 1 50 290 Tm () Tj
+1 0 0 1 50 276 Tm (9. What is the first valid index in a C array?) Tj
+1 0 0 1 50 262 Tm (Answer: 0) Tj
+1 0 0 1 50 248 Tm (Explanation: C arrays are zero-indexed.) Tj
+1 0 0 1 50 234 Tm () Tj
+1 0 0 1 50 220 Tm (10. Which header provides malloc\(\) and free\(\)?) Tj
+1 0 0 1 50 206 Tm (Answer: <stdlib.h>) Tj
+1 0 0 1 50 192 Tm (Explanation: Dynamic memory helpers are declared in <stdlib.h>.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (11. Which symbol starts a single-line comment?) Tj
+1 0 0 1 50 150 Tm (Answer: //) Tj
+1 0 0 1 50 136 Tm (Explanation: // starts a comment until end of line.) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (12. What is sizeof\(char\) in C?) Tj
+1 0 0 1 50 94 Tm (Answer: 1 byte) Tj
+1 0 0 1 50 80 Tm (Explanation: By definition, sizeof\(char\) is always 1.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+3 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 2 0 R >>
+endobj
+4 0 obj
+<< /Length 2835 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (13. What is the format specifier for int?) Tj
+1 0 0 1 50 780 Tm (Answer: %d) Tj
+1 0 0 1 50 766 Tm (Explanation: %d prints/reads int values.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm (14. Which operator means logical AND?) Tj
+1 0 0 1 50 724 Tm (Answer: &&) Tj
+1 0 0 1 50 710 Tm (Explanation: && returns true only when both conditions are true.) Tj
+1 0 0 1 50 696 Tm () Tj
+1 0 0 1 50 682 Tm (15. What does 'break' do in a loop?) Tj
+1 0 0 1 50 668 Tm (Answer: Exits the loop) Tj
+1 0 0 1 50 654 Tm (Explanation: break immediately exits the nearest loop/switch.) Tj
+1 0 0 1 50 640 Tm () Tj
+1 0 0 1 50 626 Tm (16. What does 'continue' do in a loop?) Tj
+1 0 0 1 50 612 Tm (Answer: Skips to next iteration) Tj
+1 0 0 1 50 598 Tm (Explanation: continue skips remaining statements for the current iteration.) Tj
+1 0 0 1 50 584 Tm () Tj
+1 0 0 1 50 570 Tm (17. Which character marks end of a C string?) Tj
+1 0 0 1 50 556 Tm (Answer: \\0) Tj
+1 0 0 1 50 542 Tm (Explanation: Strings are null-terminated using '\\0'.) Tj
+1 0 0 1 50 528 Tm () Tj
+1 0 0 1 50 514 Tm (18. Which header declares strlen\(\)?) Tj
+1 0 0 1 50 500 Tm (Answer: <string.h>) Tj
+1 0 0 1 50 486 Tm (Explanation: strlen\(\) is declared in <string.h>.) Tj
+1 0 0 1 50 472 Tm () Tj
+1 0 0 1 50 458 Tm (19. Which return type is used when function returns nothing?) Tj
+1 0 0 1 50 444 Tm (Answer: void) Tj
+1 0 0 1 50 430 Tm (Explanation: void indicates no return value.) Tj
+1 0 0 1 50 416 Tm () Tj
+1 0 0 1 50 402 Tm (20. In switch, which label handles unmatched cases?) Tj
+1 0 0 1 50 388 Tm (Answer: default) Tj
+1 0 0 1 50 374 Tm (Explanation: default runs when no case matches.) Tj
+1 0 0 1 50 360 Tm () Tj
+1 0 0 1 50 346 Tm (21. What does ++i do?) Tj
+1 0 0 1 50 332 Tm (Answer: Increments i by 1) Tj
+1 0 0 1 50 318 Tm (Explanation: ++i increases i by one \(prefix increment\).) Tj
+1 0 0 1 50 304 Tm () Tj
+1 0 0 1 50 290 Tm (22. Which operator gives the address of a variable?) Tj
+1 0 0 1 50 276 Tm (Answer: &) Tj
+1 0 0 1 50 262 Tm (Explanation: &variable gives its memory address.) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 234 Tm (23. Which header file declares fopen\(\)?) Tj
+1 0 0 1 50 220 Tm (Answer: <stdio.h>) Tj
+1 0 0 1 50 206 Tm (Explanation: fopen\(\) belongs to standard I/O, declared in <stdio.h>.) Tj
+1 0 0 1 50 192 Tm () Tj
+1 0 0 1 50 178 Tm (24. Which is the correct order in a for loop?) Tj
+1 0 0 1 50 164 Tm (Answer: init; condition; increment) Tj
+1 0 0 1 50 150 Tm (Explanation: for\(init; condition; increment\) is the correct pattern.) Tj
+1 0 0 1 50 136 Tm () Tj
+1 0 0 1 50 122 Tm (25. What should be used to release memory allocated by malloc\(\)?) Tj
+1 0 0 1 50 108 Tm (Answer: free\(\)) Tj
+1 0 0 1 50 94 Tm (Explanation: Use free\(\) to release dynamically allocated memory.) Tj
+1 0 0 1 50 80 Tm () Tj
+1 0 0 1 50 66 Tm (-- L2 --) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 3237 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (1. What is printed by: int a = 5; printf\("%d", a++ + ++a\);) Tj
+1 0 0 1 50 780 Tm (Answer: Undefined behavior) Tj
+1 0 0 1 50 766 Tm (Explanation: Modifying 'a' more than once between sequence points in C causes undefined) Tj
+1 0 0 1 50 752 Tm (behavior.) Tj
+1 0 0 1 50 738 Tm () Tj
+1 0 0 1 50 724 Tm (2. Which storage class keeps a local variable value between function calls?) Tj
+1 0 0 1 50 710 Tm (Answer: static) Tj
+1 0 0 1 50 696 Tm (Explanation: A local static variable has block scope but static storage duration.) Tj
+1 0 0 1 50 682 Tm () Tj
+1 0 0 1 50 668 Tm (3. What does 'const int *p' mean?) Tj
+1 0 0 1 50 654 Tm (Answer: Pointed value is constant) Tj
+1 0 0 1 50 640 Tm (Explanation: You cannot modify the pointed-to int through p, but p itself can point elsewhere.) Tj
+1 0 0 1 50 626 Tm () Tj
+1 0 0 1 50 612 Tm (4. What does 'int *const p' mean?) Tj
+1 0 0 1 50 598 Tm (Answer: Pointer is constant) Tj
+1 0 0 1 50 584 Tm (Explanation: p must always point to the same address; pointed data can still be modified.) Tj
+1 0 0 1 50 570 Tm () Tj
+1 0 0 1 50 556 Tm (5. Which function should be used instead of gets\(\) for safer input?) Tj
+1 0 0 1 50 542 Tm (Answer: fgets\(\)) Tj
+1 0 0 1 50 528 Tm (Explanation: gets\(\) is unsafe; fgets\(\) reads with size limits.) Tj
+1 0 0 1 50 514 Tm () Tj
+1 0 0 1 50 500 Tm (6. Which is true for 'extern int x;'?) Tj
+1 0 0 1 50 486 Tm (Answer: Declares x without defining) Tj
+1 0 0 1 50 472 Tm (Explanation: extern declares a variable defined in another translation unit \(or later\).) Tj
+1 0 0 1 50 458 Tm () Tj
+1 0 0 1 50 444 Tm (7. What is the result type of sizeof expression?) Tj
+1 0 0 1 50 430 Tm (Answer: size_t) Tj
+1 0 0 1 50 416 Tm (Explanation: sizeof returns size_t.) Tj
+1 0 0 1 50 402 Tm () Tj
+1 0 0 1 50 388 Tm (8. Which statement about pointer arithmetic is valid?) Tj
+1 0 0 1 50 374 Tm (Answer: p + 1 moves by sizeof\(*p\)) Tj
+1 0 0 1 50 360 Tm (Explanation: Pointer arithmetic advances by the size of the pointed type.) Tj
+1 0 0 1 50 346 Tm () Tj
+1 0 0 1 50 332 Tm (9. What does this declare? int \(*fp\)\(int, int\);) Tj
+1 0 0 1 50 318 Tm (Answer: Pointer to function returning int) Tj
+1 0 0 1 50 304 Tm (Explanation: Parentheses bind *fp first: it is a function pointer.) Tj
+1 0 0 1 50 290 Tm () Tj
+1 0 0 1 50 276 Tm (10. Which header is required for strcmp\(\)?) Tj
+1 0 0 1 50 262 Tm (Answer: <string.h>) Tj
+1 0 0 1 50 248 Tm (Explanation: strcmp\(\) is declared in <string.h>.) Tj
+1 0 0 1 50 234 Tm () Tj
+1 0 0 1 50 220 Tm (11. What happens if free\(\) is called twice on same pointer?) Tj
+1 0 0 1 50 206 Tm (Answer: Undefined behavior) Tj
+1 0 0 1 50 192 Tm (Explanation: Double free invokes undefined behavior.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (12. Which is the correct way to allocate memory for 10 ints?) Tj
+1 0 0 1 50 150 Tm (Answer: malloc\(10 * sizeof\(int\)\)) Tj
+1 0 0 1 50 136 Tm (Explanation: Always multiply element count by sizeof\(type\).) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (13. What is the danger of using scanf\("%s", str\) without width?) Tj
+1 0 0 1 50 94 Tm (Answer: Buffer overflow risk) Tj
+1 0 0 1 50 80 Tm (Explanation: Without max width, input may exceed buffer size.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 3160 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (14. Which operation is invalid on FILE *fp opened with "r" mode?) Tj
+1 0 0 1 50 780 Tm (Answer: fprintf\(fp, "x"\)) Tj
+1 0 0 1 50 766 Tm (Explanation: Read-only mode disallows write operations.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm (15. What is true about recursion in C?) Tj
+1 0 0 1 50 724 Tm (Answer: Must have base case to terminate) Tj
+1 0 0 1 50 710 Tm (Explanation: A recursion base case is required to avoid infinite recursion/stack overflow.) Tj
+1 0 0 1 50 696 Tm () Tj
+1 0 0 1 50 682 Tm (16. What does volatile indicate?) Tj
+1 0 0 1 50 668 Tm (Answer: Value may change unexpectedly) Tj
+1 0 0 1 50 654 Tm (Explanation: volatile tells compiler that value can change outside normal code flow.) Tj
+1 0 0 1 50 640 Tm () Tj
+1 0 0 1 50 626 Tm (17. Which cast is needed to store malloc result in C?) Tj
+1 0 0 1 50 612 Tm (Answer: Never required in C) Tj
+1 0 0 1 50 598 Tm (Explanation: In C, void* converts implicitly; cast is unnecessary.) Tj
+1 0 0 1 50 584 Tm () Tj
+1 0 0 1 50 570 Tm (18. What is an include guard used for?) Tj
+1 0 0 1 50 556 Tm (Answer: Prevent multiple header inclusion) Tj
+1 0 0 1 50 542 Tm (Explanation: Include guards prevent duplicate declarations from repeated inclusion.) Tj
+1 0 0 1 50 528 Tm () Tj
+1 0 0 1 50 514 Tm (19. Which of these best describes undefined behavior?) Tj
+1 0 0 1 50 500 Tm (Answer: Program behavior not defined by C standard) Tj
+1 0 0 1 50 486 Tm (Explanation: Undefined behavior gives compilers freedom; any result is possible.) Tj
+1 0 0 1 50 472 Tm () Tj
+1 0 0 1 50 458 Tm (20. What is printed by printf\("%zu", sizeof\("abc"\)\);) Tj
+1 0 0 1 50 444 Tm (Answer: 4) Tj
+1 0 0 1 50 430 Tm (Explanation: String literal "abc" includes null terminator, size is 4.) Tj
+1 0 0 1 50 416 Tm () Tj
+1 0 0 1 50 402 Tm (21. Which expression accesses struct pointer member 'x'?) Tj
+1 0 0 1 50 388 Tm (Answer: p->x) Tj
+1 0 0 1 50 374 Tm (Explanation: Use -> for member access through struct pointers.) Tj
+1 0 0 1 50 360 Tm () Tj
+1 0 0 1 50 346 Tm (22. What is the scope of a variable declared inside braces {}?) Tj
+1 0 0 1 50 332 Tm (Answer: Block scope) Tj
+1 0 0 1 50 318 Tm (Explanation: Variables declared in a block are visible only inside that block.) Tj
+1 0 0 1 50 304 Tm () Tj
+1 0 0 1 50 290 Tm (23. Which function converts string to integer?) Tj
+1 0 0 1 50 276 Tm (Answer: atoi\(\)) Tj
+1 0 0 1 50 262 Tm (Explanation: atoi\(\) converts C-string to int \(with limitations\).) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 234 Tm (24. Which format specifier prints size_t safely?) Tj
+1 0 0 1 50 220 Tm (Answer: %zu) Tj
+1 0 0 1 50 206 Tm (Explanation: %zu is the correct printf specifier for size_t.) Tj
+1 0 0 1 50 192 Tm () Tj
+1 0 0 1 50 178 Tm (25. What is the main purpose of typedef?) Tj
+1 0 0 1 50 164 Tm (Answer: Create type alias) Tj
+1 0 0 1 50 150 Tm (Explanation: typedef gives an existing type a new alias.) Tj
+1 0 0 1 50 136 Tm () Tj
+1 0 0 1 50 122 Tm (-- L3 --) Tj
+1 0 0 1 50 108 Tm (1. Given int a[5]={1,2,3,4,5}; what is *\(a + 3\)?) Tj
+1 0 0 1 50 94 Tm (Answer: 4) Tj
+1 0 0 1 50 80 Tm (Explanation: a + 3 points to the 4th element \(index 3\).) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 3364 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (2. What does this declaration mean? int \(*arr[3]\)\(void\);) Tj
+1 0 0 1 50 780 Tm (Answer: Array of 3 pointers to functions returning int) Tj
+1 0 0 1 50 766 Tm (Explanation: arr is an array of three function pointers.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm (3. Which behavior is guaranteed by 'realloc\(ptr, newSize\)' on success?) Tj
+1 0 0 1 50 724 Tm (Answer: Data up to min\(old,new\) size preserved) Tj
+1 0 0 1 50 710 Tm (Explanation: realloc preserves existing data up to the smaller size.) Tj
+1 0 0 1 50 696 Tm () Tj
+1 0 0 1 50 682 Tm (4. What is wrong with returning address of a local variable?) Tj
+1 0 0 1 50 668 Tm (Answer: Address may become invalid after function returns) Tj
+1 0 0 1 50 654 Tm (Explanation: Local variables have automatic storage duration and die after return.) Tj
+1 0 0 1 50 640 Tm () Tj
+1 0 0 1 50 626 Tm (5. Which is true about strict aliasing in C?) Tj
+1 0 0 1 50 612 Tm (Answer: Violating aliasing rules can break optimizations) Tj
+1 0 0 1 50 598 Tm (Explanation: Breaking strict aliasing may produce unexpected behavior under optimization.) Tj
+1 0 0 1 50 584 Tm () Tj
+1 0 0 1 50 570 Tm (6. What does 'sizeof\(int*\)' depend on?) Tj
+1 0 0 1 50 556 Tm (Answer: CPU architecture / data model) Tj
+1 0 0 1 50 542 Tm (Explanation: Pointer size depends on target architecture/data model.) Tj
+1 0 0 1 50 528 Tm () Tj
+1 0 0 1 50 514 Tm (7. Which is the safest pattern after free\(p\)?) Tj
+1 0 0 1 50 500 Tm (Answer: Set p = NULL) Tj
+1 0 0 1 50 486 Tm (Explanation: Setting pointer to NULL helps avoid accidental reuse/double free.) Tj
+1 0 0 1 50 472 Tm () Tj
+1 0 0 1 50 458 Tm (8. What does this expression evaluate first? *p++) Tj
+1 0 0 1 50 444 Tm (Answer: *\(p++\)) Tj
+1 0 0 1 50 430 Tm (Explanation: Post-increment has higher precedence on pointer variable: *\(p++\).) Tj
+1 0 0 1 50 416 Tm () Tj
+1 0 0 1 50 402 Tm (9. Which file mode truncates file and allows read/write?) Tj
+1 0 0 1 50 388 Tm (Answer: w+) Tj
+1 0 0 1 50 374 Tm (Explanation: w+ creates/truncates and allows both read and write.) Tj
+1 0 0 1 50 360 Tm () Tj
+1 0 0 1 50 346 Tm (10. What is the correct check for malloc failure?) Tj
+1 0 0 1 50 332 Tm (Answer: if \(!p\)) Tj
+1 0 0 1 50 318 Tm (Explanation: malloc returns NULL on allocation failure.) Tj
+1 0 0 1 50 304 Tm () Tj
+1 0 0 1 50 290 Tm (11. Which statement about enum is correct?) Tj
+1 0 0 1 50 276 Tm (Answer: Enum constants are compile-time integer constants) Tj
+1 0 0 1 50 262 Tm (Explanation: Enum values are integral constants.) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 234 Tm (12. What is the effect of '#define SQR\(x\) x*x' used as SQR\(1+2\)?) Tj
+1 0 0 1 50 220 Tm (Answer: 5) Tj
+1 0 0 1 50 206 Tm (Explanation: Macro expands to 1+2*1+2; parentheses are required in macro definitions.) Tj
+1 0 0 1 50 192 Tm () Tj
+1 0 0 1 50 178 Tm (13. Which declaration gives read-only pointer to read-only int?) Tj
+1 0 0 1 50 164 Tm (Answer: const int *const p) Tj
+1 0 0 1 50 150 Tm (Explanation: Both pointed data and pointer are const.) Tj
+1 0 0 1 50 136 Tm () Tj
+1 0 0 1 50 122 Tm (14. What does this do? memmove\(dst, src, n\);) Tj
+1 0 0 1 50 108 Tm (Answer: Copies memory; overlap handled safely) Tj
+1 0 0 1 50 94 Tm (Explanation: memmove handles overlapping memory regions safely.) Tj
+1 0 0 1 50 80 Tm () Tj
+1 0 0 1 50 66 Tm (15. Which operator has higher precedence?) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 3094 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (Answer: == over &&) Tj
+1 0 0 1 50 780 Tm (Explanation: Relational/equality operators are evaluated before logical AND.) Tj
+1 0 0 1 50 766 Tm () Tj
+1 0 0 1 50 752 Tm (16. What is UB here? int x=1; int y=x++ + x++;) Tj
+1 0 0 1 50 738 Tm (Answer: UB due to multiple unsequenced modifications) Tj
+1 0 0 1 50 724 Tm (Explanation: x is modified multiple times without sequencing.) Tj
+1 0 0 1 50 710 Tm () Tj
+1 0 0 1 50 696 Tm (17. Which header declares qsort\(\)?) Tj
+1 0 0 1 50 682 Tm (Answer: <stdlib.h>) Tj
+1 0 0 1 50 668 Tm (Explanation: qsort is declared in <stdlib.h>.) Tj
+1 0 0 1 50 654 Tm () Tj
+1 0 0 1 50 640 Tm (18. What should a comparator for qsort return?) Tj
+1 0 0 1 50 626 Tm (Answer: Negative/zero/positive by ordering) Tj
+1 0 0 1 50 612 Tm (Explanation: Comparator returns <0, 0, >0 for ordering.) Tj
+1 0 0 1 50 598 Tm () Tj
+1 0 0 1 50 584 Tm (19. What is true for static global variable?) Tj
+1 0 0 1 50 570 Tm (Answer: Internal linkage \(file scope only\)) Tj
+1 0 0 1 50 556 Tm (Explanation: static at file scope gives internal linkage.) Tj
+1 0 0 1 50 542 Tm () Tj
+1 0 0 1 50 528 Tm (20. Why use 'size_t i' for array indexing?) Tj
+1 0 0 1 50 514 Tm (Answer: Matches object size type and avoids sign issues) Tj
+1 0 0 1 50 500 Tm (Explanation: size_t is the unsigned type used for object sizes/indices.) Tj
+1 0 0 1 50 486 Tm () Tj
+1 0 0 1 50 472 Tm (21. What does this mean? int \(*p\)[10];) Tj
+1 0 0 1 50 458 Tm (Answer: Pointer to array of 10 ints) Tj
+1 0 0 1 50 444 Tm (Explanation: p points to an array containing 10 ints.) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 416 Tm (22. Which is true about fgets\(buffer, n, stdin\)?) Tj
+1 0 0 1 50 402 Tm (Answer: May store newline if read before limit) Tj
+1 0 0 1 50 388 Tm (Explanation: fgets may include newline and null-terminates when possible.) Tj
+1 0 0 1 50 374 Tm () Tj
+1 0 0 1 50 360 Tm (23. What is the safe way to print pointer value?) Tj
+1 0 0 1 50 346 Tm (Answer: %p) Tj
+1 0 0 1 50 332 Tm (Explanation: Use %p for pointer addresses.) Tj
+1 0 0 1 50 318 Tm () Tj
+1 0 0 1 50 304 Tm (24. Which statement about bit-fields is correct?) Tj
+1 0 0 1 50 290 Tm (Answer: Signedness and layout can be implementation-defined) Tj
+1 0 0 1 50 276 Tm (Explanation: Bit-field representation details are often implementation-defined.) Tj
+1 0 0 1 50 262 Tm () Tj
+1 0 0 1 50 248 Tm (25. Which construct best prevents macro side effects?) Tj
+1 0 0 1 50 234 Tm (Answer: Use inline function where possible) Tj
+1 0 0 1 50 220 Tm (Explanation: Inline functions avoid multiple evaluation issues in macros.) Tj
+1 0 0 1 50 206 Tm () Tj
+1 0 0 1 50 192 Tm () Tj
+1 0 0 1 50 178 Tm (=== HTML ===) Tj
+1 0 0 1 50 164 Tm (-- L1 --) Tj
+1 0 0 1 50 150 Tm (1. What does HTML stand for?) Tj
+1 0 0 1 50 136 Tm (Answer: Hyper Text Markup Language) Tj
+1 0 0 1 50 122 Tm (Explanation: HTML stands for Hyper Text Markup Language.) Tj
+1 0 0 1 50 108 Tm () Tj
+1 0 0 1 50 94 Tm (2. Which tag is used for the largest heading?) Tj
+1 0 0 1 50 80 Tm (Answer: <h1>) Tj
+1 0 0 1 50 66 Tm (Explanation: <h1> represents the highest-level heading.) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 2687 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm () Tj
+1 0 0 1 50 780 Tm (3. Which HTML tag creates a hyperlink?) Tj
+1 0 0 1 50 766 Tm (Answer: <a>) Tj
+1 0 0 1 50 752 Tm (Explanation: The anchor tag <a> creates links.) Tj
+1 0 0 1 50 738 Tm () Tj
+1 0 0 1 50 724 Tm (4. Which tag is used to insert an image?) Tj
+1 0 0 1 50 710 Tm (Answer: <img>) Tj
+1 0 0 1 50 696 Tm (Explanation: The <img> tag embeds an image.) Tj
+1 0 0 1 50 682 Tm () Tj
+1 0 0 1 50 668 Tm (5. Which attribute provides alternate text for images?) Tj
+1 0 0 1 50 654 Tm (Answer: alt) Tj
+1 0 0 1 50 640 Tm (Explanation: alt provides accessibility text and fallback description.) Tj
+1 0 0 1 50 626 Tm () Tj
+1 0 0 1 50 612 Tm (6. Which HTML element is used to create an unordered list?) Tj
+1 0 0 1 50 598 Tm (Answer: <ul>) Tj
+1 0 0 1 50 584 Tm (Explanation: <ul> creates a bulleted list.) Tj
+1 0 0 1 50 570 Tm () Tj
+1 0 0 1 50 556 Tm (7. Where should the <title> tag be placed?) Tj
+1 0 0 1 50 542 Tm (Answer: Inside <head>) Tj
+1 0 0 1 50 528 Tm (Explanation: <title> belongs in the <head> section.) Tj
+1 0 0 1 50 514 Tm () Tj
+1 0 0 1 50 500 Tm (8. Which tag creates a line break?) Tj
+1 0 0 1 50 486 Tm (Answer: <br>) Tj
+1 0 0 1 50 472 Tm (Explanation: <br> inserts a line break.) Tj
+1 0 0 1 50 458 Tm () Tj
+1 0 0 1 50 444 Tm (9. Which input type is used for email addresses?) Tj
+1 0 0 1 50 430 Tm (Answer: type='email') Tj
+1 0 0 1 50 416 Tm (Explanation: type='email' enables email validation.) Tj
+1 0 0 1 50 402 Tm () Tj
+1 0 0 1 50 388 Tm (10. Which semantic tag represents the main content?) Tj
+1 0 0 1 50 374 Tm (Answer: <main>) Tj
+1 0 0 1 50 360 Tm (Explanation: <main> is for dominant page content.) Tj
+1 0 0 1 50 346 Tm () Tj
+1 0 0 1 50 332 Tm (11. Which attribute is required for accessible <img> tags?) Tj
+1 0 0 1 50 318 Tm (Answer: alt) Tj
+1 0 0 1 50 304 Tm (Explanation: alt text is key for accessibility and fallback.) Tj
+1 0 0 1 50 290 Tm () Tj
+1 0 0 1 50 276 Tm (12. Which tag defines a paragraph?) Tj
+1 0 0 1 50 262 Tm (Answer: <p>) Tj
+1 0 0 1 50 248 Tm (Explanation: <p> defines a paragraph in HTML.) Tj
+1 0 0 1 50 234 Tm () Tj
+1 0 0 1 50 220 Tm (13. Which tag defines a table row?) Tj
+1 0 0 1 50 206 Tm (Answer: <tr>) Tj
+1 0 0 1 50 192 Tm (Explanation: <tr> defines a table row.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (14. Which tag creates an ordered list?) Tj
+1 0 0 1 50 150 Tm (Answer: <ol>) Tj
+1 0 0 1 50 136 Tm (Explanation: <ol> creates a numbered list.) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (15. Which tag is semantically correct for strong importance?) Tj
+1 0 0 1 50 94 Tm (Answer: <strong>) Tj
+1 0 0 1 50 80 Tm (Explanation: <strong> conveys strong importance semantically.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 2990 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (16. Which tag represents emphasized text?) Tj
+1 0 0 1 50 780 Tm (Answer: <em>) Tj
+1 0 0 1 50 766 Tm (Explanation: <em> is semantic emphasis.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm (17. Which input type creates a checkbox?) Tj
+1 0 0 1 50 724 Tm (Answer: checkbox) Tj
+1 0 0 1 50 710 Tm (Explanation: type='checkbox' creates a checkbox control.) Tj
+1 0 0 1 50 696 Tm () Tj
+1 0 0 1 50 682 Tm (18. Which attribute must be unique in one HTML page?) Tj
+1 0 0 1 50 668 Tm (Answer: id) Tj
+1 0 0 1 50 654 Tm (Explanation: id values must be unique in a document.) Tj
+1 0 0 1 50 640 Tm () Tj
+1 0 0 1 50 626 Tm (19. Which attribute can be reused on many elements?) Tj
+1 0 0 1 50 612 Tm (Answer: class) Tj
+1 0 0 1 50 598 Tm (Explanation: class can be shared by multiple elements.) Tj
+1 0 0 1 50 584 Tm () Tj
+1 0 0 1 50 570 Tm (20. Which tag links an external CSS file?) Tj
+1 0 0 1 50 556 Tm (Answer: <link>) Tj
+1 0 0 1 50 542 Tm (Explanation: <link rel='stylesheet' ...> is used for external CSS.) Tj
+1 0 0 1 50 528 Tm () Tj
+1 0 0 1 50 514 Tm (21. Which tag loads an external JavaScript file?) Tj
+1 0 0 1 50 500 Tm (Answer: <script>) Tj
+1 0 0 1 50 486 Tm (Explanation: <script src='...'></script> loads external JS.) Tj
+1 0 0 1 50 472 Tm () Tj
+1 0 0 1 50 458 Tm (22. Which tag is used to embed video?) Tj
+1 0 0 1 50 444 Tm (Answer: <video>) Tj
+1 0 0 1 50 430 Tm (Explanation: <video> is the standard HTML video element.) Tj
+1 0 0 1 50 416 Tm () Tj
+1 0 0 1 50 402 Tm (23. What is the default method of an HTML form?) Tj
+1 0 0 1 50 388 Tm (Answer: GET) Tj
+1 0 0 1 50 374 Tm (Explanation: If not specified, a form submits with GET.) Tj
+1 0 0 1 50 360 Tm () Tj
+1 0 0 1 50 346 Tm (24. Which attribute makes a form field mandatory?) Tj
+1 0 0 1 50 332 Tm (Answer: required) Tj
+1 0 0 1 50 318 Tm (Explanation: required forces input before form submission.) Tj
+1 0 0 1 50 304 Tm () Tj
+1 0 0 1 50 290 Tm (25. Which tag defines a table header cell?) Tj
+1 0 0 1 50 276 Tm (Answer: <th>) Tj
+1 0 0 1 50 262 Tm (Explanation: <th> defines a header cell in tables.) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 234 Tm (-- L2 --) Tj
+1 0 0 1 50 220 Tm (1. Which element is most appropriate for independent, reusable content like a blog post?) Tj
+1 0 0 1 50 206 Tm (Answer: <article>) Tj
+1 0 0 1 50 192 Tm (Explanation: <article> is intended for self-contained, independently distributable content.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (2. Which statement about <section> is correct?) Tj
+1 0 0 1 50 150 Tm (Answer: It groups thematic content, usually with a heading) Tj
+1 0 0 1 50 136 Tm (Explanation: <section> represents a thematic grouping of content.) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (3. What is the primary purpose of the 'srcset' attribute in <img>?) Tj
+1 0 0 1 50 94 Tm (Answer: Provide responsive image sources) Tj
+1 0 0 1 50 80 Tm (Explanation: srcset allows the browser to choose an appropriate image based on) Tj
+1 0 0 1 50 66 Tm (viewport/resolution.) Tj
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 3464 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm () Tj
+1 0 0 1 50 780 Tm (4. Which attribute in <form> controls where submitted data is sent?) Tj
+1 0 0 1 50 766 Tm (Answer: action) Tj
+1 0 0 1 50 752 Tm (Explanation: action defines the submission URL endpoint.) Tj
+1 0 0 1 50 738 Tm () Tj
+1 0 0 1 50 724 Tm (5. Which element improves accessibility by associating text with an input?) Tj
+1 0 0 1 50 710 Tm (Answer: <label>) Tj
+1 0 0 1 50 696 Tm (Explanation: <label> explicitly binds readable text to a form control.) Tj
+1 0 0 1 50 682 Tm () Tj
+1 0 0 1 50 668 Tm (6. In HTML tables, which group element wraps column headers and body rows semantically?) Tj
+1 0 0 1 50 654 Tm (Answer: <thead> and <tbody>) Tj
+1 0 0 1 50 640 Tm (Explanation: <thead> and <tbody> provide semantic grouping for table sections.) Tj
+1 0 0 1 50 626 Tm () Tj
+1 0 0 1 50 612 Tm (7. What does the 'defer' attribute on <script> do?) Tj
+1 0 0 1 50 598 Tm (Answer: Delays script until HTML parsing is complete) Tj
+1 0 0 1 50 584 Tm (Explanation: defer downloads in parallel and executes after document parsing.) Tj
+1 0 0 1 50 570 Tm () Tj
+1 0 0 1 50 556 Tm (8. Which meta tag is essential for proper mobile responsive scaling?) Tj
+1 0 0 1 50 542 Tm (Answer: <meta name='viewport' content='width=device-width, initial-scale=1.0'>) Tj
+1 0 0 1 50 528 Tm (Explanation: Viewport meta is required for correct mobile layout scaling.) Tj
+1 0 0 1 50 514 Tm () Tj
+1 0 0 1 50 500 Tm (9. What is the valid relationship between <figure> and <figcaption>?) Tj
+1 0 0 1 50 486 Tm (Answer: figcaption provides caption for content inside figure) Tj
+1 0 0 1 50 472 Tm (Explanation: <figcaption> labels content inside <figure> semantically.) Tj
+1 0 0 1 50 458 Tm () Tj
+1 0 0 1 50 444 Tm (10. Which input type provides a date picker in supporting browsers?) Tj
+1 0 0 1 50 430 Tm (Answer: type='date') Tj
+1 0 0 1 50 416 Tm (Explanation: type='date' provides date selection UI where supported.) Tj
+1 0 0 1 50 402 Tm () Tj
+1 0 0 1 50 388 Tm (11. Which ARIA practice is better when native HTML can do the same job?) Tj
+1 0 0 1 50 374 Tm (Answer: Use native semantic HTML first) Tj
+1 0 0 1 50 360 Tm (Explanation: Native semantics are preferred; ARIA supplements when needed.) Tj
+1 0 0 1 50 346 Tm () Tj
+1 0 0 1 50 332 Tm (12. What does the 'for' attribute on <label> reference?) Tj
+1 0 0 1 50 318 Tm (Answer: Input id) Tj
+1 0 0 1 50 304 Tm (Explanation: label[for] must match the target input's id.) Tj
+1 0 0 1 50 290 Tm () Tj
+1 0 0 1 50 276 Tm (13. Which element is intended for navigation links?) Tj
+1 0 0 1 50 262 Tm (Answer: <nav>) Tj
+1 0 0 1 50 248 Tm (Explanation: <nav> identifies major navigation blocks.) Tj
+1 0 0 1 50 234 Tm () Tj
+1 0 0 1 50 220 Tm (14. Which is true about multiple <main> elements on a page?) Tj
+1 0 0 1 50 206 Tm (Answer: Only one visible main landmark should exist) Tj
+1 0 0 1 50 192 Tm (Explanation: A document should generally have one main landmark.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (15. What does 'autocomplete="off"' on form controls request?) Tj
+1 0 0 1 50 150 Tm (Answer: Ask browser not to autofill \(browser may ignore\)) Tj
+1 0 0 1 50 136 Tm (Explanation: It's a hint; browsers can override it in some contexts.) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (16. Which element semantically represents tangential content like sidebars?) Tj
+1 0 0 1 50 94 Tm (Answer: <aside>) Tj
+1 0 0 1 50 80 Tm (Explanation: <aside> is for complementary/tangential content.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 18 0 R >>
+endobj
+20 0 obj
+<< /Length 3498 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (17. What is the purpose of the 'alt' attribute when image fails or for screen readers?) Tj
+1 0 0 1 50 780 Tm (Answer: Provide text alternative) Tj
+1 0 0 1 50 766 Tm (Explanation: alt provides accessible replacement text.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm (18. Which is a correct use of <button> inside a form when no submit is intended?) Tj
+1 0 0 1 50 724 Tm (Answer: <button type='button'>Click</button>) Tj
+1 0 0 1 50 710 Tm (Explanation: Default button type is submit; use type='button' for non-submit actions.) Tj
+1 0 0 1 50 696 Tm () Tj
+1 0 0 1 50 682 Tm (19. Which element pairs with <details> for a clickable heading?) Tj
+1 0 0 1 50 668 Tm (Answer: <summary>) Tj
+1 0 0 1 50 654 Tm (Explanation: <summary> provides the visible toggle label for <details>.) Tj
+1 0 0 1 50 640 Tm () Tj
+1 0 0 1 50 626 Tm (20. Which attribute adds client-side pattern validation for text input?) Tj
+1 0 0 1 50 612 Tm (Answer: pattern) Tj
+1 0 0 1 50 598 Tm (Explanation: pattern uses regular expression constraints.) Tj
+1 0 0 1 50 584 Tm () Tj
+1 0 0 1 50 570 Tm (21. What is the role of <noscript>?) Tj
+1 0 0 1 50 556 Tm (Answer: Provide fallback content when scripts are disabled) Tj
+1 0 0 1 50 542 Tm (Explanation: <noscript> displays alternate content if scripting is unavailable.) Tj
+1 0 0 1 50 528 Tm () Tj
+1 0 0 1 50 514 Tm (22. Which attribute on <script> is used for ES modules?) Tj
+1 0 0 1 50 500 Tm (Answer: type='module') Tj
+1 0 0 1 50 486 Tm (Explanation: type='module' enables JavaScript module loading behavior.) Tj
+1 0 0 1 50 472 Tm () Tj
+1 0 0 1 50 458 Tm (23. For accessibility, what should icon-only buttons include?) Tj
+1 0 0 1 50 444 Tm (Answer: aria-label or visible text) Tj
+1 0 0 1 50 430 Tm (Explanation: Buttons need an accessible name, often via aria-label when no visible text.) Tj
+1 0 0 1 50 416 Tm () Tj
+1 0 0 1 50 402 Tm (24. Which element should contain introductory content for nearest section or page?) Tj
+1 0 0 1 50 388 Tm (Answer: <header>) Tj
+1 0 0 1 50 374 Tm (Explanation: <header> represents introductory content for sectioning/root contexts.) Tj
+1 0 0 1 50 360 Tm () Tj
+1 0 0 1 50 346 Tm (25. Which statement about IDs is correct?) Tj
+1 0 0 1 50 332 Tm (Answer: IDs must be unique within a document) Tj
+1 0 0 1 50 318 Tm (Explanation: Each id value should be unique in one HTML document.) Tj
+1 0 0 1 50 304 Tm () Tj
+1 0 0 1 50 290 Tm (-- L3 --) Tj
+1 0 0 1 50 276 Tm (1. When should you use <button> instead of <a>?) Tj
+1 0 0 1 50 262 Tm (Answer: For triggering an action on the page) Tj
+1 0 0 1 50 248 Tm (Explanation: Use <button> for actions; <a> for navigation.) Tj
+1 0 0 1 50 234 Tm () Tj
+1 0 0 1 50 220 Tm (2. Which is the most semantically correct structure for a site heading and nav?) Tj
+1 0 0 1 50 206 Tm (Answer: <header><h1>...</h1><nav>...</nav></header>) Tj
+1 0 0 1 50 192 Tm (Explanation: <header> with <h1> and <nav> is semantically appropriate.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (3. What is the main advantage of using <picture> with <source>?) Tj
+1 0 0 1 50 150 Tm (Answer: Allows art direction and format switching) Tj
+1 0 0 1 50 136 Tm (Explanation: <picture> supports source selection by media/type.) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (4. Which statement about ARIA roles is correct?) Tj
+1 0 0 1 50 94 Tm (Answer: Don't override strong native semantics unnecessarily) Tj
+1 0 0 1 50 80 Tm (Explanation: Prefer native semantics; add ARIA only when necessary.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+21 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 20 0 R >>
+endobj
+22 0 obj
+<< /Length 3538 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (5. Which attribute combination is best for external links opening new tab securely?) Tj
+1 0 0 1 50 780 Tm (Answer: target='_blank' rel='noopener noreferrer') Tj
+1 0 0 1 50 766 Tm (Explanation: noopener noreferrer mitigates reverse-tabnabbing/security concerns.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm (6. What is the purpose of <fieldset> and <legend>?) Tj
+1 0 0 1 50 724 Tm (Answer: Group related form controls with accessible caption) Tj
+1 0 0 1 50 710 Tm (Explanation: They provide semantic grouping and accessibility context.) Tj
+1 0 0 1 50 696 Tm () Tj
+1 0 0 1 50 682 Tm (7. Which is true about the 'hidden' attribute?) Tj
+1 0 0 1 50 668 Tm (Answer: Represents content not currently relevant) Tj
+1 0 0 1 50 654 Tm (Explanation: hidden indicates non-relevant content and is typically not rendered.) Tj
+1 0 0 1 50 640 Tm () Tj
+1 0 0 1 50 626 Tm (8. How should heading levels be used for accessibility?) Tj
+1 0 0 1 50 612 Tm (Answer: In logical hierarchical order) Tj
+1 0 0 1 50 598 Tm (Explanation: Assistive tech relies on meaningful heading hierarchy.) Tj
+1 0 0 1 50 584 Tm () Tj
+1 0 0 1 50 570 Tm (9. Which element is best for machine-readable date/time?) Tj
+1 0 0 1 50 556 Tm (Answer: <time datetime='...'>) Tj
+1 0 0 1 50 542 Tm (Explanation: <time> with datetime carries semantic temporal data.) Tj
+1 0 0 1 50 528 Tm () Tj
+1 0 0 1 50 514 Tm (10. What does 'aria-live="polite"' do?) Tj
+1 0 0 1 50 500 Tm (Answer: Announces dynamic updates when convenient) Tj
+1 0 0 1 50 486 Tm (Explanation: polite queues announcements without interrupting current speech.) Tj
+1 0 0 1 50 472 Tm () Tj
+1 0 0 1 50 458 Tm (11. Why is placeholder not a replacement for label?) Tj
+1 0 0 1 50 444 Tm (Answer: Placeholder disappears and is not an accessible label) Tj
+1 0 0 1 50 430 Tm (Explanation: Persistent labels are needed for usability and accessibility.) Tj
+1 0 0 1 50 416 Tm () Tj
+1 0 0 1 50 402 Tm (12. Which element should contain copyright/footer links for a section/page?) Tj
+1 0 0 1 50 388 Tm (Answer: <footer>) Tj
+1 0 0 1 50 374 Tm (Explanation: <footer> is semantic for footer information.) Tj
+1 0 0 1 50 360 Tm () Tj
+1 0 0 1 50 346 Tm (13. What is the effect of 'lang' attribute on <html>?) Tj
+1 0 0 1 50 332 Tm (Answer: Helps screen readers/search engines interpret language) Tj
+1 0 0 1 50 318 Tm (Explanation: lang improves accessibility, pronunciation, and indexing.) Tj
+1 0 0 1 50 304 Tm () Tj
+1 0 0 1 50 290 Tm (14. Which input pairing improves mobile keypad for numeric entry?) Tj
+1 0 0 1 50 276 Tm (Answer: type='number' or inputmode='numeric') Tj
+1 0 0 1 50 262 Tm (Explanation: number/inputmode hints better virtual keyboards.) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 234 Tm (15. What is the semantic purpose of <mark>?) Tj
+1 0 0 1 50 220 Tm (Answer: Highlighted reference/relevance) Tj
+1 0 0 1 50 206 Tm (Explanation: <mark> indicates highlighted text relevance.) Tj
+1 0 0 1 50 192 Tm () Tj
+1 0 0 1 50 178 Tm (16. Which is a valid reason to use data-* attributes?) Tj
+1 0 0 1 50 164 Tm (Answer: Store custom non-visible metadata for scripts) Tj
+1 0 0 1 50 150 Tm (Explanation: data-* stores custom data on elements for script use.) Tj
+1 0 0 1 50 136 Tm () Tj
+1 0 0 1 50 122 Tm (17. What is correct about <meta charset='UTF-8'> placement?) Tj
+1 0 0 1 50 108 Tm (Answer: Early in <head> for reliable parsing) Tj
+1 0 0 1 50 94 Tm (Explanation: Place charset declaration early in head.) Tj
+1 0 0 1 50 80 Tm () Tj
+1 0 0 1 50 66 Tm (18. Which structure is best for accessible table headers?) Tj
+ET
+endstream
+endobj
+23 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 22 0 R >>
+endobj
+24 0 obj
+<< /Length 3201 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (Answer: Use <th scope='col/row'> where appropriate) Tj
+1 0 0 1 50 780 Tm (Explanation: th with scope improves table navigation for assistive tech.) Tj
+1 0 0 1 50 766 Tm () Tj
+1 0 0 1 50 752 Tm (19. Why prefer <ul>/<ol> over repeated <div> for lists?) Tj
+1 0 0 1 50 738 Tm (Answer: Provides semantic list structure for users and AT) Tj
+1 0 0 1 50 724 Tm (Explanation: Semantic list markup conveys structure and meaning.) Tj
+1 0 0 1 50 710 Tm () Tj
+1 0 0 1 50 696 Tm (20. Which is true for duplicate id values?) Tj
+1 0 0 1 50 682 Tm (Answer: Can break label targeting, CSS/JS selection, and accessibility) Tj
+1 0 0 1 50 668 Tm (Explanation: Duplicate IDs create ambiguous references.) Tj
+1 0 0 1 50 654 Tm () Tj
+1 0 0 1 50 640 Tm (21. What is the best semantic element for quoted block from another source?) Tj
+1 0 0 1 50 626 Tm (Answer: <blockquote>) Tj
+1 0 0 1 50 612 Tm (Explanation: <blockquote> is used for extended quotations.) Tj
+1 0 0 1 50 598 Tm () Tj
+1 0 0 1 50 584 Tm (22. Which element should wrap contact information for nearest section/page?) Tj
+1 0 0 1 50 570 Tm (Answer: <address>) Tj
+1 0 0 1 50 556 Tm (Explanation: <address> is intended for contact information.) Tj
+1 0 0 1 50 542 Tm () Tj
+1 0 0 1 50 528 Tm (23. What does preload='none' on <video> suggest?) Tj
+1 0 0 1 50 514 Tm (Answer: Do not preload media data until user interaction) Tj
+1 0 0 1 50 500 Tm (Explanation: It hints to avoid preloading media to save bandwidth.) Tj
+1 0 0 1 50 486 Tm () Tj
+1 0 0 1 50 472 Tm (24. Which option best improves keyboard accessibility for custom widgets?) Tj
+1 0 0 1 50 458 Tm (Answer: Proper focus management and keyboard handlers) Tj
+1 0 0 1 50 444 Tm (Explanation: Custom widgets need keyboard and focus support.) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 416 Tm (25. Which statement about semantic HTML is most accurate?) Tj
+1 0 0 1 50 402 Tm (Answer: Improves accessibility, maintainability, and discoverability) Tj
+1 0 0 1 50 388 Tm (Explanation: Semantic HTML provides meaningful structure for many consumers.) Tj
+1 0 0 1 50 374 Tm () Tj
+1 0 0 1 50 360 Tm () Tj
+1 0 0 1 50 346 Tm (=== Python ===) Tj
+1 0 0 1 50 332 Tm (-- L1 --) Tj
+1 0 0 1 50 318 Tm (1. Which keyword defines a function in Python?) Tj
+1 0 0 1 50 304 Tm (Answer: def) Tj
+1 0 0 1 50 290 Tm (Explanation: Python functions are defined with the def keyword.) Tj
+1 0 0 1 50 276 Tm () Tj
+1 0 0 1 50 262 Tm (2. Which data type is immutable?) Tj
+1 0 0 1 50 248 Tm (Answer: tuple) Tj
+1 0 0 1 50 234 Tm (Explanation: Tuple is immutable, while list/set/dict are mutable.) Tj
+1 0 0 1 50 220 Tm () Tj
+1 0 0 1 50 206 Tm (3. What is the output type of input\(\) in Python 3?) Tj
+1 0 0 1 50 192 Tm (Answer: str) Tj
+1 0 0 1 50 178 Tm (Explanation: input\(\) returns a string unless you cast it.) Tj
+1 0 0 1 50 164 Tm () Tj
+1 0 0 1 50 150 Tm (4. Which symbol starts a comment in Python?) Tj
+1 0 0 1 50 136 Tm (Answer: #) Tj
+1 0 0 1 50 122 Tm (Explanation: # is used for single-line comments in Python.) Tj
+1 0 0 1 50 108 Tm () Tj
+1 0 0 1 50 94 Tm (5. Which function prints output to console?) Tj
+1 0 0 1 50 80 Tm (Answer: print\(\)) Tj
+1 0 0 1 50 66 Tm (Explanation: print\(\) outputs text in Python.) Tj
+ET
+endstream
+endobj
+25 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 24 0 R >>
+endobj
+26 0 obj
+<< /Length 2745 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm () Tj
+1 0 0 1 50 780 Tm (6. How do you create an empty dictionary?) Tj
+1 0 0 1 50 766 Tm (Answer: {}) Tj
+1 0 0 1 50 752 Tm (Explanation: {} creates an empty dictionary.) Tj
+1 0 0 1 50 738 Tm () Tj
+1 0 0 1 50 724 Tm (7. Which operator is used for exponentiation?) Tj
+1 0 0 1 50 710 Tm (Answer: **) Tj
+1 0 0 1 50 696 Tm (Explanation: ** is the exponent operator in Python.) Tj
+1 0 0 1 50 682 Tm () Tj
+1 0 0 1 50 668 Tm (8. What does len\([1,2,3]\) return?) Tj
+1 0 0 1 50 654 Tm (Answer: 3) Tj
+1 0 0 1 50 640 Tm (Explanation: len returns number of elements: 3.) Tj
+1 0 0 1 50 626 Tm () Tj
+1 0 0 1 50 612 Tm (9. Which keyword handles exceptions?) Tj
+1 0 0 1 50 598 Tm (Answer: except) Tj
+1 0 0 1 50 584 Tm (Explanation: Python uses try/except for exception handling.) Tj
+1 0 0 1 50 570 Tm () Tj
+1 0 0 1 50 556 Tm (10. Which one is a valid Python boolean literal?) Tj
+1 0 0 1 50 542 Tm (Answer: True) Tj
+1 0 0 1 50 528 Tm (Explanation: Boolean literals are True and False.) Tj
+1 0 0 1 50 514 Tm () Tj
+1 0 0 1 50 500 Tm (11. How do you import the math module?) Tj
+1 0 0 1 50 486 Tm (Answer: import math) Tj
+1 0 0 1 50 472 Tm (Explanation: import math is the valid syntax.) Tj
+1 0 0 1 50 458 Tm () Tj
+1 0 0 1 50 444 Tm (12. Which method adds an item to end of list?) Tj
+1 0 0 1 50 430 Tm (Answer: append\(\)) Tj
+1 0 0 1 50 416 Tm (Explanation: append\(\) adds one item to list end.) Tj
+1 0 0 1 50 402 Tm () Tj
+1 0 0 1 50 388 Tm (13. What is the index of first item in a list?) Tj
+1 0 0 1 50 374 Tm (Answer: 0) Tj
+1 0 0 1 50 360 Tm (Explanation: Python indexing starts from 0.) Tj
+1 0 0 1 50 346 Tm () Tj
+1 0 0 1 50 332 Tm (14. Which statement creates a loop over range 0..4?) Tj
+1 0 0 1 50 318 Tm (Answer: for i in range\(5\):) Tj
+1 0 0 1 50 304 Tm (Explanation: range\(5\) produces 0,1,2,3,4.) Tj
+1 0 0 1 50 290 Tm () Tj
+1 0 0 1 50 276 Tm (15. What does // do in Python arithmetic?) Tj
+1 0 0 1 50 262 Tm (Answer: floor division) Tj
+1 0 0 1 50 248 Tm (Explanation: // performs floor division.) Tj
+1 0 0 1 50 234 Tm () Tj
+1 0 0 1 50 220 Tm (-- L2 --) Tj
+1 0 0 1 50 206 Tm (1. What is list comprehension primarily used for?) Tj
+1 0 0 1 50 192 Tm (Answer: Creating lists concisely) Tj
+1 0 0 1 50 178 Tm (Explanation: List comprehensions build lists in a concise readable form.) Tj
+1 0 0 1 50 164 Tm () Tj
+1 0 0 1 50 150 Tm (2. What does dict.get\('x', 0\) do if 'x' is missing?) Tj
+1 0 0 1 50 136 Tm (Answer: Returns 0) Tj
+1 0 0 1 50 122 Tm (Explanation: get returns default value when key is absent.) Tj
+1 0 0 1 50 108 Tm () Tj
+1 0 0 1 50 94 Tm (3. Which is true about Python sets?) Tj
+1 0 0 1 50 80 Tm (Answer: Store unique elements) Tj
+1 0 0 1 50 66 Tm (Explanation: Sets store unique items and remove duplicates.) Tj
+ET
+endstream
+endobj
+27 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 26 0 R >>
+endobj
+28 0 obj
+<< /Length 3012 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm () Tj
+1 0 0 1 50 780 Tm (4. What does enumerate\(iterable\) provide?) Tj
+1 0 0 1 50 766 Tm (Answer: Index and value pairs) Tj
+1 0 0 1 50 752 Tm (Explanation: enumerate yields \(index, value\).) Tj
+1 0 0 1 50 738 Tm () Tj
+1 0 0 1 50 724 Tm (5. Which statement about pass is correct?) Tj
+1 0 0 1 50 710 Tm (Answer: No-op placeholder) Tj
+1 0 0 1 50 696 Tm (Explanation: pass does nothing and is often used as placeholder.) Tj
+1 0 0 1 50 682 Tm () Tj
+1 0 0 1 50 668 Tm (6. What does with open\('file.txt'\) as f: help with?) Tj
+1 0 0 1 50 654 Tm (Answer: Automatic resource cleanup) Tj
+1 0 0 1 50 640 Tm (Explanation: with ensures file is closed automatically.) Tj
+1 0 0 1 50 626 Tm () Tj
+1 0 0 1 50 612 Tm (7. Which is correct about *args and **kwargs?) Tj
+1 0 0 1 50 598 Tm (Answer: *args positional, **kwargs keyword) Tj
+1 0 0 1 50 584 Tm (Explanation: *args packs positional args, **kwargs packs named args.) Tj
+1 0 0 1 50 570 Tm () Tj
+1 0 0 1 50 556 Tm (8. What does map\(function, iterable\) return in Python 3?) Tj
+1 0 0 1 50 542 Tm (Answer: Iterator) Tj
+1 0 0 1 50 528 Tm (Explanation: map returns a lazy iterator in Python 3.) Tj
+1 0 0 1 50 514 Tm () Tj
+1 0 0 1 50 500 Tm (9. Which is the best way to check key existence in dict d?) Tj
+1 0 0 1 50 486 Tm (Answer: 'k' in d) Tj
+1 0 0 1 50 472 Tm (Explanation: Use membership operator: 'k' in d.) Tj
+1 0 0 1 50 458 Tm () Tj
+1 0 0 1 50 444 Tm (10. What is the result of slicing s[::-1]?) Tj
+1 0 0 1 50 430 Tm (Answer: Reversed sequence) Tj
+1 0 0 1 50 416 Tm (Explanation: A step of -1 reverses sequence order.) Tj
+1 0 0 1 50 402 Tm () Tj
+1 0 0 1 50 388 Tm (11. Which function helps iterate two lists in parallel?) Tj
+1 0 0 1 50 374 Tm (Answer: zip\(\)) Tj
+1 0 0 1 50 360 Tm (Explanation: zip pairs elements from iterables by position.) Tj
+1 0 0 1 50 346 Tm () Tj
+1 0 0 1 50 332 Tm (12. What does __name__ == '__main__' typically control?) Tj
+1 0 0 1 50 318 Tm (Answer: Script entry-point behavior) Tj
+1 0 0 1 50 304 Tm (Explanation: It runs code only when file is executed directly.) Tj
+1 0 0 1 50 290 Tm () Tj
+1 0 0 1 50 276 Tm (13. Which exception is raised for invalid int conversion int\('x'\)?) Tj
+1 0 0 1 50 262 Tm (Answer: ValueError) Tj
+1 0 0 1 50 248 Tm (Explanation: int\('x'\) raises ValueError.) Tj
+1 0 0 1 50 234 Tm () Tj
+1 0 0 1 50 220 Tm (14. Which collection is best for FIFO queue operations?) Tj
+1 0 0 1 50 206 Tm (Answer: collections.deque) Tj
+1 0 0 1 50 192 Tm (Explanation: deque supports efficient append/pop from both ends.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (15. What does lambda create?) Tj
+1 0 0 1 50 150 Tm (Answer: Anonymous function) Tj
+1 0 0 1 50 136 Tm (Explanation: lambda creates a small anonymous function.) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (-- L3 --) Tj
+1 0 0 1 50 94 Tm (1. Which statement about Python generators is correct?) Tj
+1 0 0 1 50 80 Tm (Answer: Use yield for lazy iteration) Tj
+1 0 0 1 50 66 Tm (Explanation: Generators produce values lazily via yield.) Tj
+ET
+endstream
+endobj
+29 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 28 0 R >>
+endobj
+30 0 obj
+<< /Length 3177 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm () Tj
+1 0 0 1 50 780 Tm (2. What is the time complexity of dict key lookup on average?) Tj
+1 0 0 1 50 766 Tm (Answer: O\(1\)) Tj
+1 0 0 1 50 752 Tm (Explanation: Hash-table based dict lookup is average O\(1\).) Tj
+1 0 0 1 50 738 Tm () Tj
+1 0 0 1 50 724 Tm (3. What does @property allow in classes?) Tj
+1 0 0 1 50 710 Tm (Answer: Getter-style attribute access) Tj
+1 0 0 1 50 696 Tm (Explanation: @property lets methods act like read-only attributes.) Tj
+1 0 0 1 50 682 Tm () Tj
+1 0 0 1 50 668 Tm (4. Which module is commonly used for virtual environments?) Tj
+1 0 0 1 50 654 Tm (Answer: venv) Tj
+1 0 0 1 50 640 Tm (Explanation: venv is built into Python for virtual environments.) Tj
+1 0 0 1 50 626 Tm () Tj
+1 0 0 1 50 612 Tm (5. What is true about GIL in CPython?) Tj
+1 0 0 1 50 598 Tm (Answer: Prevents multiple Python bytecodes running at once) Tj
+1 0 0 1 50 584 Tm (Explanation: GIL allows only one thread to execute Python bytecode at a time.) Tj
+1 0 0 1 50 570 Tm () Tj
+1 0 0 1 50 556 Tm (6. Which is preferred for many independent CPU-bound tasks?) Tj
+1 0 0 1 50 542 Tm (Answer: multiprocessing) Tj
+1 0 0 1 50 528 Tm (Explanation: multiprocessing can utilize multiple CPU cores.) Tj
+1 0 0 1 50 514 Tm () Tj
+1 0 0 1 50 500 Tm (7. What does dataclass provide by default?) Tj
+1 0 0 1 50 486 Tm (Answer: Auto-generated init/repr/eq) Tj
+1 0 0 1 50 472 Tm (Explanation: @dataclass generates common boilerplate methods.) Tj
+1 0 0 1 50 458 Tm () Tj
+1 0 0 1 50 444 Tm (8. Which is true about mutable default arguments?) Tj
+1 0 0 1 50 430 Tm (Answer: Can retain state across calls) Tj
+1 0 0 1 50 416 Tm (Explanation: Mutable defaults are created once and shared across calls.) Tj
+1 0 0 1 50 402 Tm () Tj
+1 0 0 1 50 388 Tm (9. What does list.copy\(\) create?) Tj
+1 0 0 1 50 374 Tm (Answer: Shallow copy) Tj
+1 0 0 1 50 360 Tm (Explanation: list.copy\(\) makes a shallow copy.) Tj
+1 0 0 1 50 346 Tm () Tj
+1 0 0 1 50 332 Tm (10. Which tool is used to install packages from PyPI?) Tj
+1 0 0 1 50 318 Tm (Answer: pip) Tj
+1 0 0 1 50 304 Tm (Explanation: pip is the Python package installer.) Tj
+1 0 0 1 50 290 Tm () Tj
+1 0 0 1 50 276 Tm (11. What is the purpose of __init__.py in packages?) Tj
+1 0 0 1 50 262 Tm (Answer: Marks directory as package and can run package init code) Tj
+1 0 0 1 50 248 Tm (Explanation: It can mark/init package behavior.) Tj
+1 0 0 1 50 234 Tm () Tj
+1 0 0 1 50 220 Tm (12. Which statement about async/await is correct?) Tj
+1 0 0 1 50 206 Tm (Answer: Used for cooperative concurrency with event loop) Tj
+1 0 0 1 50 192 Tm (Explanation: async/await works with event loops for non-blocking tasks.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (13. What is EAFP style in Python?) Tj
+1 0 0 1 50 150 Tm (Answer: Try operation and handle exceptions) Tj
+1 0 0 1 50 136 Tm (Explanation: EAFP means Easier to Ask Forgiveness than Permission.) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (14. Which built-in helps apply a function cumulatively to iterable?) Tj
+1 0 0 1 50 94 Tm (Answer: both depending on use) Tj
+1 0 0 1 50 80 Tm (Explanation: reduce and itertools.accumulate both support cumulative operations.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+31 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 30 0 R >>
+endobj
+32 0 obj
+<< /Length 2729 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (15. Which is best for type hints of list of integers?) Tj
+1 0 0 1 50 780 Tm (Answer: list[int]) Tj
+1 0 0 1 50 766 Tm (Explanation: Modern Python uses list[int] type hints.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm () Tj
+1 0 0 1 50 724 Tm (=== JavaScript ===) Tj
+1 0 0 1 50 710 Tm (-- L1 --) Tj
+1 0 0 1 50 696 Tm (1. Which keyword declares a block-scoped variable?) Tj
+1 0 0 1 50 682 Tm (Answer: both let and const) Tj
+1 0 0 1 50 668 Tm (Explanation: let and const are block-scoped.) Tj
+1 0 0 1 50 654 Tm () Tj
+1 0 0 1 50 640 Tm (2. Which method converts JSON string to object?) Tj
+1 0 0 1 50 626 Tm (Answer: JSON.parse) Tj
+1 0 0 1 50 612 Tm (Explanation: JSON.parse converts a JSON string into an object.) Tj
+1 0 0 1 50 598 Tm () Tj
+1 0 0 1 50 584 Tm (3. What is the result type of typeof []?) Tj
+1 0 0 1 50 570 Tm (Answer: object) Tj
+1 0 0 1 50 556 Tm (Explanation: Arrays are objects in JavaScript.) Tj
+1 0 0 1 50 542 Tm () Tj
+1 0 0 1 50 528 Tm (4. Which operator checks strict equality?) Tj
+1 0 0 1 50 514 Tm (Answer: ===) Tj
+1 0 0 1 50 500 Tm (Explanation: === compares value and type.) Tj
+1 0 0 1 50 486 Tm () Tj
+1 0 0 1 50 472 Tm (5. Which function prints to browser console?) Tj
+1 0 0 1 50 458 Tm (Answer: console.log\(\)) Tj
+1 0 0 1 50 444 Tm (Explanation: console.log writes debug output to console.) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 416 Tm (6. How do you write a single-line comment in JS?) Tj
+1 0 0 1 50 402 Tm (Answer: // comment) Tj
+1 0 0 1 50 388 Tm (Explanation: // starts a single-line comment.) Tj
+1 0 0 1 50 374 Tm () Tj
+1 0 0 1 50 360 Tm (7. Which value means 'no value assigned'?) Tj
+1 0 0 1 50 346 Tm (Answer: undefined) Tj
+1 0 0 1 50 332 Tm (Explanation: undefined typically means not assigned yet.) Tj
+1 0 0 1 50 318 Tm () Tj
+1 0 0 1 50 304 Tm (8. Which method adds item to end of array?) Tj
+1 0 0 1 50 290 Tm (Answer: push) Tj
+1 0 0 1 50 276 Tm (Explanation: push appends element to array end.) Tj
+1 0 0 1 50 262 Tm () Tj
+1 0 0 1 50 248 Tm (9. What does NaN stand for?) Tj
+1 0 0 1 50 234 Tm (Answer: Not a Number) Tj
+1 0 0 1 50 220 Tm (Explanation: NaN means Not a Number.) Tj
+1 0 0 1 50 206 Tm () Tj
+1 0 0 1 50 192 Tm (10. Which loop iterates over iterable values?) Tj
+1 0 0 1 50 178 Tm (Answer: for...of) Tj
+1 0 0 1 50 164 Tm (Explanation: for...of iterates over values of iterable objects.) Tj
+1 0 0 1 50 150 Tm () Tj
+1 0 0 1 50 136 Tm (11. How do you define an arrow function?) Tj
+1 0 0 1 50 122 Tm (Answer: \(\) => {}) Tj
+1 0 0 1 50 108 Tm (Explanation: Arrow function syntax uses =>.) Tj
+1 0 0 1 50 94 Tm () Tj
+1 0 0 1 50 80 Tm (12. Which API stores key/value pairs in browser permanently \(until cleared\)?) Tj
+1 0 0 1 50 66 Tm (Answer: localStorage) Tj
+ET
+endstream
+endobj
+33 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 32 0 R >>
+endobj
+34 0 obj
+<< /Length 2873 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (Explanation: localStorage persists across sessions.) Tj
+1 0 0 1 50 780 Tm () Tj
+1 0 0 1 50 766 Tm (13. Which statement creates an array?) Tj
+1 0 0 1 50 752 Tm (Answer: let a = []) Tj
+1 0 0 1 50 738 Tm (Explanation: [] literal creates an array.) Tj
+1 0 0 1 50 724 Tm () Tj
+1 0 0 1 50 710 Tm (14. What does DOM stand for?) Tj
+1 0 0 1 50 696 Tm (Answer: Document Object Model) Tj
+1 0 0 1 50 682 Tm (Explanation: DOM is Document Object Model.) Tj
+1 0 0 1 50 668 Tm () Tj
+1 0 0 1 50 654 Tm (15. Which method removes last array element?) Tj
+1 0 0 1 50 640 Tm (Answer: pop) Tj
+1 0 0 1 50 626 Tm (Explanation: pop removes and returns the last element.) Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 598 Tm (-- L2 --) Tj
+1 0 0 1 50 584 Tm (1. What is event bubbling?) Tj
+1 0 0 1 50 570 Tm (Answer: Event moves from target up to ancestors) Tj
+1 0 0 1 50 556 Tm (Explanation: By default events bubble from target to ancestors.) Tj
+1 0 0 1 50 542 Tm () Tj
+1 0 0 1 50 528 Tm (2. Which call schedules code after current call stack is clear?) Tj
+1 0 0 1 50 514 Tm (Answer: setTimeout\(fn, 0\)) Tj
+1 0 0 1 50 500 Tm (Explanation: setTimeout with 0ms queues callback in task queue.) Tj
+1 0 0 1 50 486 Tm () Tj
+1 0 0 1 50 472 Tm (3. What does JSON.stringify do?) Tj
+1 0 0 1 50 458 Tm (Answer: Converts object to JSON string) Tj
+1 0 0 1 50 444 Tm (Explanation: JSON.stringify serializes data to a JSON string.) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 416 Tm (4. Which is true about const objects?) Tj
+1 0 0 1 50 402 Tm (Answer: Reference cannot be reassigned) Tj
+1 0 0 1 50 388 Tm (Explanation: const prevents rebinding the reference, not mutating nested props.) Tj
+1 0 0 1 50 374 Tm () Tj
+1 0 0 1 50 360 Tm (5. Which method creates a new array from mapping each element?) Tj
+1 0 0 1 50 346 Tm (Answer: map) Tj
+1 0 0 1 50 332 Tm (Explanation: map transforms each element and returns a new array.) Tj
+1 0 0 1 50 318 Tm () Tj
+1 0 0 1 50 304 Tm (6. What does filter return?) Tj
+1 0 0 1 50 290 Tm (Answer: Subset array) Tj
+1 0 0 1 50 276 Tm (Explanation: filter returns elements where predicate is true.) Tj
+1 0 0 1 50 262 Tm () Tj
+1 0 0 1 50 248 Tm (7. What is closure in JS?) Tj
+1 0 0 1 50 234 Tm (Answer: Function with access to outer lexical scope) Tj
+1 0 0 1 50 220 Tm (Explanation: Closures capture surrounding lexical variables.) Tj
+1 0 0 1 50 206 Tm () Tj
+1 0 0 1 50 192 Tm (8. Which keyword is used to handle Promise rejection?) Tj
+1 0 0 1 50 178 Tm (Answer: catch) Tj
+1 0 0 1 50 164 Tm (Explanation: Promise rejections are handled by catch.) Tj
+1 0 0 1 50 150 Tm () Tj
+1 0 0 1 50 136 Tm (9. Which method merges arrays without mutating original?) Tj
+1 0 0 1 50 122 Tm (Answer: concat) Tj
+1 0 0 1 50 108 Tm (Explanation: concat returns a new merged array.) Tj
+1 0 0 1 50 94 Tm () Tj
+1 0 0 1 50 80 Tm (10. Which value is falsy?) Tj
+1 0 0 1 50 66 Tm (Answer: 0) Tj
+ET
+endstream
+endobj
+35 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 34 0 R >>
+endobj
+36 0 obj
+<< /Length 3175 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (Explanation: 0 is falsy; empty array/object/string '0' are truthy except ''.) Tj
+1 0 0 1 50 780 Tm () Tj
+1 0 0 1 50 766 Tm (11. What does preventDefault\(\) do in event handler?) Tj
+1 0 0 1 50 752 Tm (Answer: Stops default browser action) Tj
+1 0 0 1 50 738 Tm (Explanation: preventDefault cancels default behavior.) Tj
+1 0 0 1 50 724 Tm () Tj
+1 0 0 1 50 710 Tm (12. Which operator safely accesses nested property?) Tj
+1 0 0 1 50 696 Tm (Answer: ?.) Tj
+1 0 0 1 50 682 Tm (Explanation: Optional chaining uses ?. operator.) Tj
+1 0 0 1 50 668 Tm () Tj
+1 0 0 1 50 654 Tm (13. What does nullish coalescing \(??\) return?) Tj
+1 0 0 1 50 640 Tm (Answer: Right only when left is null/undefined) Tj
+1 0 0 1 50 626 Tm (Explanation: ?? falls back only for null or undefined.) Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 598 Tm (14. Which method parses integer from string?) Tj
+1 0 0 1 50 584 Tm (Answer: Number.parseInt) Tj
+1 0 0 1 50 570 Tm (Explanation: parseInt / Number.parseInt parse integer values.) Tj
+1 0 0 1 50 556 Tm () Tj
+1 0 0 1 50 542 Tm (15. What does strict mode \('use strict'\) help with?) Tj
+1 0 0 1 50 528 Tm (Answer: Catches common silent errors) Tj
+1 0 0 1 50 514 Tm (Explanation: Strict mode prevents unsafe actions and throws helpful errors.) Tj
+1 0 0 1 50 500 Tm () Tj
+1 0 0 1 50 486 Tm (-- L3 --) Tj
+1 0 0 1 50 472 Tm (1. What is the output of Promise.resolve\(1\).then\(x => x + 1\)?) Tj
+1 0 0 1 50 458 Tm (Answer: Promise resolving to 2) Tj
+1 0 0 1 50 444 Tm (Explanation: then returns a Promise resolved with transformed value.) Tj
+1 0 0 1 50 430 Tm () Tj
+1 0 0 1 50 416 Tm (2. Which structure manages async flow with try/catch syntax?) Tj
+1 0 0 1 50 402 Tm (Answer: async/await) Tj
+1 0 0 1 50 388 Tm (Explanation: async/await gives readable asynchronous code.) Tj
+1 0 0 1 50 374 Tm () Tj
+1 0 0 1 50 360 Tm (3. What does Array.prototype.reduce do?) Tj
+1 0 0 1 50 346 Tm (Answer: Accumulates array into single result) Tj
+1 0 0 1 50 332 Tm (Explanation: reduce folds array elements into one value.) Tj
+1 0 0 1 50 318 Tm () Tj
+1 0 0 1 50 304 Tm (4. Which statement about hoisting is true?) Tj
+1 0 0 1 50 290 Tm (Answer: var declarations are hoisted) Tj
+1 0 0 1 50 276 Tm (Explanation: var declarations and function declarations are hoisted.) Tj
+1 0 0 1 50 262 Tm () Tj
+1 0 0 1 50 248 Tm (5. What is temporal dead zone?) Tj
+1 0 0 1 50 234 Tm (Answer: Period where let/const exists but cannot be accessed) Tj
+1 0 0 1 50 220 Tm (Explanation: TDZ is before initialization of let/const variables.) Tj
+1 0 0 1 50 206 Tm () Tj
+1 0 0 1 50 192 Tm (6. Which collection keeps insertion order and unique values?) Tj
+1 0 0 1 50 178 Tm (Answer: Set) Tj
+1 0 0 1 50 164 Tm (Explanation: Set stores unique values in insertion order.) Tj
+1 0 0 1 50 150 Tm () Tj
+1 0 0 1 50 136 Tm (7. Which is true about Map compared to Object?) Tj
+1 0 0 1 50 122 Tm (Answer: Map keeps insertion order and allows any key type) Tj
+1 0 0 1 50 108 Tm (Explanation: Map supports any key type and iteration order.) Tj
+1 0 0 1 50 94 Tm () Tj
+1 0 0 1 50 80 Tm (8. What does debouncing primarily control?) Tj
+1 0 0 1 50 66 Tm (Answer: Call frequency by delaying execution) Tj
+ET
+endstream
+endobj
+37 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 36 0 R >>
+endobj
+38 0 obj
+<< /Length 3049 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (Explanation: Debounce limits bursty calls by waiting pause before run.) Tj
+1 0 0 1 50 780 Tm () Tj
+1 0 0 1 50 766 Tm (9. Which call clones shallowly an object obj?) Tj
+1 0 0 1 50 752 Tm (Answer: Object.assign\({}, obj\)) Tj
+1 0 0 1 50 738 Tm (Explanation: Object.assign with empty target creates shallow clone.) Tj
+1 0 0 1 50 724 Tm () Tj
+1 0 0 1 50 710 Tm (10. What is a pure function?) Tj
+1 0 0 1 50 696 Tm (Answer: No side effects and same input -> same output) Tj
+1 0 0 1 50 682 Tm (Explanation: Pure functions are deterministic and side-effect free.) Tj
+1 0 0 1 50 668 Tm () Tj
+1 0 0 1 50 654 Tm (11. Which browser API observes DOM mutations?) Tj
+1 0 0 1 50 640 Tm (Answer: MutationObserver) Tj
+1 0 0 1 50 626 Tm (Explanation: MutationObserver watches DOM tree changes.) Tj
+1 0 0 1 50 612 Tm () Tj
+1 0 0 1 50 598 Tm (12. What does event delegation improve?) Tj
+1 0 0 1 50 584 Tm (Answer: Uses parent listener to handle child events efficiently) Tj
+1 0 0 1 50 570 Tm (Explanation: Delegation scales better for dynamic child elements.) Tj
+1 0 0 1 50 556 Tm () Tj
+1 0 0 1 50 542 Tm (13. Which statement about this in arrow functions is correct?) Tj
+1 0 0 1 50 528 Tm (Answer: Lexically captures this from enclosing scope) Tj
+1 0 0 1 50 514 Tm (Explanation: Arrow functions do not bind their own this.) Tj
+1 0 0 1 50 500 Tm () Tj
+1 0 0 1 50 486 Tm (14. What is the purpose of module exports/imports?) Tj
+1 0 0 1 50 472 Tm (Answer: Organize reusable code across files) Tj
+1 0 0 1 50 458 Tm (Explanation: Modules structure and share code cleanly.) Tj
+1 0 0 1 50 444 Tm () Tj
+1 0 0 1 50 430 Tm (15. Which method executes callback for each array item without returning new array?) Tj
+1 0 0 1 50 416 Tm (Answer: forEach) Tj
+1 0 0 1 50 402 Tm (Explanation: forEach iterates for side effects and returns undefined.) Tj
+1 0 0 1 50 388 Tm () Tj
+1 0 0 1 50 374 Tm () Tj
+1 0 0 1 50 360 Tm (=== DSA ===) Tj
+1 0 0 1 50 346 Tm (-- L1 --) Tj
+1 0 0 1 50 332 Tm (1. Which data structure follows FIFO order?) Tj
+1 0 0 1 50 318 Tm (Answer: Queue) Tj
+1 0 0 1 50 304 Tm (Explanation: Queue processes elements in First-In-First-Out order.) Tj
+1 0 0 1 50 290 Tm () Tj
+1 0 0 1 50 276 Tm (2. Which data structure follows LIFO order?) Tj
+1 0 0 1 50 262 Tm (Answer: Stack) Tj
+1 0 0 1 50 248 Tm (Explanation: Stack processes elements in Last-In-First-Out order.) Tj
+1 0 0 1 50 234 Tm () Tj
+1 0 0 1 50 220 Tm (3. Which algorithm finds an element in sorted array in O\(log n\)?) Tj
+1 0 0 1 50 206 Tm (Answer: Binary Search) Tj
+1 0 0 1 50 192 Tm (Explanation: Binary search halves search space each step.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (4. What is worst-case time complexity of linear search?) Tj
+1 0 0 1 50 150 Tm (Answer: O\(n\)) Tj
+1 0 0 1 50 136 Tm (Explanation: Linear search may scan all n elements.) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (5. Which traversal uses queue in trees?) Tj
+1 0 0 1 50 94 Tm (Answer: BFS) Tj
+1 0 0 1 50 80 Tm (Explanation: BFS level-order traversal uses a queue.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+39 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 38 0 R >>
+endobj
+40 0 obj
+<< /Length 3030 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (6. Which sort repeatedly swaps adjacent out-of-order elements?) Tj
+1 0 0 1 50 780 Tm (Answer: Bubble sort) Tj
+1 0 0 1 50 766 Tm (Explanation: Bubble sort compares adjacent pairs repeatedly.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm (7. What is time complexity of accessing array element by index?) Tj
+1 0 0 1 50 724 Tm (Answer: O\(1\)) Tj
+1 0 0 1 50 710 Tm (Explanation: Array index access is constant time.) Tj
+1 0 0 1 50 696 Tm () Tj
+1 0 0 1 50 682 Tm (8. Which structure stores key-value pairs with near O\(1\) average lookup?) Tj
+1 0 0 1 50 668 Tm (Answer: Hash table) Tj
+1 0 0 1 50 654 Tm (Explanation: Hash table provides average constant-time access.) Tj
+1 0 0 1 50 640 Tm () Tj
+1 0 0 1 50 626 Tm (9. In a min-heap, parent is:) Tj
+1 0 0 1 50 612 Tm (Answer: Less than or equal to children) Tj
+1 0 0 1 50 598 Tm (Explanation: Min-heap keeps smallest value at root with parent <= children.) Tj
+1 0 0 1 50 584 Tm () Tj
+1 0 0 1 50 570 Tm (10. Which graph traversal is commonly implemented with recursion?) Tj
+1 0 0 1 50 556 Tm (Answer: DFS) Tj
+1 0 0 1 50 542 Tm (Explanation: DFS is naturally implemented recursively with stack behavior.) Tj
+1 0 0 1 50 528 Tm () Tj
+1 0 0 1 50 514 Tm (11. What is a node with no children in a tree called?) Tj
+1 0 0 1 50 500 Tm (Answer: Leaf) Tj
+1 0 0 1 50 486 Tm (Explanation: Leaf nodes have no children.) Tj
+1 0 0 1 50 472 Tm () Tj
+1 0 0 1 50 458 Tm (12. Which algorithm is used to find shortest path in weighted graph \(non-negative\)?) Tj
+1 0 0 1 50 444 Tm (Answer: Dijkstra) Tj
+1 0 0 1 50 430 Tm (Explanation: Dijkstra solves shortest paths with non-negative edges.) Tj
+1 0 0 1 50 416 Tm () Tj
+1 0 0 1 50 402 Tm (13. What is Big-O notation used for?) Tj
+1 0 0 1 50 388 Tm (Answer: Runtime/space growth rate) Tj
+1 0 0 1 50 374 Tm (Explanation: Big-O describes asymptotic complexity.) Tj
+1 0 0 1 50 360 Tm () Tj
+1 0 0 1 50 346 Tm (14. Which sort has average O\(n log n\)?) Tj
+1 0 0 1 50 332 Tm (Answer: Quick sort) Tj
+1 0 0 1 50 318 Tm (Explanation: Quick sort is average O\(n log n\).) Tj
+1 0 0 1 50 304 Tm () Tj
+1 0 0 1 50 290 Tm (15. Which data structure is best for implementing undo operations?) Tj
+1 0 0 1 50 276 Tm (Answer: Stack) Tj
+1 0 0 1 50 262 Tm (Explanation: Undo typically uses stack to reverse last actions.) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 234 Tm (-- L2 --) Tj
+1 0 0 1 50 220 Tm (1. What is worst-case time complexity of quicksort?) Tj
+1 0 0 1 50 206 Tm (Answer: O\(n^2\)) Tj
+1 0 0 1 50 192 Tm (Explanation: Bad pivots can cause O\(n^2\) quicksort.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (2. Which traversal of BST gives sorted output?) Tj
+1 0 0 1 50 150 Tm (Answer: Inorder) Tj
+1 0 0 1 50 136 Tm (Explanation: Inorder traversal of BST visits keys in sorted order.) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (3. What is space complexity of recursive DFS \(worst case\)?) Tj
+1 0 0 1 50 94 Tm (Answer: O\(V\)) Tj
+1 0 0 1 50 80 Tm (Explanation: Recursion stack can go up to number of vertices.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+41 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 40 0 R >>
+endobj
+42 0 obj
+<< /Length 3017 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (4. Which data structure is used in BFS?) Tj
+1 0 0 1 50 780 Tm (Answer: Queue) Tj
+1 0 0 1 50 766 Tm (Explanation: BFS explores layer-by-layer using queue.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm (5. What is amortized time of dynamic array append?) Tj
+1 0 0 1 50 724 Tm (Answer: O\(1\)) Tj
+1 0 0 1 50 710 Tm (Explanation: Resizing cost spread out gives amortized O\(1\).) Tj
+1 0 0 1 50 696 Tm () Tj
+1 0 0 1 50 682 Tm (6. Which algorithm detects cycle in directed graph using DFS colors/states?) Tj
+1 0 0 1 50 668 Tm (Answer: Tarjan-style DFS state tracking) Tj
+1 0 0 1 50 654 Tm (Explanation: DFS with visiting/visited states can detect back edges.) Tj
+1 0 0 1 50 640 Tm () Tj
+1 0 0 1 50 626 Tm (7. What is a collision in hash table?) Tj
+1 0 0 1 50 612 Tm (Answer: Two keys map to same bucket/index) Tj
+1 0 0 1 50 598 Tm (Explanation: Collision occurs when hash outputs same slot.) Tj
+1 0 0 1 50 584 Tm () Tj
+1 0 0 1 50 570 Tm (8. Which technique resolves collisions by linked lists per bucket?) Tj
+1 0 0 1 50 556 Tm (Answer: Chaining) Tj
+1 0 0 1 50 542 Tm (Explanation: Chaining stores multiple items per bucket.) Tj
+1 0 0 1 50 528 Tm () Tj
+1 0 0 1 50 514 Tm (9. What is height of balanced BST usually?) Tj
+1 0 0 1 50 500 Tm (Answer: O\(log n\)) Tj
+1 0 0 1 50 486 Tm (Explanation: Balanced BST height remains logarithmic.) Tj
+1 0 0 1 50 472 Tm () Tj
+1 0 0 1 50 458 Tm (10. What does stable sorting mean?) Tj
+1 0 0 1 50 444 Tm (Answer: Equal keys keep relative order) Tj
+1 0 0 1 50 430 Tm (Explanation: Stability preserves order of equal elements.) Tj
+1 0 0 1 50 416 Tm () Tj
+1 0 0 1 50 402 Tm (11. Which sort is stable by default?) Tj
+1 0 0 1 50 388 Tm (Answer: Merge sort) Tj
+1 0 0 1 50 374 Tm (Explanation: Merge sort is stable in standard implementations.) Tj
+1 0 0 1 50 360 Tm () Tj
+1 0 0 1 50 346 Tm (12. In graph terms, what is an adjacency list good for?) Tj
+1 0 0 1 50 332 Tm (Answer: Sparse graph memory efficiency) Tj
+1 0 0 1 50 318 Tm (Explanation: Adjacency list is space-efficient for sparse graphs.) Tj
+1 0 0 1 50 304 Tm () Tj
+1 0 0 1 50 290 Tm (13. What does topological sort require?) Tj
+1 0 0 1 50 276 Tm (Answer: Directed acyclic graph) Tj
+1 0 0 1 50 262 Tm (Explanation: Topological ordering exists only in DAG.) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 234 Tm (14. Which algorithm builds MST using edge sorting + DSU?) Tj
+1 0 0 1 50 220 Tm (Answer: Kruskal) Tj
+1 0 0 1 50 206 Tm (Explanation: Kruskal sorts edges and uses union-find.) Tj
+1 0 0 1 50 192 Tm () Tj
+1 0 0 1 50 178 Tm (15. What operation does union-find optimize?) Tj
+1 0 0 1 50 164 Tm (Answer: Connectivity/component merging queries) Tj
+1 0 0 1 50 150 Tm (Explanation: DSU handles union/find for components efficiently.) Tj
+1 0 0 1 50 136 Tm () Tj
+1 0 0 1 50 122 Tm (-- L3 --) Tj
+1 0 0 1 50 108 Tm (1. Time complexity of heap sort in worst case is:) Tj
+1 0 0 1 50 94 Tm (Answer: O\(n log n\)) Tj
+1 0 0 1 50 80 Tm (Explanation: Heap sort runs in O\(n log n\) worst-case.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+43 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 42 0 R >>
+endobj
+44 0 obj
+<< /Length 3132 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (2. Which structure supports efficient prefix search?) Tj
+1 0 0 1 50 780 Tm (Answer: Trie) Tj
+1 0 0 1 50 766 Tm (Explanation: Trie is optimized for prefix-based lookup.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm (3. What is the average case lookup in balanced BST?) Tj
+1 0 0 1 50 724 Tm (Answer: O\(log n\)) Tj
+1 0 0 1 50 710 Tm (Explanation: Balanced BST search is logarithmic.) Tj
+1 0 0 1 50 696 Tm () Tj
+1 0 0 1 50 682 Tm (4. Bellman-Ford can handle:) Tj
+1 0 0 1 50 668 Tm (Answer: Negative edges \(and detect negative cycles\)) Tj
+1 0 0 1 50 654 Tm (Explanation: Bellman-Ford supports negative edges and cycle detection.) Tj
+1 0 0 1 50 640 Tm () Tj
+1 0 0 1 50 626 Tm (5. What is dynamic programming mainly about?) Tj
+1 0 0 1 50 612 Tm (Answer: Reuse overlapping subproblem results) Tj
+1 0 0 1 50 598 Tm (Explanation: DP stores/reuses subproblem answers.) Tj
+1 0 0 1 50 584 Tm () Tj
+1 0 0 1 50 570 Tm (6. Memoization is:) Tj
+1 0 0 1 50 556 Tm (Answer: Top-down caching) Tj
+1 0 0 1 50 542 Tm (Explanation: Memoization caches recursive results \(top-down\).) Tj
+1 0 0 1 50 528 Tm () Tj
+1 0 0 1 50 514 Tm (7. Which algorithm finds all-pairs shortest paths?) Tj
+1 0 0 1 50 500 Tm (Answer: Floyd-Warshall) Tj
+1 0 0 1 50 486 Tm (Explanation: Floyd-Warshall computes all-pairs shortest paths.) Tj
+1 0 0 1 50 472 Tm () Tj
+1 0 0 1 50 458 Tm (8. What is complexity of BFS traversal over graph \(V vertices, E edges\)?) Tj
+1 0 0 1 50 444 Tm (Answer: O\(V + E\)) Tj
+1 0 0 1 50 430 Tm (Explanation: BFS visits each vertex and edge at most once.) Tj
+1 0 0 1 50 416 Tm () Tj
+1 0 0 1 50 402 Tm (9. In recursion, stack overflow mainly occurs due to:) Tj
+1 0 0 1 50 388 Tm (Answer: Missing/incorrect base case) Tj
+1 0 0 1 50 374 Tm (Explanation: Without correct base case recursion may not terminate.) Tj
+1 0 0 1 50 360 Tm () Tj
+1 0 0 1 50 346 Tm (10. Which approach is greedy?) Tj
+1 0 0 1 50 332 Tm (Answer: Builds local best choices hoping global optimum) Tj
+1 0 0 1 50 318 Tm (Explanation: Greedy picks locally optimal choice at each step.) Tj
+1 0 0 1 50 304 Tm () Tj
+1 0 0 1 50 290 Tm (11. What is the typical use of sliding window technique?) Tj
+1 0 0 1 50 276 Tm (Answer: Optimize subarray/substring range problems) Tj
+1 0 0 1 50 262 Tm (Explanation: Sliding window handles contiguous range efficiently.) Tj
+1 0 0 1 50 248 Tm () Tj
+1 0 0 1 50 234 Tm (12. Which structure helps O\(1\) retrieval of minimum with push/pop stack operations \(with extra) Tj
+1 0 0 1 50 220 Tm (tracking\)?) Tj
+1 0 0 1 50 206 Tm (Answer: Min stack) Tj
+1 0 0 1 50 192 Tm (Explanation: Min stack tracks current min alongside values.) Tj
+1 0 0 1 50 178 Tm () Tj
+1 0 0 1 50 164 Tm (13. What does backtracking usually do?) Tj
+1 0 0 1 50 150 Tm (Answer: Try choice, recurse, undo choice) Tj
+1 0 0 1 50 136 Tm (Explanation: Backtracking explores search space with undo steps.) Tj
+1 0 0 1 50 122 Tm () Tj
+1 0 0 1 50 108 Tm (14. Which complexity is better for sorting large n?) Tj
+1 0 0 1 50 94 Tm (Answer: O\(n log n\)) Tj
+1 0 0 1 50 80 Tm (Explanation: O\(n log n\) scales much better than quadratic/cubic.) Tj
+1 0 0 1 50 66 Tm () Tj
+ET
+endstream
+endobj
+45 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 44 0 R >>
+endobj
+46 0 obj
+<< /Length 328 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 794 Tm (15. What is the primary purpose of pruning in search algorithms?) Tj
+1 0 0 1 50 780 Tm (Answer: Avoid exploring branches that cannot yield better solution) Tj
+1 0 0 1 50 766 Tm (Explanation: Pruning cuts unnecessary branches to reduce work.) Tj
+1 0 0 1 50 752 Tm () Tj
+1 0 0 1 50 738 Tm () Tj
+ET
+endstream
+endobj
+47 0 obj
+<< /Type /Page /Parent 48 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 46 0 R >>
+endobj
+48 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R 23 0 R 25 0 R 27 0 R 29 0 R 31 0 R 33 0 R 35 0 R 37 0 R 39 0 R 41 0 R 43 0 R 45 0 R 47 0 R] /Count 23 >>
+endobj
+49 0 obj
+<< /Type /Catalog /Pages 48 0 R >>
+endobj
+xref
+0 50
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000002940 00000 n 
+0000003067 00000 n 
+0000005953 00000 n 
+0000006080 00000 n 
+0000009368 00000 n 
+0000009495 00000 n 
+0000012706 00000 n 
+0000012833 00000 n 
+0000016249 00000 n 
+0000016378 00000 n 
+0000019524 00000 n 
+0000019653 00000 n 
+0000022392 00000 n 
+0000022521 00000 n 
+0000025563 00000 n 
+0000025692 00000 n 
+0000029208 00000 n 
+0000029337 00000 n 
+0000032887 00000 n 
+0000033016 00000 n 
+0000036606 00000 n 
+0000036735 00000 n 
+0000039988 00000 n 
+0000040117 00000 n 
+0000042914 00000 n 
+0000043043 00000 n 
+0000046107 00000 n 
+0000046236 00000 n 
+0000049465 00000 n 
+0000049594 00000 n 
+0000052375 00000 n 
+0000052504 00000 n 
+0000055429 00000 n 
+0000055558 00000 n 
+0000058785 00000 n 
+0000058914 00000 n 
+0000062015 00000 n 
+0000062144 00000 n 
+0000065226 00000 n 
+0000065355 00000 n 
+0000068424 00000 n 
+0000068553 00000 n 
+0000071737 00000 n 
+0000071866 00000 n 
+0000072245 00000 n 
+0000072374 00000 n 
+0000072584 00000 n 
+trailer
+<< /Size 50 /Root 49 0 R >>
+startxref
+72635
+%%EOF

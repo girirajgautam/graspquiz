@@ -1,0 +1,29 @@
+/home /index.html 301
+/quiz /cata.html 301
+
+/c /c.html 301
+/cpp /cpp.html 301
+/java /java.html 301
+/python /py.html 301
+/javascript /js.html 301
+/dsa /dsa.html 301
+/html-quiz /html.html 301
+/sql /sql.html 301
+
+/learn/c /c-learn.html 301
+/learn/cpp /cpp-learn.html 301
+/learn/java /java-learn.html 301
+/learn/python /py-learn.html 301
+/learn/javascript /js-learn.html 301
+/learn/dsa /dsa-learn.html 301
+/learn/html /html-learn.html 301
+/learn/sql /sql-learn.html 301
+
+/c-quiz-beginner /c-quiz-beginner.html 301
+/c-quiz-intermediate /c-quiz-intermediate.html 301
+/python-quiz-arrays /python-quiz-arrays.html 301
+
+/sitemap /sitemap.xml 301
+/robots /robots.txt 301
+
+/* /index.html 200
