@@ -155,7 +155,7 @@ nav {
 .quiz-container .level-title {
   margin: 0 0 10px;
   text-align: center;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 700;
   background: linear-gradient(120deg, var(--brand), #0284c7);
   -webkit-background-clip: text;
@@ -218,15 +218,15 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin: 2px 0 10px;
+  margin: 0 0 3px;
   border: 1px solid #c9d8f1;
   border-radius: 999px;
   background: linear-gradient(120deg, rgba(14, 165, 233, 0.1), rgba(255, 107, 53, 0.12));
   color: #1a3b74;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: 0.9rem;
-  padding: 7px 12px;
+  font-size: 0.74rem;
+  padding: 5px 9px;
   cursor: pointer;
 }
 
@@ -252,16 +252,16 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin: 4px 0 12px;
+  margin: -4px 0 8px;
 }
 
 .quiz-top-actions button {
   border: none;
   border-radius: 999px;
-  padding: 8px 14px;
+  padding: 6px 11px;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: 0.84rem;
+  font-size: 0.76rem;
   color: #fff;
   cursor: pointer;
   background: linear-gradient(120deg, var(--brand), #ff8f5c);
@@ -271,6 +271,7 @@ nav {
 
 .quiz-top-actions .back-to-sets-btn {
   margin: 0;
+  transform: translateY(-2px);
 }
 
 .learn-head #learnSubtitle {
@@ -343,13 +344,13 @@ nav {
 
 .level-card .level-btn {
   display: block;
-  width: 260px;
+  width: 210px;
   max-width: calc(100% - 40px);
   margin: 18px auto 20px;
   border: 0;
   border-radius: 999px;
-  padding: 13px 18px;
-  font-size: 1.2rem;
+  padding: 10px 14px;
+  font-size: 0.98rem;
   color: #fff;
   background: linear-gradient(120deg, var(--brand), #ff8f5c);
   box-shadow: 0 10px 22px rgba(255, 107, 53, 0.3);
@@ -412,6 +413,46 @@ nav {
   font-weight: 700;
   color: #1f3f78;
   margin-bottom: 12px;
+}
+
+.question-nav-row {
+  display: none;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.question-nav-row .level-meta {
+  justify-self: center;
+  margin-bottom: 0;
+}
+
+.question-nav-spacer {
+  width: 40px;
+  height: 1px;
+}
+
+.prev-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid #0284c7;
+  background: linear-gradient(120deg, #0ea5e9, #0284c7);
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.58rem;
+  cursor: pointer;
+}
+
+.prev-btn:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.prev-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 #question {
@@ -510,6 +551,79 @@ nav {
 
 .feedback-box p + p {
   margin-top: 6px;
+}
+
+.feedback-actions {
+  margin-top: 2px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.learn-more-btn {
+  border: 1px solid #c7d7f4;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1a3b74;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.76rem;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.learn-more-btn:hover {
+  background: #eef6ff;
+}
+
+.feedback-learn {
+  background: linear-gradient(120deg, rgba(14, 165, 233, 0.12), rgba(56, 189, 248, 0.14));
+  border-color: rgba(14, 165, 233, 0.35);
+}
+
+.learn-more-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.learn-more-back {
+  border: 1px solid #bfd4f6;
+  border-radius: 999px;
+  background: #fff;
+  color: #1a3b74;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.learn-more-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.18);
+  color: #0b4a6f;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.feedback-learn pre {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #e2e8f0;
+  overflow-x: auto;
+}
+
+.feedback-learn code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
 .feedback-correct {
@@ -704,8 +818,18 @@ nav {
   }
 
   .quiz-top-actions button {
-    padding: 7px 12px;
-    font-size: 0.8rem;
+    padding: 5px 9px;
+    font-size: 0.68rem;
+  }
+
+  .back-to-sets-btn {
+    font-size: 0.66rem;
+    padding: 4px 8px;
+  }
+
+  .quiz-container .level-title {
+    font-size: 0.88rem;
+    margin-bottom: 8px;
   }
 
   #explanation {

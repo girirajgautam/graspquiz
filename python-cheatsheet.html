@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Cheatsheet - Advanced Interview Revision | GraspQuiz</title>
+<meta name="description" content="Python advanced cheatsheet for interviews covering collections, itertools, generators, decorators, async, OOP, context managers, and time complexity.">
+<link rel="canonical" href="https://graspquiz.tech/python-cheatsheet.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GraspQuiz">
+<meta property="og:title" content="Python Cheatsheet - Advanced Interview Revision | GraspQuiz">
+<meta property="og:description" content="Python advanced cheatsheet for interviews covering collections, itertools, generators, decorators, async, OOP, context managers, and time complexity.">
+<meta property="og:url" content="https://graspquiz.tech/python-cheatsheet.html">
+<meta property="og:image" content="https://graspquiz.tech/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Python Cheatsheet - Advanced Interview Revision | GraspQuiz">
+<meta name="twitter:description" content="Python advanced cheatsheet for interviews covering collections, itertools, generators, decorators, async, OOP, context managers, and time complexity.">
+<meta name="twitter:image" content="https://graspquiz.tech/logo.svg">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+<meta name="theme-color" content="#0ea5e9">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="style.css">
+<style>
+  .sheet-wrap { width: min(1120px, 92%); margin: 30px auto 40px; }
+  .sheet-head { background: rgba(255, 255, 255, 0.88); border: 1px solid rgba(20, 33, 61, 0.1); border-radius: 16px; padding: 20px; box-shadow: 0 14px 40px rgba(20, 33, 61, 0.12); }
+  .sheet-head p { color: #5f6b84; margin-top: 8px; }
+  .sheet-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .sheet-grid { margin-top: 18px; display: grid; gap: 14px; }
+  .sheet-card { background: rgba(255, 255, 255, 0.88); border: 1px solid rgba(20, 33, 61, 0.1); border-radius: 16px; padding: 18px; box-shadow: 0 14px 40px rgba(20, 33, 61, 0.12); }
+  .sheet-card h2 { font-family: "Space Grotesk", sans-serif; font-size: 1.15rem; margin-bottom: 10px; }
+  .sheet-card h3 { font-family: "Space Grotesk", sans-serif; font-size: 1rem; margin: 10px 0 8px; }
+  .sheet-card p { color: #3f4c66; line-height: 1.6; margin-top: 8px; }
+  .sheet-card .easy { background: #f7fbff; border: 1px solid #d8eafe; border-radius: 10px; padding: 10px 12px; margin-top: 8px; }
+  .sheet-card pre { margin-top: 10px; padding: 12px; overflow-x: auto; border-radius: 12px; background: #0f172a; color: #e2e8f0; font-size: 0.88rem; line-height: 1.5; }
+  .sheet-card code { font-family: Consolas, "Courier New", monospace; }
+  .sheet-card ul { margin: 8px 0 0 18px; color: #3f4c66; }
+  .sheet-card table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .sheet-card th, .sheet-card td { border: 1px solid #dbe3f0; padding: 8px 10px; text-align: left; }
+  .sheet-card th { background: #eef3fb; }
+  @media (max-width: 600px) {
+    .sheet-card { padding: 14px; }
+    .sheet-card pre { font-size: 0.82rem; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-82ZQVTYV9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-82ZQVTYV9J');
+</script>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo"><img src="logo.svg" alt="GraspQuiz logo"></div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="c.html">C</a>
+    <a href="cpp.html">C++</a>
+    <a href="java.html">Java</a>
+    <a href="py.html">Python</a>
+    <a href="js.html">JavaScript</a>
+    <a href="dsa.html">DSA</a>
+    <a href="html.html">HTML</a>
+    <a href="sql.html">SQL</a>
+  </nav>
+</header>
+
+<main class="sheet-wrap">
+  <section class="sheet-head">
+    <h1>Python Cheatsheet (Very Easy)</h1>
+    <p>Each topic is shown in 3 parts: <strong>Core concept</strong>, <strong>Simple code</strong>, and <strong>Output</strong>.</p>
+    <div class="sheet-actions">
+      <a class="lang-btn" href="javascript:history.back()">← Back</a>
+      <a class="lang-btn" href="py.html">Start Python Quiz</a>
+    </div>
+  </section>
+
+  <section class="sheet-grid">
+    <article class="sheet-card">
+      <h2>1. Advanced Data Structures</h2>
+      <h3>Collections Module</h3>
+      <p><strong>Core concept:</strong> <code>collections</code> gives smarter containers than normal list/dict.</p>
+      <p><strong>Why useful:</strong> Faster and cleaner for counting, default values, and queue operations.</p>
+      <p class="easy"><strong>Remember:</strong> <code>Counter</code> = count, <code>defaultdict</code> = no missing-key error, <code>deque</code> = fast left/right operations.</p>
+<pre><code>from collections import Counter, defaultdict, deque
+
+# 1) Counter: count frequency
+print(Counter([1, 1, 2, 3]))  # Counter({1: 2, 2: 1, 3: 1})
+
+# 2) defaultdict: missing key gets default value automatically
+d = defaultdict(int)
+d["a"] += 1
+print(d["a"])  # 1
+
+# 3) deque: fast insert/remove on both sides
+dq = deque([1,2,3])
+dq.appendleft(0)
+print(dq.pop())  # 3</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> First line imports tools. <code>Counter</code> creates value-frequency map. <code>defaultdict(int)</code> gives 0 for missing key, so <code>d["a"] += 1</code> works safely. <code>deque</code> allows <code>appendleft</code> and <code>pop</code> efficiently.</p>
+      <p><strong>Output summary:</strong> Counter shows counts, defaultdict avoids key error, deque returns last element <code>3</code>.</p>
+      <p><strong>Real interview use:</strong> Most frequent element -> <code>Counter(arr).most_common(1)</code>.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>2. Itertools (Powerful for Interviews)</h2>
+      <p><strong>Core concept:</strong> <code>itertools</code> helps generate patterns (all orders, pairs, cartesian products).</p>
+      <p><strong>Where to use:</strong> Backtracking, combinations, and brute-force problems.</p>
+      <p class="easy"><strong>Remember:</strong> permutation = order matters, combination = order does not matter.</p>
+<pre><code>import itertools
+
+print(list(itertools.permutations([1,2,3], 2)))
+# [(1,2), (1,3), (2,1), (2,3), (3,1), (3,2)]
+
+print(list(itertools.combinations([1,2,3], 2)))
+# [(1,2), (1,3), (2,3)]
+
+print(list(itertools.product([1,2], [3,4])))
+# [(1,3), (1,4), (2,3), (2,4)]</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> <code>permutations</code> builds ordered selections, <code>combinations</code> builds unordered selections, and <code>product</code> builds all pairings from two lists.</p>
+      <p><strong>Output summary:</strong> You get ordered pairs, unordered pairs, and cross-product pairs.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>3. Generators</h2>
+      <p><strong>Core concept:</strong> Generator produces values one-by-one using <code>yield</code>.</p>
+      <p><strong>Why useful:</strong> Saves memory for large data.</p>
+      <p class="easy"><strong>Think:</strong> list = store all now, generator = create next only when needed.</p>
+<pre><code>def count_up(n):
+    for i in range(n):
+        yield i
+
+gen = count_up(5)
+print(next(gen))  # 0
+print(next(gen))  # 1</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> Function does not return full list. It pauses at each <code>yield</code>. <code>next(gen)</code> resumes function from last pause and gives next value.</p>
+      <p><strong>Output summary:</strong> first <code>next()</code> gives <code>0</code>, second gives <code>1</code>.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>4. Decorators</h2>
+      <p><strong>What it means:</strong> A decorator adds extra behavior around a function (before/after call).</p>
+      <p><strong>When to use:</strong> Logging, timing, authorization, validation.</p>
+      <p class="easy"><strong>Simple view:</strong> Decorator is a wrapper around your original function.</p>
+<pre><code>def decorator(func):
+    def wrapper():
+        print("Before")
+        func()
+        print("After")
+    return wrapper
+
+@decorator
+def say_hello():
+    print("Hello")
+
+say_hello()
+# Before
+# Hello
+# After</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> <code>decorator</code> receives original function, returns <code>wrapper</code>. <code>@decorator</code> means <code>say_hello = decorator(say_hello)</code>.</p>
+      <p><strong>How this code works:</strong> <code>@decorator</code> replaces <code>say_hello</code> with <code>wrapper</code>. So when you call it, Python runs <code>Before -> original function -> After</code>.</p>
+      <p><strong>Output summary:</strong> It prints three lines in order: <code>Before</code>, <code>Hello</code>, <code>After</code>.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>5. *args and **kwargs</h2>
+      <p><strong>What it means:</strong> <code>*args</code> takes extra positional values, <code>**kwargs</code> takes extra named values.</p>
+      <p><strong>When to use:</strong> Flexible functions where number of inputs can vary.</p>
+      <p class="easy"><strong>Remember:</strong> <code>*args</code> -> tuple, <code>**kwargs</code> -> dictionary.</p>
+<pre><code>def func(*args, **kwargs):
+    print(args)
+    print(kwargs)
+
+func(1, 2, 3, name="Ram")
+# (1, 2, 3)
+# {'name': 'Ram'}</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> Python packs all unnamed values into tuple <code>args</code> and all named values into dict <code>kwargs</code>.</p>
+      <p><strong>How this code works:</strong> <code>*args</code> stores normal values into one tuple, and <code>**kwargs</code> stores named values into one dictionary.</p>
+      <p><strong>Output summary:</strong> first line is tuple of positional arguments, second line is dictionary of named arguments.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>6. Map, Filter, Reduce</h2>
+      <p><strong>Core concept:</strong> 3 tools for list processing in one line.</p>
+      <p><strong>Use:</strong> <code>map</code> changes values, <code>filter</code> keeps matching values, <code>reduce</code> combines to one value.</p>
+      <p class="easy"><strong>Shortcut:</strong> map = change each item, filter = keep some items, reduce = one final value.</p>
+<pre><code>from functools import reduce
+
+print(list(map(lambda x: x*2, [1,2,3])))          # [2, 4, 6]
+print(list(filter(lambda x: x%2==0, [1,2,3,4]))) # [2, 4]
+print(reduce(lambda a,b: a+b, [1,2,3,4]))        # 10</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> <code>map</code> applies function to each element, <code>filter</code> keeps only True results, <code>reduce</code> repeatedly combines values into one.</p>
+      <p><strong>Output summary:</strong> transformed list, filtered list, and final sum.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>7. Advanced OOP</h2>
+      <h3>Inheritance</h3>
+      <p><strong>What it means:</strong> Child class reuses parent behavior and can override methods.</p>
+      <p class="easy"><strong>Why useful:</strong> write common code once in parent, customize in child.</p>
+<pre><code>class Animal:
+    def speak(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def speak(self):
+        print("Bark")
+
+Dog().speak()  # Bark</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> <code>Dog(Animal)</code> inherits parent methods, but its own <code>speak</code> overrides parent behavior.</p>
+      <p><strong>How this code works:</strong> <code>Dog</code> inherits from <code>Animal</code> but overrides <code>speak()</code>, so Dog's method runs instead of parent method.</p>
+      <p><strong>Output summary:</strong> prints <code>Bark</code>.</p>
+      <h3>Dunder Methods</h3>
+      <p><strong>What it means:</strong> Special methods that define object behavior in Python.</p>
+      <p class="easy"><strong>Most asked:</strong> <code>__init__</code> for setup, <code>__str__</code> for print, <code>__eq__</code> for object comparison.</p>
+<pre><code>class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
+print(Person("Ram"))  # Ram</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> object is created with <code>name</code>. On <code>print(obj)</code>, Python calls <code>obj.__str__()</code>.</p>
+      <p><strong>How this code works:</strong> <code>__init__</code> stores value when object is created. <code>__str__</code> controls what is shown when you print object.</p>
+      <p><strong>Output summary:</strong> printing object shows <code>Ram</code> instead of memory address.</p>
+      <p>Important:</p>
+      <ul>
+        <li><code>__init__</code></li>
+        <li><code>__str__</code></li>
+        <li><code>__repr__</code></li>
+        <li><code>__len__</code></li>
+        <li><code>__eq__</code></li>
+      </ul>
+    </article>
+
+    <article class="sheet-card">
+      <h2>8. Class vs Static Methods</h2>
+      <p><strong>Class method:</strong> Works with class (<code>cls</code>). Good for alternate constructors.</p>
+      <p><strong>Static method:</strong> Utility method inside class, no <code>self</code> or <code>cls</code>.</p>
+      <p class="easy"><strong>Rule:</strong> Need class data? classmethod. Just helper logic? staticmethod.</p>
+<pre><code>class MyClass:
+    @classmethod
+    def cls_method(cls):
+        return cls.__name__
+
+    @staticmethod
+    def static_method():
+        return "helper"
+
+print(MyClass.cls_method())     # MyClass
+print(MyClass.static_method())  # helper</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> <code>cls_method</code> can read class details (<code>cls.__name__</code>). <code>static_method</code> behaves like normal helper function inside class namespace.</p>
+      <p><strong>How this code works:</strong> classmethod receives class (<code>cls</code>) automatically, staticmethod receives nothing automatically.</p>
+      <p><strong>Output summary:</strong> first call returns class name, second returns helper string.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>9. Context Managers</h2>
+      <p><strong>What it means:</strong> Handles setup/cleanup automatically with <code>with</code>.</p>
+      <p><strong>When to use:</strong> Files, database connections, locks, resources.</p>
+      <p class="easy"><strong>Benefit:</strong> even on error, cleanup still runs.</p>
+<pre><code>class FileHandler:
+    def __enter__(self):
+        print("Start")
+        return self
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("End")
+
+with FileHandler():
+    print("Inside")
+# Start
+# Inside
+# End</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> <code>with</code> starts resource with <code>__enter__</code>, runs main block, then always calls <code>__exit__</code> for cleanup.</p>
+      <p><strong>How this code works:</strong> entering <code>with</code> calls <code>__enter__</code>, leaving block calls <code>__exit__</code>, even if error happens.</p>
+      <p><strong>Output summary:</strong> start prints first, inside block prints second, cleanup prints at end.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>10. Multithreading vs Multiprocessing</h2>
+      <p><strong>Threading:</strong> Best for I/O tasks (API calls, file/network wait).</p>
+      <p><strong>Multiprocessing:</strong> Best for CPU-heavy tasks (math, image processing).</p>
+      <p class="easy"><strong>Fast choice in interview:</strong> waiting task -> threads, heavy computation -> processes.</p>
+<pre><code>import threading
+import multiprocessing
+
+# rule:
+# Threading -> I/O bound
+# Multiprocessing -> CPU bound</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> for waiting operations, threads keep CPU busy while one task waits. for heavy calculations, processes use multiple CPU cores.</p>
+      <p><strong>How this works in practice:</strong> use threading when program waits (network/file). use multiprocessing when CPU calculations are heavy.</p>
+      <ul>
+        <li>Threading -> I/O bound</li>
+        <li>Multiprocessing -> CPU bound</li>
+      </ul>
+    </article>
+
+    <article class="sheet-card">
+      <h2>11. Async Programming</h2>
+      <p><strong>Core concept:</strong> <code>async/await</code> runs many waiting tasks without blocking program flow.</p>
+      <p><strong>When to use:</strong> APIs, scraping, bots, chat systems.</p>
+      <p class="easy"><strong>Important:</strong> Async is great for many waiting operations, not raw CPU speed.</p>
+<pre><code>import asyncio
+
+async def main():
+    print("Hello")
+    await asyncio.sleep(1)
+    print("World")
+
+asyncio.run(main())
+# Hello
+# (wait 1 second)
+# World</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> <code>async def</code> defines coroutine, <code>await</code> pauses current task without blocking loop, and <code>asyncio.run</code> starts event loop.</p>
+      <p><strong>Output summary:</strong> prints <code>Hello</code>, waits 1 second, then prints <code>World</code>.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>12. Memory Optimization</h2>
+      <p><strong>Goal:</strong> Use less memory for faster and scalable programs.</p>
+      <p class="easy"><strong>Simple strategy:</strong> avoid creating big temporary lists when you can stream values.</p>
+<pre><code>import sys
+print(sys.getsizeof([1,2,3]))  # memory used by list object</code></pre>
+      <p class="easy"><strong>Code breakdown:</strong> <code>getsizeof</code> checks object memory footprint. Use it to compare memory cost of list, tuple, dict, etc.</p>
+      <p><strong>How this code works:</strong> <code>getsizeof</code> shows bytes used by object in memory. helpful for comparing list vs generator choices.</p>
+      <p><strong>Output summary:</strong> prints a number (bytes). exact value may differ by Python version/system.</p>
+      <p>Tips:</p>
+      <ul>
+        <li>Use generators instead of full lists for large loops.</li>
+        <li>Use <code>__slots__</code> in classes to reduce object memory.</li>
+      </ul>
+    </article>
+
+    <article class="sheet-card">
+      <h2>13. Time Complexity Must Know</h2>
+      <p><strong>Why this matters:</strong> Helps choose fast data structures in coding rounds.</p>
+      <p class="easy"><strong>Interview tip:</strong> if repeated lookup is needed, prefer <code>set</code>/<code>dict</code> over list search.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Complexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>List access</td><td>O(1)</td></tr>
+          <tr><td>List search</td><td>O(n)</td></tr>
+          <tr><td>Dict access</td><td>O(1)</td></tr>
+          <tr><td>Set lookup</td><td>O(1)</td></tr>
+          <tr><td>Sort</td><td>O(n log n)</td></tr>
+        </tbody>
+      </table>
+      <p><strong>How to use this table:</strong> if operation repeats many times, choose data structure with lower complexity (for lookup, prefer dict/set over list).</p>
+    </article>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Copyright 2026 Grasp Coding Quiz. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -93,6 +93,7 @@ const PASS_SCORE_BY_LEVEL = { l1: 16, l2: 18, l3: 20, l4: 22 };
 const LEVEL_ORDER = ["l1", "l2", "l3", "l4"];
 const unlockedLevels = new Set(LEVEL_ORDER);
 let quizInitialized = false;
+let lastFeedbackState = null;
 const API_BASE_URL = (
   window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
     ? "http://localhost:5000"
@@ -112,6 +113,8 @@ const explanationEl = document.getElementById("explanation");
 const nextBtn = document.getElementById("nextBtn");
 const resultEl = document.getElementById("result");
 const levelMetaEl = document.getElementById("levelMeta");
+const questionNavRowEl = document.getElementById("questionNavRow");
+const prevBtn = document.getElementById("prevBtn");
 const quizIntroEl = document.querySelector(".quiz-intro");
 const relatedQuizzesEl = document.querySelector(".related-quizzes");
 const backHomeBtnEl = document.querySelector("button[onclick*='index.html']");
@@ -131,6 +134,82 @@ const backToSetsBtn = (() => {
   else if (quizContainerEl) quizContainerEl.insertBefore(btn, quizContainerEl.firstChild);
   return btn;
 })();
+
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function buildLearnExample(questionText, correctAnswer) {
+  const text = String(questionText || "").toLowerCase();
+  const answer = String(correctAnswer || "").trim();
+
+  if (text.includes("defines a function in python") || answer === "def") {
+    return [
+      "Python example:",
+      "def greet(name):",
+      "    return f\"Hello, {name}\"",
+      "",
+      "print(greet(\"Ram\"))  # Hello, Ram"
+    ].join("\n");
+  }
+
+  return [
+    "Quick example:",
+    "Question type: " + String(questionText).trim(),
+    "Correct option: " + answer,
+    "",
+    "Use case:",
+    "Use '" + answer + "' when this concept appears in a similar question."
+  ].join("\n");
+}
+
+function showLearnMore(questionData, correctIndex) {
+  if (!explanationEl || !questionData) return;
+  const correctAnswer = questionData.answers[correctIndex];
+  const questionText = questionData.question;
+  const explanationText = questionData.explanation;
+
+  lastFeedbackState = {
+    className: explanationEl.className,
+    html: explanationEl.innerHTML,
+    questionData,
+    correctIndex,
+  };
+
+  explanationEl.className = "feedback-box feedback-learn";
+  explanationEl.innerHTML = `
+    <div class="learn-more-head">
+      <button type="button" class="learn-more-back">Back</button>
+      <span class="learn-more-badge">Learn More</span>
+    </div>
+    <p><strong>Question:</strong> ${escapeHtml(questionText)}</p>
+    <p><strong>Correct Answer:</strong> ${escapeHtml(correctAnswer)}</p>
+    <p><strong>Why:</strong> ${escapeHtml(explanationText)}</p>
+    <pre><code>${escapeHtml(buildLearnExample(questionText, correctAnswer))}</code></pre>
+  `;
+
+  const backBtn = explanationEl.querySelector(".learn-more-back");
+  if (!backBtn) return;
+  backBtn.addEventListener("click", () => {
+    if (!lastFeedbackState) return;
+    explanationEl.className = lastFeedbackState.className;
+    explanationEl.innerHTML = lastFeedbackState.html;
+    attachLearnMore(lastFeedbackState.questionData, lastFeedbackState.correctIndex);
+  });
+}
+
+function attachLearnMore(questionData, correctIndex) {
+  if (!explanationEl) return;
+  const learnMoreBtn = explanationEl.querySelector(".learn-more-btn");
+  if (!learnMoreBtn) return;
+  learnMoreBtn.addEventListener("click", () => showLearnMore(questionData, correctIndex));
+}
 
 function reportRuntimeError(message) { if (questionEl) questionEl.textContent = message; }
 if (questionEl && String(questionEl.textContent).trim() === "Question text will appear here") {
@@ -164,6 +243,10 @@ function formatLevel(level) {
 }
 function getPassScoreForLevel(level) { return PASS_SCORE_BY_LEVEL[level] || 20; }
 function updateLevelMeta() { levelMetaEl.textContent = `${formatLevel(currentLevel)} | Question ${currentQuestion + 1}/${quizData.length}`; }
+function updatePrevButton() {
+  if (!prevBtn) return;
+  prevBtn.disabled = currentQuestion === 0;
+}
 
 function setActiveLevelButton() {
   levelButtons.forEach((btn) => {
@@ -200,6 +283,7 @@ function loadQuestion() {
   snapToQuizTop();
   const q = quizData[currentQuestion];
   updateLevelMeta();
+  updatePrevButton();
   questionEl.textContent = q.question;
   answersEl.innerHTML = "";
   explanationEl.innerHTML = "";
@@ -239,6 +323,9 @@ function selectAnswer(index) {
       <div class="feedback-title">Right</div>
       <p><strong>${q.answers[correctIndex]}</strong> is correct.</p>
       <p>${q.explanation}</p>
+      <div class="feedback-actions">
+        <button type="button" class="learn-more-btn">Learn More</button>
+      </div>
     `;
   } else {
     explanationEl.className = "feedback-box feedback-wrong";
@@ -246,10 +333,14 @@ function selectAnswer(index) {
       <div class="feedback-title">Wrong</div>
       <p>Right answer: <strong>${q.answers[correctIndex]}</strong></p>
       <p>${q.explanation}</p>
+      <div class="feedback-actions">
+        <button type="button" class="learn-more-btn">Learn More</button>
+      </div>
     `;
   }
 
-  nextBtn.style.display = "inline-block";
+  attachLearnMore(q, correctIndex);
+nextBtn.style.display = "inline-block";
   snapToQuizTop();
 
   submitQuizRecord(currentQuestion + 1, false).catch((error) => {
@@ -311,6 +402,7 @@ function showResult() {
   explanationEl.style.display = "none";
   nextBtn.style.display = "none";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "block";
+  if (questionNavRowEl) questionNavRowEl.style.display = "none";
   levelMetaEl.textContent = `${formatLevel(currentLevel)} completed | Score ${score}/${quizData.length}`;
   setActiveLevelButton();
   const ruleText = passed
@@ -371,7 +463,7 @@ function shareScore() {
 }
 function showLevelSelection() {
   if (levelPickerEl) levelPickerEl.style.display = "grid";
-  if (levelMetaEl) levelMetaEl.style.display = "none";
+  if (questionNavRowEl) questionNavRowEl.style.display = "none";
   if (quizIntroEl) quizIntroEl.style.display = "block";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "block";
   if (backToSetsBtn) backToSetsBtn.style.display = "none";
@@ -398,6 +490,7 @@ function restartQuiz() {
   resultEl.innerHTML = "";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "none";
   if (backHomeBtnEl) backHomeBtnEl.style.display = "none";
+  if (questionNavRowEl) questionNavRowEl.style.display = "grid";
   loadQuestion();
 }
 
@@ -410,7 +503,7 @@ function setLevel(level) {
   });
   submissionPromise = null;
   if (levelPickerEl) levelPickerEl.style.display = "none";
-  if (levelMetaEl) levelMetaEl.style.display = "block";
+  if (questionNavRowEl) questionNavRowEl.style.display = "grid";
   if (quizIntroEl) quizIntroEl.style.display = "none";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "none";
   if (backHomeBtnEl) backHomeBtnEl.style.display = "none";
@@ -447,6 +540,14 @@ function initQuiz() {
     else showResult();
   };
 
+  
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      if (currentQuestion <= 0) return;
+      currentQuestion--;
+      loadQuestion();
+    });
+  }
   levelButtons.forEach((btn) => { btn.addEventListener("click", () => setLevel(btn.dataset.level)); });
   showLevelSelection();
   quizInitialized = true;

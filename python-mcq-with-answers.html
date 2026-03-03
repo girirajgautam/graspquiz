@@ -19,6 +19,71 @@
 <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<style>
+  .faq-grid { display: grid; gap: 14px; margin-top: 14px; }
+  .faq-card {
+    background: rgba(255,255,255,0.94);
+    border: 1px solid rgba(19,35,63,0.12);
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 10px 24px rgba(19,35,63,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .faq-question {
+    font-weight: 800;
+    color: #13233f;
+    line-height: 1.55;
+    margin-bottom: 10px;
+    font-size: 1.02rem;
+  }
+  .faq-toggle {
+    border: none;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font-weight: 700;
+    font-size: 0.76rem;
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    width: auto;
+    margin-top: 0;
+    background: linear-gradient(120deg, #0f4c81, #1e3a8a);
+    box-shadow: 0 6px 14px rgba(30, 58, 138, 0.22);
+  }
+  .categories .card .faq-toggle { width: auto; }
+  .faq-answer {
+    margin-top: 12px;
+    border-top: 1px solid #c6d8f5;
+    padding-top: 12px;
+    color: #0f274d;
+    line-height: 1.65;
+    display: none;
+    width: 100%;
+  }
+  .faq-answer.visible { display: block; }
+  .faq-block {
+    background: #f8fbff;
+    border: 1px solid #d6e3f8;
+    border-left: 4px solid #1e3a8a;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .faq-block + .faq-block { margin-top: 10px; }
+  .faq-block p { margin: 0; color: #0f274d; font-weight: 600; }
+  .faq-label {
+    display: inline-block;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #0f2e67;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 4px 9px;
+    margin-bottom: 6px;
+  }
+</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-82ZQVTYV9J"></script>
 <script>
@@ -48,28 +113,8 @@
   <h1>Python MCQ with Answers</h1>
   <h2 class="catalog-subtitle">Quick MCQ revision for exams and interviews.</h2>
   <div class="card">
-    <ol>
-      <li>Which keyword defines a function? <strong>Answer:</strong> `def`</li>
-      <li>Python is interpreted or compiled? <strong>Answer:</strong> Interpreted</li>
-      <li>Which type is immutable? <strong>Answer:</strong> `tuple`</li>
-      <li>Which symbol starts a comment? <strong>Answer:</strong> `#`</li>
-      <li>Which function gets input? <strong>Answer:</strong> `input()`</li>
-      <li>What does `len()` return? <strong>Answer:</strong> Number of elements</li>
-      <li>Which keyword handles exceptions? <strong>Answer:</strong> `except`</li>
-      <li>Dictionary keys must be? <strong>Answer:</strong> Hashable</li>
-      <li>Which operator is exponent? <strong>Answer:</strong> `**`</li>
-      <li>Which data type stores key-value pairs? <strong>Answer:</strong> `dict`</li>
-      <li>What does `range(5)` produce? <strong>Answer:</strong> 0 to 4</li>
-      <li>What is list slicing syntax? <strong>Answer:</strong> `[start:stop:step]`</li>
-      <li>What does `append()` do? <strong>Answer:</strong> Adds one item at end</li>
-      <li>What is `None` in Python? <strong>Answer:</strong> Null-like singleton object</li>
-      <li>Which module gives math functions? <strong>Answer:</strong> `math`</li>
-      <li>What is correct package installer? <strong>Answer:</strong> `pip`</li>
-      <li>Which statement creates set? <strong>Answer:</strong> `set()` or `{1,2}`</li>
-      <li>What does `pass` do? <strong>Answer:</strong> No operation placeholder</li>
-      <li>What does `break` do? <strong>Answer:</strong> Exits loop</li>
-      <li>What does `continue` do? <strong>Answer:</strong> Skips current iteration</li>
-    </ol>
+    <p>Click <strong>Show</strong> to view answer and explanation.</p>
+    <div id="pythonMcqFaq" class="faq-grid"></div>
     <p><a class="lang-btn" href="py.html">Practice Python Quiz Now</a></p>
   </div>
 </section>
@@ -77,6 +122,68 @@
 <footer class="footer">
   <p>Copyright 2026 Grasp Coding Quiz. All rights reserved.</p>
 </footer>
+<script>
+  (function () {
+    const data = [
+      { q: "Which keyword defines a function?", a: "`def`", e: "Functions in Python start with `def`, then function name and parentheses.", x: "def greet():\n    print(\"Hello\")\ngreet()  # Hello" },
+      { q: "Python is interpreted or compiled?", a: "Interpreted", e: "Python code is executed by the interpreter at runtime.", x: "print(\"Python runs via interpreter\")" },
+      { q: "Which type is immutable?", a: "`tuple`", e: "Immutable means values cannot be changed after creation.", x: "t = (1, 2, 3)\n# t[0] = 9  -> TypeError" },
+      { q: "Which symbol starts a comment?", a: "`#`", e: "Everything after `#` on that line is ignored by Python.", x: "# this is a comment\nx = 10" },
+      { q: "Which function gets input?", a: "`input()`", e: "It reads user input as a string.", x: "name = input(\"Enter name: \")\nprint(name)" },
+      { q: "What does `len()` return?", a: "Number of elements", e: "`len()` gives size of string, list, tuple, dict, etc.", x: "print(len([10, 20, 30]))  # 3" },
+      { q: "Which keyword handles exceptions?", a: "`except`", e: "Use `try` and `except` to catch runtime errors safely.", x: "try:\n    1/0\nexcept ZeroDivisionError:\n    print(\"Error handled\")" },
+      { q: "Dictionary keys must be?", a: "Hashable", e: "Keys must be immutable/hashable types like string, int, tuple.", x: "d = {\"name\": \"Ram\", 1: \"one\"}" },
+      { q: "Which operator is exponent?", a: "`**`", e: "Use `**` for power operations.", x: "print(2 ** 3)  # 8" },
+      { q: "Which data type stores key-value pairs?", a: "`dict`", e: "Dictionary maps keys to values.", x: "student = {\"name\": \"A\", \"marks\": 95}" },
+      { q: "What does `range(5)` produce?", a: "0 to 4", e: "`range(5)` generates numbers from 0 up to (not including) 5.", x: "print(list(range(5)))  # [0, 1, 2, 3, 4]" },
+      { q: "What is list slicing syntax?", a: "`[start:stop:step]`", e: "Slicing extracts part of a list/string.", x: "nums = [0,1,2,3,4]\nprint(nums[1:4])  # [1,2,3]" },
+      { q: "What does `append()` do?", a: "Adds one item at end", e: "Use `append` to insert a single new element at the end.", x: "a = [1,2]\na.append(3)\nprint(a)  # [1,2,3]" },
+      { q: "What is `None` in Python?", a: "Null-like singleton object", e: "`None` means no value / empty state.", x: "x = None\nprint(x is None)  # True" },
+      { q: "Which module gives math functions?", a: "`math`", e: "`math` provides sqrt, ceil, floor, pi, etc.", x: "import math\nprint(math.sqrt(16))  # 4.0" },
+      { q: "What is correct package installer?", a: "`pip`", e: "`pip` installs Python libraries.", x: "pip install requests" },
+      { q: "Which statement creates set?", a: "`set()` or `{1,2}`", e: "Set stores unique unordered elements.", x: "s = {1,2,2,3}\nprint(s)  # {1,2,3}" },
+      { q: "What does `pass` do?", a: "No operation placeholder", e: "`pass` keeps syntax valid when block is intentionally empty.", x: "def todo():\n    pass" },
+      { q: "What does `break` do?", a: "Exits loop", e: "`break` stops the nearest loop immediately.", x: "for i in range(5):\n    if i == 3:\n        break\n    print(i)  # 0 1 2" },
+      { q: "What does `continue` do?", a: "Skips current iteration", e: "`continue` skips current loop turn and moves next.", x: "for i in range(5):\n    if i == 2:\n        continue\n    print(i)  # 0 1 3 4" }
+    ];
+
+    const wrap = document.getElementById("pythonMcqFaq");
+    if (!wrap) return;
+
+    data.forEach((item, i) => {
+      const card = document.createElement("article");
+      card.className = "faq-card";
+
+      const q = document.createElement("div");
+      q.className = "faq-question";
+      q.textContent = (i + 1) + ". " + item.q;
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "faq-toggle";
+      btn.textContent = "Show";
+      btn.setAttribute("aria-expanded", "false");
+
+      const ans = document.createElement("div");
+      ans.className = "faq-answer";
+      ans.innerHTML =
+        '<div class="faq-block"><div class="faq-label">Answer</div><p>' + item.a + '</p></div>' +
+        '<div class="faq-block"><div class="faq-label">Explanation</div><p>' + item.e + '</p></div>' +
+        '<div class="faq-block"><div class="faq-label">Example</div><p><code>' + item.x.replace(/\n/g, "<br>") + '</code></p></div>';
+
+      btn.addEventListener("click", function () {
+        const open = ans.classList.toggle("visible");
+        btn.setAttribute("aria-expanded", String(open));
+        btn.textContent = open ? "Hide" : "Show";
+      });
+
+      card.appendChild(q);
+      card.appendChild(btn);
+      card.appendChild(ans);
+      wrap.appendChild(card);
+    });
+  })();
+</script>
 </body>
 </html>
 

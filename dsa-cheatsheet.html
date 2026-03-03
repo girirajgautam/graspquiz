@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Cheatsheet - Interview Revision | GraspQuiz</title>
+<meta name="description" content="DSA cheatsheet for coding interviews with core concepts, simple code, and output examples: arrays, linked list, stack, queue, trees, graphs, DP, and complexity.">
+<link rel="canonical" href="https://graspquiz.tech/dsa-cheatsheet.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GraspQuiz">
+<meta property="og:title" content="DSA Cheatsheet - Interview Revision | GraspQuiz">
+<meta property="og:description" content="DSA cheatsheet for interviews with core concepts, simple code, and output examples for fast revision.">
+<meta property="og:url" content="https://graspquiz.tech/dsa-cheatsheet.html">
+<meta property="og:image" content="https://graspquiz.tech/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DSA Cheatsheet - Interview Revision | GraspQuiz">
+<meta name="twitter:description" content="DSA cheatsheet for interviews with core concepts, simple code, and output examples for fast revision.">
+<meta name="twitter:image" content="https://graspquiz.tech/logo.svg">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+<meta name="theme-color" content="#0ea5e9">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="style.css">
+<style>
+  .sheet-wrap { width: min(1120px, 92%); margin: 30px auto 40px; }
+  .sheet-head { background: rgba(255, 255, 255, 0.88); border: 1px solid rgba(20, 33, 61, 0.1); border-radius: 16px; padding: 20px; box-shadow: 0 14px 40px rgba(20, 33, 61, 0.12); }
+  .sheet-head p { color: #5f6b84; margin-top: 8px; }
+  .sheet-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .sheet-grid { margin-top: 18px; display: grid; gap: 14px; }
+  .sheet-card { background: rgba(255, 255, 255, 0.88); border: 1px solid rgba(20, 33, 61, 0.1); border-radius: 16px; padding: 18px; box-shadow: 0 14px 40px rgba(20, 33, 61, 0.12); }
+  .sheet-card h2 { font-family: "Space Grotesk", sans-serif; font-size: 1.15rem; margin-bottom: 10px; }
+  .sheet-card p { color: #3f4c66; line-height: 1.6; margin-top: 8px; }
+  .sheet-card .easy { background: #f7fbff; border: 1px solid #d8eafe; border-radius: 10px; padding: 10px 12px; margin-top: 8px; }
+  .sheet-card pre { margin-top: 10px; padding: 12px; overflow-x: auto; border-radius: 12px; background: #0f172a; color: #e2e8f0; font-size: 0.88rem; line-height: 1.5; }
+  .sheet-card code { font-family: Consolas, "Courier New", monospace; }
+  .sheet-card table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .sheet-card th, .sheet-card td { border: 1px solid #dbe3f0; padding: 8px 10px; text-align: left; }
+  .sheet-card th { background: #eef3fb; }
+  @media (max-width: 600px) {
+    .sheet-card { padding: 14px; }
+    .sheet-card pre { font-size: 0.82rem; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-82ZQVTYV9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-82ZQVTYV9J');
+</script>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo"><img src="logo.svg" alt="GraspQuiz logo"></div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="c.html">C</a>
+    <a href="cpp.html">C++</a>
+    <a href="java.html">Java</a>
+    <a href="py.html">Python</a>
+    <a href="js.html">JavaScript</a>
+    <a href="dsa.html">DSA</a>
+    <a href="html.html">HTML</a>
+    <a href="sql.html">SQL</a>
+  </nav>
+</header>
+
+<main class="sheet-wrap">
+  <section class="sheet-head">
+    <h1>DSA Cheatsheet (Very Easy)</h1>
+    <p>Each topic is shown in 3 parts: <strong>Core concept</strong>, <strong>Simple code</strong>, and <strong>Output</strong>.</p>
+    <div class="sheet-actions">
+      <a class="lang-btn" href="javascript:history.back()">&larr; Back</a>
+      <a class="lang-btn" href="dsa.html">Start DSA Quiz</a>
+    </div>
+  </section>
+
+  <section class="sheet-grid">
+    <article class="sheet-card">
+      <h2>1. Arrays</h2>
+      <p><strong>Core concept:</strong> Array stores elements in continuous memory, so index access is fast.</p>
+      <p class="easy"><strong>Time:</strong> Access O(1), Search O(n).</p>
+<pre><code>arr = [10, 20, 30, 40]
+print(arr[2])</code></pre>
+      <p><strong>Output:</strong> <code>30</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>2. Two Pointers</h2>
+      <p><strong>Core concept:</strong> Use two indexes to reduce nested loops in sorted arrays/strings.</p>
+<pre><code>a = [1, 2, 3, 4, 6]
+target = 7
+l, r = 0, len(a)-1
+while l &lt; r:
+    s = a[l] + a[r]
+    if s == target:
+        print(l, r)
+        break
+    if s &lt; target:
+        l += 1
+    else:
+        r -= 1</code></pre>
+      <p><strong>Output:</strong> <code>0 4</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>3. Sliding Window</h2>
+      <p><strong>Core concept:</strong> Keep a moving window for subarray/substring problems.</p>
+<pre><code>a = [2,1,5,1,3,2]
+k = 3
+cur = sum(a[:k])
+best = cur
+for i in range(k, len(a)):
+    cur += a[i] - a[i-k]
+    best = max(best, cur)
+print(best)</code></pre>
+      <p><strong>Output:</strong> <code>9</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>4. Linked List</h2>
+      <p><strong>Core concept:</strong> Nodes connected by pointers; insertion/deletion is easy when pointer is known.</p>
+<pre><code># reverse linked list logic
+prev = None
+cur = head
+while cur:
+    nxt = cur.next
+    cur.next = prev
+    prev = cur
+    cur = nxt
+head = prev</code></pre>
+      <p><strong>Output:</strong> List is reversed.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>5. Stack</h2>
+      <p><strong>Core concept:</strong> LIFO (Last In First Out), useful in parentheses and next greater element problems.</p>
+<pre><code>s = []
+s.append(10)
+s.append(20)
+print(s.pop())</code></pre>
+      <p><strong>Output:</strong> <code>20</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>6. Queue</h2>
+      <p><strong>Core concept:</strong> FIFO (First In First Out), used heavily in BFS.</p>
+<pre><code>from collections import deque
+q = deque([1,2,3])
+q.append(4)
+print(q.popleft())</code></pre>
+      <p><strong>Output:</strong> <code>1</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>7. Binary Search</h2>
+      <p><strong>Core concept:</strong> Repeatedly divide sorted range into half.</p>
+      <p class="easy"><strong>Time:</strong> O(log n)</p>
+<pre><code>a = [1,3,5,7,9]
+x = 7
+l, r = 0, len(a)-1
+while l &lt;= r:
+    m = (l+r)//2
+    if a[m] == x:
+        print(m)
+        break
+    if a[m] &lt; x:
+        l = m+1
+    else:
+        r = m-1</code></pre>
+      <p><strong>Output:</strong> <code>3</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>8. Trees (DFS)</h2>
+      <p><strong>Core concept:</strong> DFS goes deep first; recursion is common.</p>
+<pre><code>def inorder(root):
+    if not root:
+        return
+    inorder(root.left)
+    print(root.val, end=" ")
+    inorder(root.right)</code></pre>
+      <p><strong>Output:</strong> Inorder traversal sequence.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>9. Graph BFS</h2>
+      <p><strong>Core concept:</strong> BFS visits level by level and finds shortest path in unweighted graph.</p>
+<pre><code>from collections import deque
+g = {0:[1,2], 1:[3], 2:[3], 3:[]}
+q = deque([0]); vis = {0}
+while q:
+    u = q.popleft()
+    print(u, end=" ")
+    for v in g[u]:
+        if v not in vis:
+            vis.add(v)
+            q.append(v)</code></pre>
+      <p><strong>Output:</strong> <code>0 1 2 3</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>10. Recursion & Backtracking</h2>
+      <p><strong>Core concept:</strong> Build solution step by step, undo step when path fails.</p>
+<pre><code>res = []
+def backtrack(path, nums):
+    if len(path) == len(nums):
+        res.append(path[:]); return
+    for x in nums:
+        if x in path:
+            continue
+        path.append(x)
+        backtrack(path, nums)
+        path.pop()</code></pre>
+      <p><strong>Output:</strong> Generates all permutations.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>11. Dynamic Programming</h2>
+      <p><strong>Core concept:</strong> Store repeated subproblem answers to avoid recomputation.</p>
+<pre><code># Fibonacci DP
+n = 6
+dp = [0,1] + [0]*(n-1)
+for i in range(2, n+1):
+    dp[i] = dp[i-1] + dp[i-2]
+print(dp[n])</code></pre>
+      <p><strong>Output:</strong> <code>8</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>12. Complexity Quick Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>Complexity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Array index access</td><td>O(1)</td></tr>
+          <tr><td>Array search</td><td>O(n)</td></tr>
+          <tr><td>Binary search</td><td>O(log n)</td></tr>
+          <tr><td>BFS/DFS (V+E)</td><td>O(V + E)</td></tr>
+          <tr><td>Sort</td><td>O(n log n)</td></tr>
+        </tbody>
+      </table>
+      <p class="easy"><strong>Interview tip:</strong> Always say time and space complexity after your solution.</p>
+    </article>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Copyright 2026 Grasp Coding Quiz. All rights reserved.</p>
+</footer>
+</body>
+</html>

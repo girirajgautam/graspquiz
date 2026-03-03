@@ -567,17 +567,22 @@ const quizLevels = {
   l1: buildLevelQuestions(l1QuestionPool, 0),
   l2: buildLevelQuestions(l2QuestionPool, 0),
   l3: buildLevelQuestions(l3QuestionPool, 0),
-  l4: buildLevelQuestions(l4QuestionPool, 0)
+  l4: buildLevelQuestions(l4QuestionPool, 0),
+  l5: buildLevelQuestions(l1QuestionPool, 7),
+  l6: buildLevelQuestions(l2QuestionPool, 9),
+  l7: buildLevelQuestions(l3QuestionPool, 11),
+  l8: buildLevelQuestions(l4QuestionPool, 13)
 };
 
 let currentLevel = "l1";
 let quizData = quizLevels[currentLevel];
 let currentQuestion = 0;
 let score = 0;
-const PASS_SCORE_BY_LEVEL = { l1: 16, l2: 18, l3: 20, l4: 22 };
-const LEVEL_ORDER = ["l1", "l2", "l3", "l4"];
+const PASS_SCORE_BY_LEVEL = { l1: 16, l2: 18, l3: 20, l4: 22, l5: 22, l6: 23, l7: 23, l8: 24 };
+const LEVEL_ORDER = ["l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8"];
 const unlockedLevels = new Set(LEVEL_ORDER);
 let quizInitialized = false;
+let lastFeedbackState = null;
 const API_BASE_URL = (
   window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
     ? "http://localhost:5000"
@@ -597,6 +602,8 @@ const explanationEl = document.getElementById("explanation");
 const nextBtn = document.getElementById("nextBtn");
 const resultEl = document.getElementById("result");
 const levelMetaEl = document.getElementById("levelMeta");
+const questionNavRowEl = document.getElementById("questionNavRow");
+const prevBtn = document.getElementById("prevBtn");
 const quizIntroEl = document.querySelector(".quiz-intro");
 const relatedQuizzesEl = document.querySelector(".related-quizzes");
 const backHomeBtnEl = document.querySelector("button[onclick*='index.html']");
@@ -616,6 +623,152 @@ const backToSetsBtn = (() => {
   else if (quizContainerEl) quizContainerEl.insertBefore(btn, quizContainerEl.firstChild);
   return btn;
 })();
+
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function buildLearnExplanation(questionText, correctAnswer, explanationText) {
+  const text = String(questionText || "").toLowerCase();
+  const answer = String(correctAnswer || "").trim();
+
+  if (text.includes("alt")) {
+    return {
+      concept: "The alt attribute provides a text alternative for images.",
+      why: "It improves accessibility and helps users when an image cannot load.",
+      steps: [
+        "Use meaningful text that describes image purpose.",
+        "For decorative images, keep alt empty: alt=\"\".",
+        "Do not stuff keywords in alt text."
+      ],
+      example: "<img src=\"profile.jpg\" alt=\"Student writing code on laptop\">",
+      pitfall: "Using alt like 'image123' gives poor accessibility."
+    };
+  }
+
+  if (text.includes("label") || text.includes("for' attribute") || text.includes("for attribute")) {
+    return {
+      concept: "A label should be linked to an input using for + id.",
+      why: "Clicking label focuses input and screen readers announce it correctly.",
+      steps: [
+        "Give input a unique id.",
+        "Set label for value to the same id.",
+        "Keep label text clear and specific."
+      ],
+      example: "<label for=\"email\">Email</label>\n<input id=\"email\" type=\"email\">",
+      pitfall: "Using label text without for/id reduces usability."
+    };
+  }
+
+  if (text.includes("semantic") || text.includes("<main>") || text.includes("<article>") || text.includes("<section>")) {
+    return {
+      concept: "Semantic tags describe meaning, not just layout.",
+      why: "They improve accessibility, SEO, and maintainability.",
+      steps: [
+        "Use header/nav/main/footer for page structure.",
+        "Use article for independent content.",
+        "Use section for thematic grouping."
+      ],
+      example: "<main>\n  <article>\n    <h2>Blog Post</h2>\n  </article>\n</main>",
+      pitfall: "Replacing everything with div makes structure harder to understand."
+    };
+  }
+
+  if (text.includes("form") || text.includes("required") || text.includes("method") || text.includes("action")) {
+    return {
+      concept: "Forms collect user input and submit data using method/action.",
+      why: "Correct setup ensures valid and secure data submission.",
+      steps: [
+        "Set action URL where data goes.",
+        "Use method GET for search and POST for sensitive data.",
+        "Use required/pattern for basic validation."
+      ],
+      example: "<form action=\"/submit\" method=\"post\">\n  <input name=\"name\" required>\n</form>",
+      pitfall: "Relying only on client-side validation is not enough."
+    };
+  }
+
+  if (text.includes("script") || text.includes("defer") || text.includes("module")) {
+    return {
+      concept: "Script loading strategy affects performance and behavior.",
+      why: "Using defer/module helps avoid render-blocking issues.",
+      steps: [
+        "Use defer for normal external scripts.",
+        "Use type=\"module\" for ES modules.",
+        "Place scripts to avoid blocking critical content."
+      ],
+      example: "<script src=\"app.js\" defer></script>\n<script type=\"module\" src=\"main.js\"></script>",
+      pitfall: "Inline heavy scripts in head can slow first render."
+    };
+  }
+
+  return {
+    concept: String(explanationText || "Use the correct HTML element/attribute based on purpose."),
+    why: "Interview HTML questions test semantics, accessibility, and correct structure.",
+    steps: [
+      "Identify what the question asks: structure, accessibility, form, or script behavior.",
+      "Map it to the standard HTML tag or attribute.",
+      "Reject options that are non-standard or non-semantic."
+    ],
+    example: "Question: " + String(questionText || "").trim() + "\nCorrect option: " + answer,
+    pitfall: "Choosing a visually similar tag without semantic meaning."
+  };
+}
+
+function showLearnMore(questionData, correctIndex) {
+  if (!explanationEl || !questionData) return;
+  const correctAnswer = questionData.answers[correctIndex];
+  const questionText = questionData.question;
+  const explanationText = questionData.explanation;
+  const learnInfo = buildLearnExplanation(questionText, correctAnswer, explanationText);
+
+  lastFeedbackState = {
+    className: explanationEl.className,
+    html: explanationEl.innerHTML,
+    questionData,
+    correctIndex,
+  };
+
+  explanationEl.className = "feedback-box feedback-learn";
+  explanationEl.innerHTML = `
+    <div class="learn-more-head">
+      <button type="button" class="learn-more-back">Back</button>
+      <span class="learn-more-badge">Learn More</span>
+    </div>
+    <p><strong>Question:</strong> ${escapeHtml(questionText)}</p>
+    <p><strong>Correct Answer:</strong> ${escapeHtml(correctAnswer)}</p>
+    <p><strong>Concept:</strong> ${escapeHtml(learnInfo.concept)}</p>
+    <p><strong>Why it matters:</strong> ${escapeHtml(learnInfo.why)}</p>
+    <p><strong>How to apply:</strong></p>
+    <ul>
+      ${learnInfo.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}
+    </ul>
+    <pre><code>${escapeHtml(learnInfo.example)}</code></pre>
+    <p><strong>Common mistake:</strong> ${escapeHtml(learnInfo.pitfall)}</p>
+  `;
+
+  const backBtn = explanationEl.querySelector(".learn-more-back");
+  if (!backBtn) return;
+  backBtn.addEventListener("click", () => {
+    if (!lastFeedbackState) return;
+    explanationEl.className = lastFeedbackState.className;
+    explanationEl.innerHTML = lastFeedbackState.html;
+    attachLearnMore(lastFeedbackState.questionData, lastFeedbackState.correctIndex);
+  });
+}
+
+function attachLearnMore(questionData, correctIndex) {
+  if (!explanationEl) return;
+  const learnMoreBtn = explanationEl.querySelector(".learn-more-btn");
+  if (!learnMoreBtn) return;
+  learnMoreBtn.addEventListener("click", () => showLearnMore(questionData, correctIndex));
+}
 
 function reportRuntimeError(message) {
   if (questionEl) questionEl.textContent = message;
@@ -670,6 +823,10 @@ function getPassScoreForLevel(level) {
 function updateLevelMeta() {
   levelMetaEl.textContent = `${formatLevel(currentLevel)} | Question ${currentQuestion + 1}/${quizData.length}`;
 }
+function updatePrevButton() {
+  if (!prevBtn) return;
+  prevBtn.disabled = currentQuestion === 0;
+}
 
 function setActiveLevelButton() {
   levelButtons.forEach((btn) => {
@@ -706,6 +863,7 @@ function loadQuestion() {
   snapToQuizTop();
   const q = quizData[currentQuestion];
   updateLevelMeta();
+  updatePrevButton();
   questionEl.textContent = q.question;
   answersEl.innerHTML = "";
   explanationEl.innerHTML = "";
@@ -747,6 +905,9 @@ function selectAnswer(index) {
       <div class="feedback-title">Right</div>
       <p><strong>${q.answers[correctIndex]}</strong> is correct.</p>
       <p>${q.explanation}</p>
+      <div class="feedback-actions">
+        <button type="button" class="learn-more-btn">Learn More</button>
+      </div>
     `;
   } else {
     explanationEl.className = "feedback-box feedback-wrong";
@@ -754,10 +915,14 @@ function selectAnswer(index) {
       <div class="feedback-title">Wrong</div>
       <p>Right answer: <strong>${q.answers[correctIndex]}</strong></p>
       <p>${q.explanation}</p>
+      <div class="feedback-actions">
+        <button type="button" class="learn-more-btn">Learn More</button>
+      </div>
     `;
   }
 
-  nextBtn.style.display = "inline-block";
+  attachLearnMore(q, correctIndex);
+nextBtn.style.display = "inline-block";
   snapToQuizTop();
 
   submitQuizRecord(currentQuestion + 1, false).catch((error) => {
@@ -819,6 +984,7 @@ function showResult() {
   explanationEl.style.display = "none";
   nextBtn.style.display = "none";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "block";
+  if (questionNavRowEl) questionNavRowEl.style.display = "none";
   levelMetaEl.textContent = `${formatLevel(currentLevel)} completed | Score ${score}/${quizData.length}`;
   setActiveLevelButton();
   const ruleText = passed
@@ -879,7 +1045,7 @@ function shareScore() {
 }
 function showLevelSelection() {
   if (levelPickerEl) levelPickerEl.style.display = "grid";
-  if (levelMetaEl) levelMetaEl.style.display = "none";
+  if (questionNavRowEl) questionNavRowEl.style.display = "none";
   if (quizIntroEl) quizIntroEl.style.display = "block";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "block";
   if (backToSetsBtn) backToSetsBtn.style.display = "none";
@@ -907,6 +1073,7 @@ function restartQuiz() {
   resultEl.innerHTML = "";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "none";
   if (backHomeBtnEl) backHomeBtnEl.style.display = "none";
+  if (questionNavRowEl) questionNavRowEl.style.display = "grid";
   loadQuestion();
 }
 
@@ -919,7 +1086,7 @@ function setLevel(level) {
   });
   submissionPromise = null;
   if (levelPickerEl) levelPickerEl.style.display = "none";
-  if (levelMetaEl) levelMetaEl.style.display = "block";
+  if (questionNavRowEl) questionNavRowEl.style.display = "grid";
   if (quizIntroEl) quizIntroEl.style.display = "none";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "none";
   if (backHomeBtnEl) backHomeBtnEl.style.display = "none";
@@ -963,6 +1130,14 @@ function initQuiz() {
     else showResult();
   };
 
+  
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      if (currentQuestion <= 0) return;
+      currentQuestion--;
+      loadQuestion();
+    });
+  }
   levelButtons.forEach((btn) => {
     btn.addEventListener("click", () => setLevel(btn.dataset.level));
   });

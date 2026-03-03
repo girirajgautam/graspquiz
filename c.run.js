@@ -563,21 +563,78 @@ function buildLevelQuestions(pool, offset) {
   });
 }
 
+function buildStrictLevelQuestions(pool, levelKey) {
+  const total = 25;
+  const uniqueQuestions = new Set(pool.map((q) => String(q.question).trim()));
+  if (pool.length < total || uniqueQuestions.size < total) {
+    console.error(`Strict pool check failed for ${levelKey}: need 25 unique questions.`);
+    return buildLevelQuestions(pool, 0);
+  }
+  return pool.slice(0, total).map((q) => ({
+    question: q.question,
+    answers: [...q.answers],
+    correct: q.correct,
+    explanation: q.explanation
+  }));
+}
+
+function buildShiftedUniquePool(bank, offset = 0, total = 25) {
+  const seen = new Set();
+  const unique = [];
+  bank.forEach((q) => {
+    const key = String(q.question || "").trim();
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    unique.push({
+      question: q.question,
+      answers: [...q.answers],
+      correct: q.correct,
+      explanation: q.explanation
+    });
+  });
+
+  if (unique.length < total) {
+    return unique;
+  }
+
+  const start = ((offset % unique.length) + unique.length) % unique.length;
+  const rotated = unique.slice(start).concat(unique.slice(0, start));
+  return rotated.slice(0, total);
+}
+
+const advancedCQuestionBank = [
+  ...l1QuestionPool,
+  ...l2QuestionPool,
+  ...l3QuestionPool,
+  ...l4QuestionPool
+];
+
+const l5QuestionPool = buildShiftedUniquePool(advancedCQuestionBank, 7, 25);
+const l6QuestionPool = buildShiftedUniquePool(advancedCQuestionBank, 19, 25);
+const l7QuestionPool = buildShiftedUniquePool(advancedCQuestionBank, 31, 25);
+const l8QuestionPool = buildShiftedUniquePool(advancedCQuestionBank, 43, 25);
+
 const quizLevels = {
   l1: buildLevelQuestions(l1QuestionPool, 0),
   l2: buildLevelQuestions(l2QuestionPool, 0),
   l3: buildLevelQuestions(l3QuestionPool, 0),
-  l4: buildLevelQuestions(l4QuestionPool, 0)
+  l4: buildLevelQuestions(l4QuestionPool, 0),
+  l5: buildStrictLevelQuestions(l5QuestionPool, "l5"),
+  l6: buildStrictLevelQuestions(l6QuestionPool, "l6"),
+  l7: buildStrictLevelQuestions(l7QuestionPool, "l7"),
+  l8: buildStrictLevelQuestions(l8QuestionPool, "l8")
 };
 
 let currentLevel = "l1";
 let quizData = quizLevels[currentLevel];
 let currentQuestion = 0;
 let score = 0;
-const PASS_SCORE_BY_LEVEL = { l1: 16, l2: 18, l3: 20, l4: 22 };
-const LEVEL_ORDER = ["l1", "l2", "l3", "l4"];
+let userSelections = [];
+const PASS_SCORE_BY_LEVEL = { l1: 14, l2: 15, l3: 16, l4: 17, l5: 18, l6: 19, l7: 20, l8: 21 };
+const LEVEL_ORDER = ["l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8"];
 const unlockedLevels = new Set(LEVEL_ORDER);
 let quizInitialized = false;
+let lastFeedbackState = null;
 const API_BASE_URL = (
   window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
     ? "http://localhost:5000"
@@ -597,6 +654,8 @@ const explanationEl = document.getElementById("explanation");
 const nextBtn = document.getElementById("nextBtn");
 const resultEl = document.getElementById("result");
 const levelMetaEl = document.getElementById("levelMeta");
+const questionNavRowEl = document.getElementById("questionNavRow");
+const prevBtn = document.getElementById("prevBtn");
 const quizIntroEl = document.querySelector(".quiz-intro");
 const relatedQuizzesEl = document.querySelector(".related-quizzes");
 const backHomeBtnEl = document.querySelector("button[onclick*='index.html']");
@@ -616,6 +675,243 @@ const backToSetsBtn = (() => {
   else if (quizContainerEl) quizContainerEl.insertBefore(btn, quizContainerEl.firstChild);
   return btn;
 })();
+
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function buildLearnExplanation(questionText, correctAnswer, explanationText) {
+  const text = String(questionText || "").toLowerCase();
+  const answer = String(correctAnswer || "").trim();
+
+  if (text.includes("printf") || answer.includes("printf")) {
+    return {
+      concept: "`printf` writes formatted text to standard output.",
+      why: "In C, output is explicit. You use format specifiers like `%d`, `%f`, `%c` to print variables safely.",
+      steps: [
+        "Include `stdio.h` for `printf` declaration.",
+        "Choose correct format specifier for variable type.",
+        "Pass variables in same order as format specifiers."
+      ],
+      example: [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int x = 10;",
+        "    printf(\"x = %d\\n\", x);",
+        "    return 0;",
+        "}"
+      ].join("\n"),
+      output: "x = 10",
+      pitfalls: ["Using wrong format specifier (e.g., `%f` for int).", "Forgetting `\\n` in interactive outputs."]
+    };
+  }
+
+  if (text.includes("scanf") || answer.includes("scanf")) {
+    return {
+      concept: "`scanf` reads input and stores values in variables.",
+      why: "C has pass-by-value, so `scanf` needs memory addresses (`&var`) to modify variables.",
+      steps: [
+        "Declare variable with correct type.",
+        "Use matching format specifier.",
+        "Pass address using `&` for non-array variables."
+      ],
+      example: [
+        "#include <stdio.h>",
+        "int main(void) {",
+        "    int n;",
+        "    scanf(\"%d\", &n);",
+        "    printf(\"%d\\n\", n);",
+        "}"
+      ].join("\n"),
+      output: "Input: 42 -> Output: 42",
+      pitfalls: ["Using `scanf(\"%d\", n)` without `&`.", "Using `%d` for a float variable."]
+    };
+  }
+
+  if (text.includes("pointer") || answer === "*") {
+    return {
+      concept: "Pointer stores address; dereference (`*`) accesses value at that address.",
+      why: "Pointers are core in C for arrays, function calls, dynamic memory, and performance control.",
+      steps: [
+        "Create normal variable.",
+        "Store its address in pointer using `&`.",
+        "Use `*ptr` to read/write pointed value."
+      ],
+      example: [
+        "int a = 5;",
+        "int *p = &a;",
+        "printf(\"%d\\n\", *p);",
+        "*p = 8;",
+        "printf(\"%d\\n\", a);"
+      ].join("\n"),
+      output: "5\n8",
+      pitfalls: ["Dereferencing uninitialized pointer.", "Using pointer after object lifetime ends."]
+    };
+  }
+
+  if (text.includes("malloc") || text.includes("free") || answer.includes("free")) {
+    return {
+      concept: "`malloc` allocates heap memory; `free` releases it.",
+      why: "Dynamic memory is needed when size is known at runtime. Not freeing memory causes leaks.",
+      steps: [
+        "Allocate with correct byte size (`count * sizeof(type)`).",
+        "Check for NULL before using memory.",
+        "Free exactly once, then set pointer to NULL."
+      ],
+      example: [
+        "#include <stdlib.h>",
+        "int *arr = malloc(5 * sizeof(int));",
+        "if (!arr) return 1;",
+        "arr[0] = 10;",
+        "arr[1] = 20;",
+        "free(arr);",
+        "arr = NULL;"
+      ].join("\n"),
+      output: "No visible output; memory allocated and safely released.",
+      pitfalls: ["Forgetting `free`.", "Double-free on same pointer.", "Using memory after free."]
+    };
+  }
+
+  if (text.includes("undefined behavior") || answer.toLowerCase().includes("undefined")) {
+    return {
+      concept: "Undefined behavior (UB) means C standard does not define program result.",
+      why: "UB can appear to work locally but fail on another compiler/optimization level.",
+      steps: [
+        "Identify operations that break C rules (double free, invalid access, unsequenced updates).",
+        "Rewrite code to make behavior explicit and sequenced.",
+        "Treat UB warnings as serious bugs."
+      ],
+      example: [
+        "int x = 1;",
+        "int y = x++ + x++;  // undefined behavior"
+      ].join("\n"),
+      output: "Output is unpredictable; compiler-dependent.",
+      pitfalls: ["Assuming one specific output for UB code."]
+    };
+  }
+
+  if (text.includes("array") || answer === "0") {
+    return {
+      concept: "C arrays use zero-based indexing.",
+      why: "Pointer arithmetic and array indexing are linked (`a[i]` == `*(a + i)`).",
+      steps: [
+        "First element is index 0.",
+        "Last valid index is `size - 1`.",
+        "Out-of-bounds access causes UB."
+      ],
+      example: [
+        "int a[3] = {10, 20, 30};",
+        "printf(\"%d\\n\", a[0]);",
+        "printf(\"%d\\n\", a[2]);"
+      ].join("\n"),
+      output: "10\n30",
+      pitfalls: ["Using index 3 in array of size 3.", "Confusing 1-based indexing with C arrays."]
+    };
+  }
+
+  if (text.includes("header") || answer.includes(".h")) {
+    return {
+      concept: "Header files declare functions/types/macros shared across files.",
+      why: "Compiler must know function signatures before use to type-check calls.",
+      steps: [
+        "Include needed standard header at top.",
+        "Match functions to correct headers.",
+        "Use include guards for custom headers."
+      ],
+      example: [
+        "#include <stdio.h>   // printf, scanf",
+        "#include <stdlib.h>  // malloc, free"
+      ].join("\n"),
+      output: "Compilation succeeds with known declarations.",
+      pitfalls: ["Calling library function without proper header include."]
+    };
+  }
+
+  return {
+    concept: String(explanationText || "Apply the rule based on C syntax and memory behavior."),
+    why: "Interview MCQs usually test exact C language rules and edge cases.",
+    steps: [
+      "Read keyword/operator carefully.",
+      "Map it to C rule.",
+      "Eliminate options that violate type/memory rules."
+    ],
+    example: [
+      "Question:",
+      String(questionText || "").trim(),
+      "",
+      "Correct option:",
+      answer,
+      "",
+      "Tip:",
+      "Remember the C rule behind this option and apply it in similar questions."
+    ].join("\n"),
+    output: "Depends on question context.",
+    pitfalls: ["Choosing option by guess instead of C rule."]
+  };
+}
+
+function renderList(items) {
+  if (!Array.isArray(items) || items.length === 0) return "";
+  return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+}
+
+function showLearnMore(questionData, correctIndex) {
+  if (!explanationEl || !questionData) return;
+  const correctAnswer = questionData.answers[correctIndex];
+  const questionText = questionData.question;
+  const explanationText = questionData.explanation;
+  const learnInfo = buildLearnExplanation(questionText, correctAnswer, explanationText);
+
+  lastFeedbackState = {
+    className: explanationEl.className,
+    html: explanationEl.innerHTML,
+    questionData,
+    correctIndex,
+  };
+
+  explanationEl.className = "feedback-box feedback-learn";
+  explanationEl.innerHTML = `
+    <div class="learn-more-head">
+      <button type="button" class="learn-more-back">Back</button>
+      <span class="learn-more-badge">Learn More</span>
+    </div>
+    <p><strong>Question:</strong> ${escapeHtml(questionText)}</p>
+    <p><strong>Correct Answer:</strong> ${escapeHtml(correctAnswer)}</p>
+    <p><strong>Why:</strong> ${escapeHtml(explanationText)}</p>
+    <p><strong>Concept:</strong> ${escapeHtml(learnInfo.concept)}</p>
+    <p><strong>Why this matters:</strong> ${escapeHtml(learnInfo.why || "")}</p>
+    <p><strong>Step-by-step:</strong></p>
+    ${renderList(learnInfo.steps || [])}
+    <p><strong>Example code:</strong></p>
+    <pre><code>${escapeHtml(learnInfo.example || "")}</code></pre>
+    <p><strong>Expected output:</strong></p>
+    <pre><code>${escapeHtml(learnInfo.output || "")}</code></pre>
+    <p><strong>Common mistakes:</strong></p>
+    ${renderList(learnInfo.pitfalls || [])}
+  `;
+
+  const backBtn = explanationEl.querySelector(".learn-more-back");
+  if (!backBtn) return;
+  backBtn.addEventListener("click", () => {
+    if (!lastFeedbackState) return;
+    explanationEl.className = lastFeedbackState.className;
+    explanationEl.innerHTML = lastFeedbackState.html;
+    attachLearnMore(lastFeedbackState.questionData, lastFeedbackState.correctIndex);
+  });
+}
+
+function attachLearnMore(questionData, correctIndex) {
+  if (!explanationEl) return;
+  const learnMoreBtn = explanationEl.querySelector(".learn-more-btn");
+  if (!learnMoreBtn) return;
+  learnMoreBtn.addEventListener("click", () => showLearnMore(questionData, correctIndex));
+}
 
 function reportRuntimeError(message) {
   if (questionEl) questionEl.textContent = message;
@@ -671,6 +967,11 @@ function updateLevelMeta() {
   levelMetaEl.textContent = `${formatLevel(currentLevel)} | Question ${currentQuestion + 1}/${quizData.length}`;
 }
 
+function updatePrevButton() {
+  if (!prevBtn) return;
+  prevBtn.disabled = currentQuestion === 0;
+}
+
 function setActiveLevelButton() {
   levelButtons.forEach((btn) => {
     const level = btn.dataset.level;
@@ -706,6 +1007,7 @@ function loadQuestion() {
   snapToQuizTop();
   const q = quizData[currentQuestion];
   updateLevelMeta();
+  updatePrevButton();
   questionEl.textContent = q.question;
   answersEl.innerHTML = "";
   explanationEl.innerHTML = "";
@@ -719,11 +1021,57 @@ function loadQuestion() {
     btn.onclick = () => selectAnswer(index);
     answersEl.appendChild(btn);
   });
+
+  const selectedIndex = userSelections[currentQuestion];
+  if (selectedIndex === null || selectedIndex === undefined) return;
+
+  const correctIndex = q.correct;
+  const buttons = answersEl.querySelectorAll("button");
+  buttons.forEach((btn, i) => {
+    if (i === correctIndex) {
+      btn.style.background = "#16a34a";
+      btn.style.color = "#ffffff";
+    } else if (i === selectedIndex) {
+      btn.style.background = "#dc2626";
+      btn.style.color = "#ffffff";
+    } else {
+      btn.style.background = "#cbd5e1";
+      btn.style.color = "#1e293b";
+    }
+    btn.disabled = true;
+  });
+
+  if (selectedIndex === correctIndex) {
+    explanationEl.className = "feedback-box feedback-correct";
+    explanationEl.innerHTML = `
+      <div class="feedback-title">Right</div>
+      <p><strong>${q.answers[correctIndex]}</strong> is correct.</p>
+      <p>${q.explanation}</p>
+      <div class="feedback-actions">
+        <button type="button" class="learn-more-btn">Learn More</button>
+      </div>
+    `;
+  } else {
+    explanationEl.className = "feedback-box feedback-wrong";
+    explanationEl.innerHTML = `
+      <div class="feedback-title">Wrong</div>
+      <p>Right answer: <strong>${q.answers[correctIndex]}</strong></p>
+      <p>${q.explanation}</p>
+      <div class="feedback-actions">
+        <button type="button" class="learn-more-btn">Learn More</button>
+      </div>
+    `;
+  }
+
+  attachLearnMore(q, correctIndex);
+  nextBtn.style.display = "inline-block";
 }
 
 function selectAnswer(index) {
   const q = quizData[currentQuestion];
   const correctIndex = q.correct;
+  if (userSelections[currentQuestion] !== null && userSelections[currentQuestion] !== undefined) return;
+  userSelections[currentQuestion] = index;
   if (index === correctIndex) score++;
 
   const buttons = answersEl.querySelectorAll("button");
@@ -747,6 +1095,9 @@ function selectAnswer(index) {
       <div class="feedback-title">Right</div>
       <p><strong>${q.answers[correctIndex]}</strong> is correct.</p>
       <p>${q.explanation}</p>
+      <div class="feedback-actions">
+        <button type="button" class="learn-more-btn">Learn More</button>
+      </div>
     `;
   } else {
     explanationEl.className = "feedback-box feedback-wrong";
@@ -754,10 +1105,14 @@ function selectAnswer(index) {
       <div class="feedback-title">Wrong</div>
       <p>Right answer: <strong>${q.answers[correctIndex]}</strong></p>
       <p>${q.explanation}</p>
+      <div class="feedback-actions">
+        <button type="button" class="learn-more-btn">Learn More</button>
+      </div>
     `;
   }
 
-  nextBtn.style.display = "inline-block";
+  attachLearnMore(q, correctIndex);
+nextBtn.style.display = "inline-block";
   snapToQuizTop();
 
   submitQuizRecord(currentQuestion + 1, false).catch((error) => {
@@ -817,6 +1172,7 @@ function showResult() {
   questionEl.style.display = "none";
   answersEl.style.display = "none";
   explanationEl.style.display = "none";
+  if (questionNavRowEl) questionNavRowEl.style.display = "none";
   nextBtn.style.display = "none";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "block";
   levelMetaEl.textContent = `${formatLevel(currentLevel)} completed | Score ${score}/${quizData.length}`;
@@ -880,7 +1236,7 @@ function shareScore() {
 }
 function showLevelSelection() {
   if (levelPickerEl) levelPickerEl.style.display = "grid";
-  if (levelMetaEl) levelMetaEl.style.display = "none";
+  if (questionNavRowEl) questionNavRowEl.style.display = "none";
   if (quizIntroEl) quizIntroEl.style.display = "block";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "block";
   if (backToSetsBtn) backToSetsBtn.style.display = "none";
@@ -900,6 +1256,7 @@ function restartQuiz() {
   submissionPromise = null;
   currentQuestion = 0;
   score = 0;
+  userSelections = Array(quizData.length).fill(null);
   questionEl.style.display = "block";
   answersEl.style.display = "grid";
   explanationEl.style.display = "block";
@@ -908,6 +1265,7 @@ function restartQuiz() {
   resultEl.innerHTML = "";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "none";
   if (backHomeBtnEl) backHomeBtnEl.style.display = "none";
+  if (questionNavRowEl) questionNavRowEl.style.display = "grid";
   loadQuestion();
 }
 
@@ -920,7 +1278,7 @@ function setLevel(level) {
   });
   submissionPromise = null;
   if (levelPickerEl) levelPickerEl.style.display = "none";
-  if (levelMetaEl) levelMetaEl.style.display = "block";
+  if (questionNavRowEl) questionNavRowEl.style.display = "grid";
   if (quizIntroEl) quizIntroEl.style.display = "none";
   if (relatedQuizzesEl) relatedQuizzesEl.style.display = "none";
   if (backHomeBtnEl) backHomeBtnEl.style.display = "none";
@@ -930,6 +1288,7 @@ function setLevel(level) {
   quizData = quizLevels[currentLevel];
   currentQuestion = 0;
   score = 0;
+  userSelections = Array(quizData.length).fill(null);
 
   questionEl.style.display = "block";
   answersEl.style.display = "grid";
@@ -963,6 +1322,14 @@ function initQuiz() {
     if (currentQuestion < quizData.length) loadQuestion();
     else showResult();
   };
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      if (currentQuestion <= 0) return;
+      currentQuestion--;
+      loadQuestion();
+    });
+  }
 
   levelButtons.forEach((btn) => {
     btn.addEventListener("click", () => setLevel(btn.dataset.level));

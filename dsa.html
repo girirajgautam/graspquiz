@@ -77,7 +77,7 @@
 <section class="quiz-section">
   <div class="quiz-container">
     <h1>Data Structures & Algorithms Quiz</h1>
-    <h2 class="quiz-subtitle">Choose a level and start practicing with 25 questions per level.</h2>
+    <h2 class="quiz-subtitle">Choose a set and start practicing with 25 questions per set.</h2>
     <div class="quiz-top-actions">
       <button type="button" onclick="window.location.href='index.html'">Back to Home</button>
       <button type="button" onclick="window.location.href='dsa-learn.html'">Learn</button>
@@ -85,7 +85,7 @@
 
     <h3 class="level-title">Data Structures & Algorithms Quiz</h3>
     <div class="quiz-intro">
-      <p>Practice arrays, trees, graphs, hashing, and complexity topics across 4 levels (Easy to Expert), with 25 questions per level.</p>
+      <p>Practice arrays, trees, graphs, hashing, and complexity topics across 8 sets (Easy to Master), with 25 questions per set.</p>
     </div>
     <div id="levelPicker" class="level-picker">
       <div class="level-card" data-level-card="l1">
@@ -116,12 +116,48 @@
         <div class="level-card-head"><h4>Set 4</h4><span>High Priority 4</span></div>
         <div class="level-card-stats">
           <div><strong>25</strong><small>Questions</small></div>
-          <div><strong>Expert</strong><small>Difficulty</small></div>
+          <div><strong>Hard</strong><small>Difficulty</small></div>
         </div>
         <button class="level-btn" data-level="l4" type="button">Start Now -></button>
       </div>
+      <div class="level-card" data-level-card="l5">
+        <div class="level-card-head"><h4>Set 5</h4><span>High Priority 5</span></div>
+        <div class="level-card-stats">
+          <div><strong>25</strong><small>Questions</small></div>
+          <div><strong>Advanced</strong><small>Difficulty</small></div>
+        </div>
+        <button class="level-btn" data-level="l5" type="button">Start Now -></button>
+      </div>
+      <div class="level-card" data-level-card="l6">
+        <div class="level-card-head"><h4>Set 6</h4><span>High Priority 6</span></div>
+        <div class="level-card-stats">
+          <div><strong>25</strong><small>Questions</small></div>
+          <div><strong>Advanced+</strong><small>Difficulty</small></div>
+        </div>
+        <button class="level-btn" data-level="l6" type="button">Start Now -></button>
+      </div>
+      <div class="level-card" data-level-card="l7">
+        <div class="level-card-head"><h4>Set 7</h4><span>High Priority 7</span></div>
+        <div class="level-card-stats">
+          <div><strong>25</strong><small>Questions</small></div>
+          <div><strong>Expert</strong><small>Difficulty</small></div>
+        </div>
+        <button class="level-btn" data-level="l7" type="button">Start Now -></button>
+      </div>
+      <div class="level-card" data-level-card="l8">
+        <div class="level-card-head"><h4>Set 8</h4><span>High Priority 8</span></div>
+        <div class="level-card-stats">
+          <div><strong>25</strong><small>Questions</small></div>
+          <div><strong>Master</strong><small>Difficulty</small></div>
+        </div>
+        <button class="level-btn" data-level="l8" type="button">Start Now -></button>
+      </div>
     </div>
-    <div id="levelMeta" class="level-meta"></div>
+        <div id="questionNavRow" class="question-nav-row">
+      <button id="prevBtn" class="prev-btn" type="button" aria-label="Previous question">&larr;</button>
+      <div id="levelMeta" class="level-meta"></div>
+      <span class="question-nav-spacer" aria-hidden="true"></span>
+    </div>
     <div id="question">Question text will appear here</div>
     <div id="answers"></div>
     <div id="explanation"></div>

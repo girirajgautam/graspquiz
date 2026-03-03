@@ -32,6 +32,77 @@
   .learn-q { font-weight: 800; margin-bottom: 8px; }
   .learn-answer { display: inline-block; font-weight: 700; color: #fff; background: linear-gradient(120deg, #16a34a, #15803d); padding: 6px 10px; border-radius: 999px; margin-bottom: 8px; }
   .learn-explain { color: #13233f; line-height: 1.6; }
+  .faq-wrap { margin-top: 16px; }
+  .quick-revision { margin-top: 16px; background: rgba(255,255,255,0.9); border: 1px solid rgba(19,35,63,0.12); border-radius: 14px; padding: 14px; }
+  .quick-revision p { color: #1f3458; margin-bottom: 8px; }
+  .quick-revision .faq-grid { margin-top: 10px; }
+  .quick-revision .quick-cta { margin-top: 12px; }
+  .quick-revision .quick-cta a { display: inline-block; border-radius: 999px; padding: 8px 12px; text-decoration: none; color: #fff; background: linear-gradient(120deg, #0ea5e9, #0284c7); font-weight: 700; }
+  .faq-head { background: rgba(255,255,255,0.88); border: 1px solid rgba(19,35,63,0.12); border-radius: 14px; padding: 14px; margin-bottom: 12px; }
+  .faq-head p { color: #5f6b84; margin-top: 6px; }
+  .faq-grid { display: grid; gap: 12px; }
+  .faq-card { background: rgba(255,255,255,0.9); border: 1px solid rgba(19,35,63,0.12); border-radius: 12px; padding: 12px; }
+  .faq-question { font-weight: 800; color: #13233f; line-height: 1.5; margin-bottom: 8px; }
+  .faq-toggle {
+    border: none;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font-weight: 700;
+    font-size: 0.76rem;
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    width: auto;
+    background: linear-gradient(120deg, #0f4c81, #1e3a8a);
+    box-shadow: 0 6px 14px rgba(30, 58, 138, 0.22);
+  }
+  .faq-answer {
+    margin-top: 10px;
+    border-top: 1px solid #c6d8f5;
+    padding-top: 10px;
+    color: #0f274d;
+    line-height: 1.6;
+    display: none;
+  }
+  .faq-answer.visible { display: block; }
+  .faq-block {
+    background: #f8fbff;
+    border: 1px solid #d6e3f8;
+    border-left: 4px solid #1e3a8a;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .faq-block + .faq-block { margin-top: 10px; }
+  .faq-block p { margin: 0; color: #0f274d; font-weight: 600; }
+  .faq-label {
+    display: inline-block;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: #0f2e67;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 4px 9px;
+    margin-bottom: 6px;
+  }
+  .faq-answer pre {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #0f172a;
+    color: #e2e8f0;
+    overflow-x: auto;
+    font-size: 0.84rem;
+  }
+  .faq-answer code { font-family: Consolas, "Courier New", monospace; }
+  @media (max-width: 600px) {
+    .faq-card { padding: 10px; }
+    .faq-toggle { font-size: 0.74rem; padding: 4px 8px; }
+  }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-82ZQVTYV9J"></script>
@@ -65,9 +136,16 @@
     <div class="learn-actions"><a id="backQuiz" href="c.html">Back to Quiz</a></div>
   </div>
   <div id="learnGrid" class="learn-grid"></div>
+
+  <div class="quick-revision">
+    <p><strong>Use this list for fast interview revision, then solve the C quiz.</strong></p>
+    <p>Click <strong>Show</strong> below any question to open detailed explanation.</p>
+    <div id="quickRevisionFaq" class="faq-grid"></div>
+    <div class="quick-cta"><a href="c.html">Practice C Quiz Now</a></div>
+  </div>
 </section>
 
-<script src="c.js"></script>
+<script src="c-interview-faq.js?v=6"></script>
 <script src="study-pdf.js"></script>
 </body>
 </html>

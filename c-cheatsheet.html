@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C Cheatsheet - Interview Revision | GraspQuiz</title>
+<meta name="description" content="C programming cheatsheet for interviews with core concepts, simple code, and output examples: pointers, memory, structs, files, macros, and more.">
+<link rel="canonical" href="https://graspquiz.tech/c-cheatsheet.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GraspQuiz">
+<meta property="og:title" content="C Cheatsheet - Interview Revision | GraspQuiz">
+<meta property="og:description" content="C cheatsheet for interviews with core concepts, simple code, and output examples for fast revision.">
+<meta property="og:url" content="https://graspquiz.tech/c-cheatsheet.html">
+<meta property="og:image" content="https://graspquiz.tech/logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="C Cheatsheet - Interview Revision | GraspQuiz">
+<meta name="twitter:description" content="C cheatsheet for interviews with core concepts, simple code, and output examples for fast revision.">
+<meta name="twitter:image" content="https://graspquiz.tech/logo.svg">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+<meta name="theme-color" content="#0ea5e9">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="style.css">
+<style>
+  .sheet-wrap { width: min(1120px, 92%); margin: 30px auto 40px; }
+  .sheet-head { background: rgba(255, 255, 255, 0.88); border: 1px solid rgba(20, 33, 61, 0.1); border-radius: 16px; padding: 20px; box-shadow: 0 14px 40px rgba(20, 33, 61, 0.12); }
+  .sheet-head p { color: #5f6b84; margin-top: 8px; }
+  .sheet-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .sheet-grid { margin-top: 18px; display: grid; gap: 14px; }
+  .sheet-card { background: rgba(255, 255, 255, 0.88); border: 1px solid rgba(20, 33, 61, 0.1); border-radius: 16px; padding: 18px; box-shadow: 0 14px 40px rgba(20, 33, 61, 0.12); }
+  .sheet-card h2 { font-family: "Space Grotesk", sans-serif; font-size: 1.15rem; margin-bottom: 10px; }
+  .sheet-card h3 { font-family: "Space Grotesk", sans-serif; font-size: 1rem; margin: 10px 0 8px; }
+  .sheet-card p { color: #3f4c66; line-height: 1.6; margin-top: 8px; }
+  .sheet-card .easy { background: #f7fbff; border: 1px solid #d8eafe; border-radius: 10px; padding: 10px 12px; margin-top: 8px; }
+  .sheet-card pre { margin-top: 10px; padding: 12px; overflow-x: auto; border-radius: 12px; background: #0f172a; color: #e2e8f0; font-size: 0.88rem; line-height: 1.5; }
+  .sheet-card code { font-family: Consolas, "Courier New", monospace; }
+  .sheet-card ul { margin: 8px 0 0 18px; color: #3f4c66; }
+  .sheet-card table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .sheet-card th, .sheet-card td { border: 1px solid #dbe3f0; padding: 8px 10px; text-align: left; }
+  .sheet-card th { background: #eef3fb; }
+  @media (max-width: 600px) {
+    .sheet-card { padding: 14px; }
+    .sheet-card pre { font-size: 0.82rem; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-82ZQVTYV9J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-82ZQVTYV9J');
+</script>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo"><img src="logo.svg" alt="GraspQuiz logo"></div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="c.html">C</a>
+    <a href="cpp.html">C++</a>
+    <a href="java.html">Java</a>
+    <a href="py.html">Python</a>
+    <a href="js.html">JavaScript</a>
+    <a href="dsa.html">DSA</a>
+    <a href="html.html">HTML</a>
+    <a href="sql.html">SQL</a>
+  </nav>
+</header>
+
+<main class="sheet-wrap">
+  <section class="sheet-head">
+    <h1>C Cheatsheet (Very Easy)</h1>
+    <p>Each topic is shown in 3 parts: <strong>Core concept</strong>, <strong>Simple code</strong>, and <strong>Output</strong>.</p>
+    <div class="sheet-actions">
+      <a class="lang-btn" href="javascript:history.back()">&larr; Back</a>
+      <a class="lang-btn" href="c.html">Start C Quiz</a>
+    </div>
+  </section>
+
+  <section class="sheet-grid">
+    <article class="sheet-card">
+      <h2>1. Declaration vs Definition</h2>
+      <p><strong>Core concept:</strong> Declaration tells type/name exists. Definition creates storage or function body.</p>
+      <p class="easy"><strong>Remember:</strong> Declare many times, define once.</p>
+<pre><code>extern int x;   // declaration
+int x = 10;     // definition</code></pre>
+      <p><strong>Output:</strong> No output. This is compile/link behavior.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>2. Basic Types and Format Specifiers</h2>
+      <p><strong>Core concept:</strong> Use correct format specifier in <code>printf</code>/<code>scanf</code> for each type.</p>
+      <p class="easy"><strong>Common:</strong> <code>%d</code> int, <code>%f</code> float, <code>%c</code> char, <code>%s</code> string.</p>
+<pre><code>int age = 20;
+float pi = 3.14f;
+printf("%d %.2f\n", age, pi);</code></pre>
+      <p><strong>Output:</strong> <code>20 3.14</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>3. Pointers</h2>
+      <p><strong>Core concept:</strong> Pointer stores memory address of another variable.</p>
+      <p class="easy"><strong>Symbols:</strong> <code>&amp;</code> gives address, <code>*</code> accesses value at address.</p>
+<pre><code>int a = 5;
+int *p = &amp;a;
+printf("%d\n", *p);</code></pre>
+      <p><strong>Output:</strong> <code>5</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>4. Arrays and Strings</h2>
+      <p><strong>Core concept:</strong> Arrays store same-type values in contiguous memory. String is char array ending with <code>\0</code>.</p>
+<pre><code>int arr[3] = {10, 20, 30};
+char name[] = "C";
+printf("%d %s\n", arr[1], name);</code></pre>
+      <p><strong>Output:</strong> <code>20 C</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>5. Struct, Union, Enum</h2>
+      <p><strong>Core concept:</strong> <code>struct</code> groups fields, <code>union</code> shares memory, <code>enum</code> gives named constants.</p>
+<pre><code>struct Student { int id; char grade; };
+enum Day { MON, TUE, WED };
+struct Student s = {1, 'A'};
+printf("%d %c %d\n", s.id, s.grade, WED);</code></pre>
+      <p><strong>Output:</strong> <code>1 A 2</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>6. Storage Classes</h2>
+      <p><strong>Core concept:</strong> Storage class controls lifetime, scope, and linkage.</p>
+      <ul>
+        <li><code>auto</code>: default local variable</li>
+        <li><code>static</code>: keeps value between function calls</li>
+        <li><code>extern</code>: variable defined in another file</li>
+        <li><code>register</code>: compiler hint for CPU register</li>
+      </ul>
+<pre><code>void counter() {
+  static int c = 0;
+  c++;
+  printf("%d\n", c);
+}</code></pre>
+      <p><strong>Output:</strong> Calling twice prints <code>1</code> then <code>2</code>.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>7. Dynamic Memory</h2>
+      <p><strong>Core concept:</strong> Heap memory is allocated at runtime with <code>malloc/calloc/realloc</code> and released using <code>free</code>.</p>
+<pre><code>int *a = (int*)malloc(3 * sizeof(int));
+a[0] = 7; a[1] = 8; a[2] = 9;
+printf("%d %d %d\n", a[0], a[1], a[2]);
+free(a);</code></pre>
+      <p><strong>Output:</strong> <code>7 8 9</code></p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>8. File Handling</h2>
+      <p><strong>Core concept:</strong> Use <code>fopen</code>, <code>fprintf</code>/<code>fscanf</code>, and <code>fclose</code> for files.</p>
+<pre><code>FILE *fp = fopen("note.txt", "w");
+fprintf(fp, "Hello C");
+fclose(fp);</code></pre>
+      <p><strong>Output:</strong> Creates file <code>note.txt</code> with text <code>Hello C</code>.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>9. Preprocessor and Macros</h2>
+      <p><strong>Core concept:</strong> Preprocessor runs before compilation. Macros are text replacements.</p>
+<pre><code>#define SQUARE(x) ((x) * (x))
+printf("%d\n", SQUARE(4));</code></pre>
+      <p><strong>Output:</strong> <code>16</code></p>
+      <p class="easy"><strong>Tip:</strong> Always use parentheses in macros.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>10. Function Pointers and qsort</h2>
+      <p><strong>Core concept:</strong> Function pointer stores function address. Useful in callbacks like <code>qsort</code>.</p>
+<pre><code>int cmp(const void *a, const void *b) {
+  return (*(int*)a - *(int*)b);
+}
+int arr[] = {3,1,2};
+qsort(arr, 3, sizeof(int), cmp);</code></pre>
+      <p><strong>Output:</strong> Array becomes sorted: <code>1 2 3</code>.</p>
+    </article>
+
+    <article class="sheet-card">
+      <h2>11. Bitwise Operators</h2>
+      <p><strong>Core concept:</strong> Bitwise operations work directly on binary bits.</p>
+<pre><code>int a = 6;   // 110
+int b = 3;   // 011
+printf("%d\n", a &amp; b);  // 2</code></pre>
+      <p><strong>Output:</strong> <code>2</code></p>
+      <ul>
+        <li><code>&amp;</code> AND</li>
+        <li><code>|</code> OR</li>
+        <li><code>^</code> XOR</li>
+        <li><code>&lt;&lt;</code> left shift</li>
+        <li><code>&gt;&gt;</code> right shift</li>
+      </ul>
+    </article>
+
+    <article class="sheet-card">
+      <h2>12. Complexity and Safety Checklist</h2>
+      <p><strong>Core concept:</strong> Good C code is not only correct, but also safe and efficient.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>Quick Rule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Array access</td><td>Always check bounds</td></tr>
+          <tr><td>Heap memory</td><td>Every malloc needs one free</td></tr>
+          <tr><td>Input</td><td>Prefer fgets over gets</td></tr>
+          <tr><td>Pointers</td><td>Initialize to NULL when possible</td></tr>
+          <tr><td>Time complexity</td><td>State O(n), O(log n), O(n log n) clearly</td></tr>
+        </tbody>
+      </table>
+    </article>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Copyright 2026 Grasp Coding Quiz. All rights reserved.</p>
+</footer>
+</body>
+</html>

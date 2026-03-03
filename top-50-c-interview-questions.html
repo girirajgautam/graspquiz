@@ -19,6 +19,83 @@
 <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<style>
+  .categories { width: min(1040px, 92%); margin: 26px auto 44px; }
+  .categories > h1 { margin-bottom: 8px; }
+  .catalog-subtitle { margin-bottom: 16px; color: #4b5b78; }
+  .faq-grid { display: grid; gap: 14px; margin-top: 14px; }
+  .faq-card {
+    background: rgba(255,255,255,0.94);
+    border: 1px solid rgba(19,35,63,0.12);
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 10px 24px rgba(19,35,63,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .faq-question { font-weight: 800; color: #13233f; line-height: 1.55; margin-bottom: 10px; font-size: 1.02rem; }
+  .faq-toggle {
+    border: none;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font-weight: 700;
+    font-size: 0.76rem;
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    width: auto;
+    margin-top: 0;
+    background: linear-gradient(120deg, #0f4c81, #1e3a8a);
+    box-shadow: 0 6px 14px rgba(30, 58, 138, 0.22);
+  }
+  .categories .card .faq-toggle {
+    width: auto;
+  }
+  .faq-answer {
+    margin-top: 12px;
+    border-top: 1px solid #c6d8f5;
+    padding-top: 12px;
+    color: #0f274d;
+    line-height: 1.65;
+    display: none;
+  }
+  .faq-answer.visible { display: block; }
+  .faq-block {
+    background: #f8fbff;
+    border: 1px solid #d6e3f8;
+    border-left: 4px solid #1e3a8a;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .faq-block + .faq-block { margin-top: 10px; }
+  .faq-block p { margin: 0; color: #0f274d; font-weight: 600; }
+  .faq-label {
+    display: inline-block;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #0f2e67;
+    background: #dbeafe;
+    border-radius: 999px;
+    padding: 4px 9px;
+    margin-bottom: 6px;
+  }
+  .faq-answer pre {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #0f172a;
+    color: #e2e8f0;
+    overflow-x: auto;
+    font-size: 0.84rem;
+  }
+  .faq-answer code { font-family: Consolas, "Courier New", monospace; }
+</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-82ZQVTYV9J"></script>
 <script>
@@ -48,58 +125,8 @@
   <h1>Top 50 C Interview Questions</h1>
   <h2 class="catalog-subtitle">Use this list for fast interview revision, then solve the C quiz.</h2>
   <div class="card">
-    <ol>
-      <li>What is the difference between declaration and definition in C?</li>
-      <li>What are storage classes in C?</li>
-      <li>What is the difference between stack and heap memory?</li>
-      <li>What is a pointer and why is it used?</li>
-      <li>What is pointer arithmetic?</li>
-      <li>What is a null pointer?</li>
-      <li>What is a dangling pointer?</li>
-      <li>What is the difference between `const int *p` and `int *const p`?</li>
-      <li>What is `void*` in C?</li>
-      <li>What is the use of `sizeof` operator?</li>
-      <li>What are arrays in C?</li>
-      <li>Difference between array and pointer?</li>
-      <li>How are strings represented in C?</li>
-      <li>What is a buffer overflow?</li>
-      <li>What is the use of `fgets` vs `gets`?</li>
-      <li>What are structures in C?</li>
-      <li>What is `typedef` and when to use it?</li>
-      <li>Difference between `struct` and `union`?</li>
-      <li>What are enums in C?</li>
-      <li>What is recursion?</li>
-      <li>What is the base case in recursion?</li>
-      <li>Difference between call by value and call by reference style using pointers?</li>
-      <li>What are function pointers?</li>
-      <li>What is a header file?</li>
-      <li>What are include guards?</li>
-      <li>What are macros in C?</li>
-      <li>What is conditional compilation?</li>
-      <li>What is the `volatile` keyword?</li>
-      <li>What is `static` keyword at local scope?</li>
-      <li>What is `static` keyword at file scope?</li>
-      <li>What is `extern` keyword?</li>
-      <li>What is dynamic memory allocation?</li>
-      <li>Difference between `malloc`, `calloc`, and `realloc`?</li>
-      <li>Why should `free` be called?</li>
-      <li>What happens on double free?</li>
-      <li>What is undefined behavior in C?</li>
-      <li>What is implementation-defined behavior?</li>
-      <li>What is sequence point / unsequenced modification issue?</li>
-      <li>What is strict aliasing?</li>
-      <li>What are file handling functions in C?</li>
-      <li>Difference between text mode and binary mode file operations?</li>
-      <li>What is `EOF`?</li>
-      <li>How does `qsort` comparator work?</li>
-      <li>What is endianness?</li>
-      <li>What is bitwise operation and where used?</li>
-      <li>Difference between `++i` and `i++`?</li>
-      <li>How does `switch` statement work?</li>
-      <li>What is the role of `main` return value?</li>
-      <li>How to avoid memory leaks in C programs?</li>
-      <li>What are best practices for writing interview-ready C code?</li>
-    </ol>
+    <p>Click <strong>Show</strong> to view explanation.</p>
+    <div id="quickRevisionFaq" class="faq-grid"></div>
     <p><a class="lang-btn" href="c.html">Practice C Quiz Now</a></p>
   </div>
 </section>
@@ -107,6 +134,7 @@
 <footer class="footer">
   <p>Copyright 2026 Grasp Coding Quiz. All rights reserved.</p>
 </footer>
+<script src="c-interview-faq.js?v=5"></script>
 </body>
 </html>
 

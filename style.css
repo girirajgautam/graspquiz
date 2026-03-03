@@ -566,6 +566,29 @@ nav {
   line-height: 1.5;
 }
 
+.lang-btn {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  background: linear-gradient(120deg, #0ea5e9, #0284c7);
+}
+
+.resource-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.resource-actions .lang-btn:last-child {
+  margin-left: auto;
+}
+
 .card button {
   margin-top: 18px;
 }
@@ -790,6 +813,15 @@ nav {
   .card button {
     width: 100%;
     padding: 11px 18px;
+  }
+
+  .resource-actions {
+    display: grid;
+    gap: 8px;
+  }
+
+  .resource-actions .lang-btn {
+    text-align: center;
   }
 
   .hero-cta-group {
