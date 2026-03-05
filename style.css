@@ -446,6 +446,29 @@ nav {
   gap: 22px;
 }
 
+.single-card-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.single-card-row .card {
+  width: auto;
+}
+
+@media (max-width: 900px) {
+  .single-card-row {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .single-card-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .card,
 .feature {
   background: var(--surface);

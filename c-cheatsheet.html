@@ -51,6 +51,11 @@
   gtag('js', new Date());
   gtag('config', 'G-82ZQVTYV9J');
 </script>
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image:alt" content="C Cheatsheet - Interview Revision | GraspQuiz | GraspQuiz">
+  <meta name="twitter:site" content="@graspquiz">
+  <meta name="twitter:url" content="https://graspquiz.tech/c-cheatsheet.html">
+  <meta name="twitter:image:alt" content="C Cheatsheet - Interview Revision | GraspQuiz | GraspQuiz">
 </head>
 <body>
 <header class="navbar">
@@ -79,7 +84,7 @@
   </section>
 
   <section class="sheet-grid">
-    <article class="sheet-card">
+    <article id="c-core-basics" class="sheet-card">
       <h2>1. Declaration vs Definition</h2>
       <p><strong>Core concept:</strong> Declaration tells type/name exists. Definition creates storage or function body.</p>
       <p class="easy"><strong>Remember:</strong> Declare many times, define once.</p>
@@ -88,7 +93,7 @@ int x = 10;     // definition</code></pre>
       <p><strong>Output:</strong> No output. This is compile/link behavior.</p>
     </article>
 
-    <article class="sheet-card">
+    <article id="c-format-specifiers" class="sheet-card">
       <h2>2. Basic Types and Format Specifiers</h2>
       <p><strong>Core concept:</strong> Use correct format specifier in <code>printf</code>/<code>scanf</code> for each type.</p>
       <p class="easy"><strong>Common:</strong> <code>%d</code> int, <code>%f</code> float, <code>%c</code> char, <code>%s</code> string.</p>
@@ -98,7 +103,7 @@ printf("%d %.2f\n", age, pi);</code></pre>
       <p><strong>Output:</strong> <code>20 3.14</code></p>
     </article>
 
-    <article class="sheet-card">
+    <article id="c-pointers" class="sheet-card">
       <h2>3. Pointers</h2>
       <p><strong>Core concept:</strong> Pointer stores memory address of another variable.</p>
       <p class="easy"><strong>Symbols:</strong> <code>&amp;</code> gives address, <code>*</code> accesses value at address.</p>
@@ -108,7 +113,7 @@ printf("%d\n", *p);</code></pre>
       <p><strong>Output:</strong> <code>5</code></p>
     </article>
 
-    <article class="sheet-card">
+    <article id="c-arrays-strings" class="sheet-card">
       <h2>4. Arrays and Strings</h2>
       <p><strong>Core concept:</strong> Arrays store same-type values in contiguous memory. String is char array ending with <code>\0</code>.</p>
 <pre><code>int arr[3] = {10, 20, 30};
@@ -144,7 +149,7 @@ printf("%d %c %d\n", s.id, s.grade, WED);</code></pre>
       <p><strong>Output:</strong> Calling twice prints <code>1</code> then <code>2</code>.</p>
     </article>
 
-    <article class="sheet-card">
+    <article id="c-memory" class="sheet-card">
       <h2>7. Dynamic Memory</h2>
       <p><strong>Core concept:</strong> Heap memory is allocated at runtime with <code>malloc/calloc/realloc</code> and released using <code>free</code>.</p>
 <pre><code>int *a = (int*)malloc(3 * sizeof(int));
@@ -183,7 +188,7 @@ qsort(arr, 3, sizeof(int), cmp);</code></pre>
       <p><strong>Output:</strong> Array becomes sorted: <code>1 2 3</code>.</p>
     </article>
 
-    <article class="sheet-card">
+    <article id="c-operators" class="sheet-card">
       <h2>11. Bitwise Operators</h2>
       <p><strong>Core concept:</strong> Bitwise operations work directly on binary bits.</p>
 <pre><code>int a = 6;   // 110

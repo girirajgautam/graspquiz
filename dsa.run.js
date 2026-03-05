@@ -1,4 +1,4 @@
-const l1QuestionPool = [
+﻿const l1QuestionPool = [
   { question: "Which data structure follows FIFO order?", answers: ["Stack", "Queue", "Tree", "Graph"], correct: 1, explanation: "Queue processes elements in First-In-First-Out order." },
   { question: "Which data structure follows LIFO order?", answers: ["Queue", "Stack", "Heap", "Trie"], correct: 1, explanation: "Stack processes elements in Last-In-First-Out order." },
   { question: "Which algorithm finds an element in sorted array in O(log n)?", answers: ["Linear Search", "Binary Search", "Bubble Sort", "DFS"], correct: 1, explanation: "Binary search halves search space each step." },
@@ -84,24 +84,134 @@ function buildLevelQuestions(pool, offset) {
   });
 }
 
+function buildStrictLevelQuestions(pool, levelKey) {
+  const total = 25;
+  const uniqueQuestions = new Set((pool || []).map((q) => String(q.question).trim()));
+  if (!Array.isArray(pool) || pool.length < total || uniqueQuestions.size < total) {
+    console.error(`Strict pool check failed for ${levelKey}: need 25 unique questions.`);
+    return buildLevelQuestions(pool || [], 0);
+  }
+  return pool.slice(0, total).map((q) => ({
+    question: q.question,
+    answers: [...q.answers],
+    correct: q.correct,
+    explanation: q.explanation
+  }));
+}
+
+function normalizeQuestionKey(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
+function cloneQuestionItem(q) {
+  return {
+    question: q.question,
+    answers: [...q.answers],
+    correct: q.correct,
+    explanation: q.explanation
+  };
+}
+
+function buildGeneratedDsaQuestionBank(total = 420) {
+  const topics = [
+    "array indexing", "linked list traversal", "stack operations", "queue operations", "binary search",
+    "two pointers", "sliding window", "hashing", "sorting stability", "heap properties",
+    "BST traversal", "tree height", "graph BFS", "graph DFS", "shortest path constraints",
+    "topological ordering", "union-find", "dynamic programming state", "greedy choice", "backtracking pruning",
+    "recurrence analysis", "amortized complexity", "space tradeoffs", "edge cases", "invariants",
+    "cycle detection", "prefix structures", "range queries", "monotonic structures", "complexity bounds"
+  ];
+  const lenses = [
+    "fundamental", "intermediate", "advanced", "debug", "design",
+    "proof", "performance", "review", "contest", "interview",
+    "edge-case", "optimization", "runtime", "maintenance"
+  ];
+  const result = [];
+  for (let i = 0; i < total; i += 1) {
+    const topic = topics[i % topics.length];
+    const lens = lenses[Math.floor(i / topics.length) % lenses.length];
+    result.push({
+      question: `DSA ${lens} check ${i + 1}: Which statement about ${topic} is correct?`,
+      answers: [
+        `For ${topic}, apply the precise data-structure/algorithm rule and validate complexity assumptions.`,
+        `For ${topic}, asymptotic complexity does not matter if sample tests pass.`,
+        `For ${topic}, edge cases can be ignored when input size is large.`,
+        `For ${topic}, implementation details never affect correctness.`
+      ],
+      correct: 0,
+      explanation: `Correct: ${topic} requires exact rule-based reasoning and complexity awareness.`
+    });
+  }
+  return result;
+}
+
+function pickDisjointPool(levelKey, sourcePools, usedKeys, total = 25, fillerOffset = 0) {
+  const selected = [];
+  const tryAdd = (q) => {
+    const key = normalizeQuestionKey(q && q.question);
+    if (!key || usedKeys.has(key)) return false;
+    usedKeys.add(key);
+    selected.push(cloneQuestionItem(q));
+    return selected.length >= total;
+  };
+
+  sourcePools.forEach((pool) => {
+    if (selected.length >= total || !Array.isArray(pool)) return;
+    pool.forEach((q) => {
+      if (selected.length < total) tryAdd(q);
+    });
+  });
+
+  if (selected.length < total) {
+    const filler = generatedDsaQuestionBank.slice(fillerOffset).concat(generatedDsaQuestionBank.slice(0, fillerOffset));
+    filler.forEach((q) => {
+      if (selected.length < total) tryAdd(q);
+    });
+  }
+
+  if (selected.length < total) {
+    console.error(`Failed to build ${levelKey}: only ${selected.length}/${total} unique questions.`);
+  }
+
+  return selected.slice(0, total);
+}
+
+const generatedDsaQuestionBank = buildGeneratedDsaQuestionBank(420);
+const usedDsaQuestionKeys = new Set();
+
+const disjointLevelPools = {
+  l1: pickDisjointPool("l1", [l1QuestionPool], usedDsaQuestionKeys, 25, 0),
+  l2: pickDisjointPool("l2", [l2QuestionPool], usedDsaQuestionKeys, 25, 40),
+  l3: pickDisjointPool("l3", [l3QuestionPool], usedDsaQuestionKeys, 25, 80),
+  l4: pickDisjointPool("l4", [l4QuestionPool], usedDsaQuestionKeys, 25, 120),
+  l5: pickDisjointPool("l5", [l1QuestionPool, l2QuestionPool], usedDsaQuestionKeys, 25, 160),
+  l6: pickDisjointPool("l6", [l2QuestionPool, l3QuestionPool], usedDsaQuestionKeys, 25, 200),
+  l7: pickDisjointPool("l7", [l3QuestionPool, l4QuestionPool], usedDsaQuestionKeys, 25, 240),
+  l8: pickDisjointPool("l8", [l4QuestionPool], usedDsaQuestionKeys, 25, 280),
+  l9: pickDisjointPool("l9", [l3QuestionPool, l4QuestionPool], usedDsaQuestionKeys, 25, 320),
+  l10: pickDisjointPool("l10", [l4QuestionPool, l3QuestionPool], usedDsaQuestionKeys, 25, 360)
+};
+
 const quizLevels = {
-  l1: buildLevelQuestions(l1QuestionPool, 0),
-  l2: buildLevelQuestions(l2QuestionPool, 0),
-  l3: buildLevelQuestions(l3QuestionPool, 0),
-  l4: buildLevelQuestions(l4QuestionPool, 0),
-  l5: buildLevelQuestions(l1QuestionPool, 7),
-  l6: buildLevelQuestions(l2QuestionPool, 9),
-  l7: buildLevelQuestions(l3QuestionPool, 11),
-  l8: buildLevelQuestions(l4QuestionPool, 13)
+  l1: buildStrictLevelQuestions(disjointLevelPools.l1, "l1"),
+  l2: buildStrictLevelQuestions(disjointLevelPools.l2, "l2"),
+  l3: buildStrictLevelQuestions(disjointLevelPools.l3, "l3"),
+  l4: buildStrictLevelQuestions(disjointLevelPools.l4, "l4"),
+  l5: buildStrictLevelQuestions(disjointLevelPools.l5, "l5"),
+  l6: buildStrictLevelQuestions(disjointLevelPools.l6, "l6"),
+  l7: buildStrictLevelQuestions(disjointLevelPools.l7, "l7"),
+  l8: buildStrictLevelQuestions(disjointLevelPools.l8, "l8"),
+  l9: buildStrictLevelQuestions(disjointLevelPools.l9, "l9"),
+  l10: buildStrictLevelQuestions(disjointLevelPools.l10, "l10")
 };
 
 let currentLevel = "l1";
 let quizData = quizLevels[currentLevel];
 let currentQuestion = 0;
 let score = 0;
-const PASS_SCORE_BY_LEVEL = { l1: 16, l2: 18, l3: 20, l4: 22, l5: 22, l6: 23, l7: 23, l8: 24 };
-const LEVEL_ORDER = ["l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8"];
-const unlockedLevels = new Set(LEVEL_ORDER);
+const PASS_SCORE_BY_LEVEL = { l1: 14, l2: 15, l3: 16, l4: 17, l5: 18, l6: 19, l7: 20, l8: 21, l9: 22, l10: 23 };
+const LEVEL_ORDER = ["l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8", "l9", "l10"];
+const unlockedLevels = new Set(["l1"]);
 let quizInitialized = false;
 let lastFeedbackState = null;
 const API_BASE_URL = (
@@ -376,7 +486,7 @@ function setActiveLevelButton() {
     const isUnlocked = unlockedLevels.has(level);
     const isActive = btn.dataset.level === currentLevel;
     const label = formatLevel(level);
-    btn.textContent = isUnlocked ? "Start Now ->" : "Locked";
+    btn.textContent = "Start Now ->";
     btn.classList.toggle("active", isActive);
     btn.disabled = !isUnlocked;
     btn.setAttribute("aria-pressed", String(isActive));
@@ -385,6 +495,7 @@ function setActiveLevelButton() {
       const idx = LEVEL_ORDER.indexOf(level);
       const prevLevelKey = idx > 0 ? LEVEL_ORDER[idx - 1] : "l1";
       const prevLevel = formatLevel(prevLevelKey);
+      btn.textContent = `Unlock after ${prevLevel}`;
       const prevPassScore = getPassScoreForLevel(prevLevelKey);
       btn.title = `Score ${prevPassScore}/25 in ${prevLevel} to unlock`;
     } else {
@@ -514,6 +625,7 @@ async function submitQuizRecord(totalQuestions = quizData.length, isFinal = fals
 }
 function showResult() {
   const passed = score >= getPassScoreForLevel(currentLevel);
+  const unlockedLevel = passed ? unlockNextLevel() : null;
   trackQuizEvent("complete_quiz", {
     quiz_name: QUIZ_NAME,
     level: currentLevel,
@@ -531,13 +643,10 @@ function showResult() {
   setActiveLevelButton();
   const ruleText = passed
     ? `Pass rule met (${score}/${quizData.length}).`
-    : `Score ${score}/${quizData.length}.`;
-  const currentIdx = LEVEL_ORDER.indexOf(currentLevel);
-  const nextLevel = currentIdx >= 0 && currentIdx < LEVEL_ORDER.length - 1
-    ? LEVEL_ORDER[currentIdx + 1]
-    : null;
-  const nextLevelBtn = nextLevel
-    ? `<button type="button" onclick="goToLevel('${nextLevel}')">Next Level</button>`
+    : `Need ${getPassScoreForLevel(currentLevel)}/${quizData.length} to unlock next level.`;
+  const unlockText = unlockedLevel ? `<p>Unlocked ${formatLevel(unlockedLevel)}.</p>` : "";
+  const nextLevelBtn = unlockedLevel
+    ? `<button type="button" onclick="goToLevel('${unlockedLevel}')">Next Level</button>`
     : "";
   const token = getAuthToken();
   const saveStatusText = token
@@ -546,6 +655,7 @@ function showResult() {
 
   resultEl.innerHTML = `<h3>Your Score: ${score} / ${quizData.length}</h3>
                         <p>${ruleText}</p>
+                        ${unlockText}
                         <p id="saveStatus">${saveStatusText}</p>
                         ${nextLevelBtn}
                         <button type="button" onclick="restartQuiz()">Try Again</button>
@@ -597,6 +707,7 @@ function showLevelSelection() {
   explanationEl.style.display = "none";
   nextBtn.style.display = "none";
   resultEl.style.display = "none";
+  setActiveLevelButton();
 }
 
 function goToLevel(level) {
@@ -619,6 +730,7 @@ function restartQuiz() {
 }
 
 function setLevel(level) {
+  if (!unlockedLevels.has(level)) return;
   if (!quizLevels[level]) return;
   trackQuizEvent("start_quiz", {
     quiz_name: QUIZ_NAME,
@@ -695,6 +807,7 @@ if (document.readyState === "loading") {
 initQuiz();
 setTimeout(initQuiz, 0);
 setTimeout(initQuiz, 200);
+
 
 
 
